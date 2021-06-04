@@ -1,0 +1,211 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hexo+github搭建个人博客 | Blog</title><meta name="author" content="Willianhuanbian"><meta name="copyright" content="Willianhuanbian"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="前言今天的文章主要记录了如何利用Hexo+Github搭建一个自己的博客，作为一个小白不得不说这个过程真的是欲哭无泪。 一、前期准备工作nodejs: 包含俩个命令 node npm hexo: 快速、简洁且高效的博客框架,支持markdown 插件和扩展性很好 git：需要安装git 通过git 命令来操作github github账号：申请注册一个github账号，github提供了一个git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo+github搭建个人博客">
+<meta property="og:url" content="https://willianhuanbian.com/2021/01/30/Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="前言今天的文章主要记录了如何利用Hexo+Github搭建一个自己的博客，作为一个小白不得不说这个过程真的是欲哭无泪。 一、前期准备工作nodejs: 包含俩个命令 node npm hexo: 快速、简洁且高效的博客框架,支持markdown 插件和扩展性很好 git：需要安装git 通过git 命令来操作github github账号：申请注册一个github账号，github提供了一个git">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2021-01-29T16:44:57.661Z">
+<meta property="article:modified_time" content="2021-01-29T16:57:50.167Z">
+<meta property="article:author" content="Willianhuanbian">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://willianhuanbian.com/2021/01/30/Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-01-30 00:57:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/null" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">3</div></a></div></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Blog</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Hexo+github搭建个人博客</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-01-29T16:44:57.661Z" title="Created 2021-01-30 00:44:57">2021-01-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-01-29T16:57:50.167Z" title="Updated 2021-01-30 00:57:50">2021-01-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天的文章主要记录了如何利用Hexo+Github搭建一个自己的博客，作为一个小白不得不说这个过程真的是欲哭无泪。</p>
+<h1 id="一、前期准备工作"><a href="#一、前期准备工作" class="headerlink" title="一、前期准备工作"></a>一、前期准备工作</h1><p>nodejs: 包含俩个命令 node npm</p>
+<p>hexo: 快速、简洁且高效的博客框架,支持markdown 插件和扩展性很好</p>
+<p>git：需要安装git 通过git 命令来操作github</p>
+<p>github账号：申请注册一个github账号，github提供了一个github pages功能可以支持站点</p>
+<h1 id="二、博客的搭建以及部署"><a href="#二、博客的搭建以及部署" class="headerlink" title="二、博客的搭建以及部署"></a>二、博客的搭建以及部署</h1><h2 id="1-nodejs-以及Git的安装"><a href="#1-nodejs-以及Git的安装" class="headerlink" title="1.nodejs 以及Git的安装"></a>1.nodejs 以及Git的安装</h2><p>需要使用Git安装，进入官方网址下载：<a target="_blank" rel="noopener" href="https://git-scm.com/download/win">这里是Windows用户地址</a><br>下载完成之后点击安装，然后通过打开Git Bash 这个软件来执行的命令，由于为了之后加快安装hexo速度，更换为国内的npm源：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https:<span class="comment">//registry.npm.taobao.org</span></span><br><span class="line">npm config get registry</span><br><span class="line">看看终端显示信息，如果看到这行信息，说明配置成功: https:<span class="comment">//registry.npm.taobao.org/</span></span><br></pre></td></tr></table></figure>
+<p>下载安装 然后通过命令检测下安装版本<br>下载地址： <a target="_blank" rel="noopener" href="https://npm.taobao.org/mirrors/node/v12.20.0/">https://npm.taobao.org/mirrors/node/v12.20.0/</a></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">(base)</span><br><span class="line">$ npm -v</span><br></pre></td></tr></table></figure>
+<p>临时更换npm 源 (为了后面快速下载安装hexo，更换为国内的源)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm config <span class="built_in">set</span> registry https:<span class="comment">//registry.npm.taobao.org</span></span><br><span class="line">$ npm config get registry</span><br><span class="line">https:<span class="comment">//registry.npm.taobao.org/</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-github注册"><a href="#2-github注册" class="headerlink" title="2.github注册"></a>2.github注册</h2><p><a target="_blank" rel="noopener" href="https://github.com/join?ref_cta=Sign%20up&ref_loc=header%20logged%20out&ref_page=/&source=header-home">这里是github 注册地址</a><br><img src="https://img-blog.csdnimg.cn/20210129231024102.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>新建一个仓库<br><img src="https://img-blog.csdnimg.cn/20210129231246925.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210129231345582.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>然后打开仓库创建一个 index.html 文件，并添加内容。<br><img src="https://img-blog.csdnimg.cn/20210129231615114.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2021012923170181.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>创建站点后，index html的效果只是暂时的。后期需要hexo部署到你的Github上就可以生成自己的博客。</p>
+<h2 id="3-GithubSHH配置"><a href="#3-GithubSHH配置" class="headerlink" title="3.GithubSHH配置"></a>3.GithubSHH配置</h2><p>首先打开Git-Bash工具 ，执行命令</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;用户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;邮箱地址&quot;</span></span><br></pre></td></tr></table></figure>
+<p>（注意这里填写注册github时所使用的用户名和邮箱地址）<br>生成一对密钥 SSH key</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;你的邮箱地址&quot;</span></span><br></pre></td></tr></table></figure>
+<p>执行后一直敲回车键就可以了<br><img src="https://img-blog.csdnimg.cn/20210129232724928.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>首次使用需要检测是否成功：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>由于我这里安装过了，出现下面的情况。<br><img src="https://img-blog.csdnimg.cn/20210129232912527.png" alt="在这里插入图片描述"><br>在C盘中的用户中找到.shh的文件<br><img src="https://img-blog.csdnimg.cn/20210129233107317.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>记事本打开复制里面的密匙内容<br>然后登录github 在github 上添加刚刚生成的ssh key 把公钥复制粘贴上去。<br><img src="https://img-blog.csdnimg.cn/2021012923331275.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210129233435659.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>点击后标题随意，将密匙内容复制到文本框中。</p>
+<h2 id="4-Hexo安装"><a href="#4-Hexo安装" class="headerlink" title="4.Hexo安装"></a>4.Hexo安装</h2><p>首先创建一个你熟知路径的文件，文件名这里以blog来举例。<br>安装并初始化，blog目录就是博客目录<br>打开命令控制中心进入blog执行命令：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g </span><br><span class="line">hexo init 这里是你的github的用户名            </span><br><span class="line">cd 以用户名创建的新的文件</span><br><span class="line">npm install       </span><br><span class="line">hexo server </span><br></pre></td></tr></table></figure>
+<p>出现：<code>INFO  Validating config INFO  Start processing INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</code><br>那么本地访问<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 就可以看到博客网站了，但效果是有限的并且别人无法访问。</p>
+<p>接下来部署到Github Page </p>
+<h2 id="5-Sublime安装"><a href="#5-Sublime安装" class="headerlink" title="5.Sublime安装"></a>5.Sublime安装</h2><p>为了部署Github page我们需要安装sublime进行文本编译<br>官方网站：<a target="_blank" rel="noopener" href="http://www.sublimetext.cn/">http://www.sublimetext.cn/</a><br>但是由于下载的困难，建议翻墙下载，或者在其他网址下载可以使用的安装包。<br><img src="https://img-blog.csdnimg.cn/20210129234635122.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="6-hexo发布到github"><a href="#6-hexo发布到github" class="headerlink" title="6.hexo发布到github"></a>6.hexo发布到github</h2><p>首先：用sublime打开blog下创建的用户名文件进行部署（将文件直接拖进去就可以了）打开仓库_config.yml 配置文件，拉到文件末尾，填上如下配置：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:<span class="comment">//hexo.io/docs/one-command-deployment</span></span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:<span class="comment">//github.com/budongshu/budongshu.github.io.git #仓库名字改成自己的</span></span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
+<p>使用时：Ctrl+s用于保存<br>(注意由于语法问题 ：后加一个空格）</p>
+<p>第二: 要安装一个部署插件 hexo-deployer-git<br>首先进入blog的根目录执行</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>第三: 最后执行以下命令就可以部署上传啦</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+<p>接下来，在浏览器访问网址： https://你的用户名.github.io 就会看到你的博客。</p>
+<h2 id="7-hexo主题的更换"><a href="#7-hexo主题的更换" class="headerlink" title="7.hexo主题的更换"></a>7.hexo主题的更换</h2><p>可以去官方挑选自己喜欢的主题：<a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a><br><img src="https://img-blog.csdnimg.cn/20210130000003101.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>点击这里，学习如何更换<br><img src="https://img-blog.csdnimg.cn/20210130000110753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>首先在博客的项目文件夹下打开git bash执行命令：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b master https:<span class="comment">//github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span></span><br></pre></td></tr></table></figure>
+<p>成功后出现themes的文件夹<br><img src="https://img-blog.csdnimg.cn/20210130000337784.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>然后修改_config.yml文件（_config.yml文件在博客的项目文件夹下）<br><img src="https://img-blog.csdnimg.cn/20210130000503295.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>theme需要修改为：<code>theme: 主题的名字</code> 之后保存</p>
+<p>然后安装pug 以及stylus 的渲染器：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>执行hexo s部署到本地运行</p>
+<p>然后搭建到Github上：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>执行后稍等一会访问：<br><img src="https://img-blog.csdnimg.cn/20210130001224724.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>成功了！</p>
+<h2 id="8-hexo命令"><a href="#8-hexo命令" class="headerlink" title="8.hexo命令"></a>8.hexo命令</h2><p><img src="https://img-blog.csdnimg.cn/20210130002025339.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>作为一位小白来讲，搭建的过程的确很艰辛，但是学习的过程也是获益匪浅。希望我的记录不仅能保存下来我的搭建过程也能对你产生帮助。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Willianhuanbian</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://willianhuanbian.com/2021/01/30/Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B/">https://willianhuanbian.com/2021/01/30/Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/02/05/SQL%E6%B3%A8%E5%85%A5-%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">SQL注入-联合查询入门</div></div></a></div><div class="next-post pull-right"><a href="/2021/01/29/hello-world/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Hello World</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/null" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Willianhuanbian</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">一、前期准备工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E9%83%A8%E7%BD%B2"><span class="toc-number">3.</span> <span class="toc-text">二、博客的搭建以及部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-nodejs-%E4%BB%A5%E5%8F%8AGit%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-number">3.1.</span> <span class="toc-text">1.nodejs 以及Git的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-github%E6%B3%A8%E5%86%8C"><span class="toc-number">3.2.</span> <span class="toc-text">2.github注册</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-GithubSHH%E9%85%8D%E7%BD%AE"><span class="toc-number">3.3.</span> <span class="toc-text">3.GithubSHH配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Hexo%E5%AE%89%E8%A3%85"><span class="toc-number">3.4.</span> <span class="toc-text">4.Hexo安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Sublime%E5%AE%89%E8%A3%85"><span class="toc-number">3.5.</span> <span class="toc-text">5.Sublime安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-hexo%E5%8F%91%E5%B8%83%E5%88%B0github"><span class="toc-number">3.6.</span> <span class="toc-text">6.hexo发布到github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-hexo%E4%B8%BB%E9%A2%98%E7%9A%84%E6%9B%B4%E6%8D%A2"><span class="toc-number">3.7.</span> <span class="toc-text">7.hexo主题的更换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-hexo%E5%91%BD%E4%BB%A4"><span class="toc-number">3.8.</span> <span class="toc-text">8.hexo命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">3.9.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/02/05/SQL%E6%B3%A8%E5%85%A5-%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" title="SQL注入-联合查询入门"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SQL注入-联合查询入门"/></a><div class="content"><a class="title" href="/2021/02/05/SQL%E6%B3%A8%E5%85%A5-%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" title="SQL注入-联合查询入门">SQL注入-联合查询入门</a><time datetime="2021-02-05T09:18:57.446Z" title="Created 2021-02-05 17:18:57">2021-02-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/30/Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B/" title="Hexo+github搭建个人博客"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo+github搭建个人博客"/></a><div class="content"><a class="title" href="/2021/01/30/Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B/" title="Hexo+github搭建个人博客">Hexo+github搭建个人博客</a><time datetime="2021-01-29T16:44:57.661Z" title="Created 2021-01-30 00:44:57">2021-01-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/29/hello-world/" title="Hello World"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2021/01/29/hello-world/" title="Hello World">Hello World</a><time datetime="2021-01-29T05:01:33.518Z" title="Created 2021-01-29 13:01:33">2021-01-29</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Willianhuanbian</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
