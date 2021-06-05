@@ -6,13 +6,12 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title> - Blog</title>
+  <title>XSS初探 - Blog</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
   
-  <meta name="description" content="@TOC
-前言跨站脚本（cross site scri...">
+  <meta name="description" content="前言跨站脚本（cross site script）为了...">
   <meta name="author" content="Willianhuanbian">
   <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -133,6 +132,28 @@
     
 
 
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">XSS初探</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
   
   
 
@@ -168,18 +189,17 @@
     <section class="head">
   <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
   <div class="head-mask">
-    <h1 class="head-title"></h1>
+    <h1 class="head-title">XSS初探</h1>
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>June 05, 2021</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1465</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1460</span>
     </div>
   </div>
 </section>
     <section class="main">
       <section class="content">
-        <p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>跨站脚本（cross site script）为了避免与样式css混淆，所以简称为XSS。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>跨站脚本（cross site script）为了避免与样式css混淆，所以简称为XSS。</p>
 <p>XSS是一种经常出现在web应用中的计算机安全漏洞，也是web中最主流的攻击方式。那么什么是XSS呢？</p>
 <p>XSS是指恶意攻击者利用网站没有对用户提交数据进行转义处理或者过滤不足的缺点，进而添加一些代码，嵌入到web页面中去。使别的用户访问都会执行相应的嵌入代码。</p>
 <p>从而盗取用户资料、利用用户身份进行某种动作或者对访问者进行病毒侵害的一种攻击方式。</p>
@@ -234,8 +254,8 @@
         
         
   <nav class="nav">
-    <a href="/2021/06/05/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99%EF%BC%88%E4%BA%8C%EF%BC%89/"><i class="iconfont iconleft"></i></a>
-    <a href="/2021/06/05/sqli-labs-%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5-updatexml%E6%8A%A5%E9%94%99/"><i class="iconfont iconright"></i></a>
+    <a href="/2021/06/05/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99%EF%BC%88%E4%BA%8C%EF%BC%89/"><i class="iconfont iconleft"></i>图片隐写（二）</a>
+    <a href="/2021/06/05/sqli-labs-%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5-updatexml%E6%8A%A5%E9%94%99/">sqli-labs-报错注入-updatexml报错<i class="iconfont iconright"></i></a>
   </nav>
 
       </section>

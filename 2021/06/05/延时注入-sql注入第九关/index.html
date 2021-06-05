@@ -6,15 +6,14 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title> - Blog</title>
+  <title>延时注入-sql注入第九关 - Blog</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
   
-  <meta name="description" content="@TOC
-前言什么是延时注入？
+  <meta name="description" content="前言什么是延时注入？
 
-12341.IF(C...">
+12341.IF(Condit...">
   <meta name="author" content="Willianhuanbian">
   <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -135,6 +134,28 @@
     
 
 
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">延时注入-sql注入第九关</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
   
   
 
@@ -170,18 +191,17 @@
     <section class="head">
   <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
   <div class="head-mask">
-    <h1 class="head-title"></h1>
+    <h1 class="head-title">延时注入-sql注入第九关</h1>
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>June 05, 2021</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>2690</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>2685</span>
     </div>
   </div>
 </section>
     <section class="main">
       <section class="content">
-        <p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2>什么是延时注入？</h2>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2>什么是延时注入？</h2>
 
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1.</span>IF(<span class="hljs-keyword">Condition</span>,A,B)函数<br><span class="hljs-number">2.</span>当<span class="hljs-keyword">Condition</span>为<span class="hljs-literal">TRUE</span>时，返回A；当<span class="hljs-keyword">Condition</span>为<span class="hljs-literal">FALSE</span>时，返回B。<br><span class="hljs-number">3.</span>sleep()函数			网页延迟n秒后，输出结果<br><span class="hljs-number">4.</span><span class="hljs-keyword">left</span>（）函数           左边数，取几个数<br></code></pre></td></tr></table></figure>
 <p>比如呢：</p>
@@ -252,8 +272,8 @@
         
         
   <nav class="nav">
-    <a href="/2021/06/05/upload%E7%BB%83%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/"><i class="iconfont iconleft"></i></a>
-    <a href="/2021/06/05/upload-%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/"><i class="iconfont iconright"></i></a>
+    <a href="/2021/06/05/upload%E7%BB%83%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/"><i class="iconfont iconleft"></i>upload练习（二）</a>
+    <a href="/2021/06/05/upload-%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/">upload-靶场练习<i class="iconfont iconright"></i></a>
   </nav>
 
       </section>

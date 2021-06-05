@@ -6,13 +6,12 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title> - Blog</title>
+  <title>upload-labs-第一关 - Blog</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
   
-  <meta name="description" content="@TOC
-前言客户端js验证绕过上传-（1）`让我们看...">
+  <meta name="description" content="前言客户端js验证绕过上传-（1）`让我们看看第一关说...">
   <meta name="author" content="Willianhuanbian">
   <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -133,6 +132,28 @@
     
 
 
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">upload-labs-第一关</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
   
   
 
@@ -168,18 +189,17 @@
     <section class="head">
   <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
   <div class="head-mask">
-    <h1 class="head-title"></h1>
+    <h1 class="head-title">upload-labs-第一关</h1>
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>June 05, 2021</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>512</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>507</span>
     </div>
   </div>
 </section>
     <section class="main">
       <section class="content">
-        <p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h1 id="客户端js验证绕过上传-（1）"><a href="#客户端js验证绕过上传-（1）" class="headerlink" title="客户端js验证绕过上传-（1）`"></a>客户端js验证绕过上传-（1）`</h1><p>让我们看看第一关说了什么<img    class="lazyload" data-original="https://img-blog.csdnimg.cn/20210411092634950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">在这里插入图片描述</span><br><strong>基于“JS本地验证”绕过其实也就是：客户端js检查类型的上传漏洞是Web系统的上传功能在前端页面使用javascript脚本对要上传的文件进行检查，在服务器端没有进行检查，而造成的缺陷。</strong><br><img    class="lazyload" data-original="https://img-blog.csdnimg.cn/20210411093257848.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">在这里插入图片描述</span><br>查看源码，会发现，上传文件的格式只有三种，那么如何绕过达到实现上传我们想要上传的文件也就是我们需要达到的目的了</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h1 id="客户端js验证绕过上传-（1）"><a href="#客户端js验证绕过上传-（1）" class="headerlink" title="客户端js验证绕过上传-（1）`"></a>客户端js验证绕过上传-（1）`</h1><p>让我们看看第一关说了什么<img    class="lazyload" data-original="https://img-blog.csdnimg.cn/20210411092634950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">在这里插入图片描述</span><br><strong>基于“JS本地验证”绕过其实也就是：客户端js检查类型的上传漏洞是Web系统的上传功能在前端页面使用javascript脚本对要上传的文件进行检查，在服务器端没有进行检查，而造成的缺陷。</strong><br><img    class="lazyload" data-original="https://img-blog.csdnimg.cn/20210411093257848.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">在这里插入图片描述</span><br>查看源码，会发现，上传文件的格式只有三种，那么如何绕过达到实现上传我们想要上传的文件也就是我们需要达到的目的了</p>
 <h2 id="Burp抓包改包"><a href="#Burp抓包改包" class="headerlink" title="Burp抓包改包"></a>Burp抓包改包</h2><p><strong>一.为了抓包成功，我们先将写好的一句话木马文件的格式修改为<code>.jpg</code>格式进行上传，同时burp设置为拦截模式。点击上传，即可拦截到上传的数据包。</strong><img    class="lazyload" data-original="https://img-blog.csdnimg.cn/20210411095836514.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">在这里插入图片描述</span><br>此时的格式为.jpg</p>
 <p><strong>二：改包</strong><br>将filename=后的文件修改为：<code>shell.php</code><br><img    class="lazyload" data-original="https://img-blog.csdnimg.cn/2021041110002883.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">在这里插入图片描述</span><br><strong>三：放包</strong><br>点开放包按钮，将修改后的数据包发送出去<br><img    class="lazyload" data-original="https://img-blog.csdnimg.cn/20210411100209954.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">在这里插入图片描述</span><br>查看文件是否上传成功</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">upload-labs-master\upload<br></code></pre></td></tr></table></figure>
@@ -211,8 +231,8 @@
         
         
   <nav class="nav">
-    <a href="/2021/06/05/upload-%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/"><i class="iconfont iconleft"></i></a>
-    <a href="/2021/06/05/CTFshow-%E8%90%8C%E6%96%B0/"><i class="iconfont iconright"></i></a>
+    <a href="/2021/06/05/upload-%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/"><i class="iconfont iconleft"></i>upload-靶场练习</a>
+    <a href="/2021/06/05/CTFshow-%E8%90%8C%E6%96%B0/">CTFshow-萌新<i class="iconfont iconright"></i></a>
   </nav>
 
       </section>
