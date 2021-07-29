@@ -1,59 +1,69 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>XSS初探 | Willianir&#39;s home</title>
-  
-  
-  
-  <!--link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css"-->
-  
-<link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css">
-
-  
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="baidu-site-verification" content="vvVgSQUzPU" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="keywords" content="虎虎|博客|个人|utone|Utone|">
+    <meta name="description" content="骑士恨煎蛋，骑士恨孜然">
+    
+    <title>
+       XSS初探 -  Willianir&#39;s home
+    </title>
+    
 <link rel="stylesheet" href="/css/style.css">
-
-<meta name="generator" content="Hexo 5.3.0"></head>
-
-<body>
-<div class="Shell">
-    <aside class='SideBar'>
-    <section class='avatar' style="background-image: url()">
-        <div class='av-pic' style="background-image: url()">
+ 
+    
+      <link rel="icon" href="/images/favicon.ico" />
+    
+  <meta name="generator" content="Hexo 5.3.0"></head>
+  <body>
+    <div id="container">
+      <div id="main-left">
+        <div id="introduce">
+          <div class="logo-worp">
+            <a href="/"><img class="logo" src="/images/logo.png" alt=""/></a>
+          </div>
+          <ul>
+            
+              <li><a href="/"> Home </a></li>
+            
+              <li><a href="/archives"> Archive </a></li>
+            
+              <li><a href="/about"> About </a></li>
+            
+              <li><a href="/atom.xml"> RSS </a></li>
+            
+            <li>
+              <img id="search-img" src="/images/search.svg" alt="search" />
+            </li>
+          </ul>
+           
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%89%8D%E8%A8%80"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81XSS%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E5%AE%9E%E4%BE%8B"><span class="post-toc-number">2.</span> <span class="post-toc-text">一、XSS跨站脚本实例</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%BA%8C-%E3%80%81%E5%8E%9F%E7%90%86%E5%A4%8D%E7%8E%B0"><span class="post-toc-number">3.</span> <span class="post-toc-text">二 、原理复现</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%B8%89%E3%80%81XSS%E5%88%86%E7%B1%BB"><span class="post-toc-number">4.</span> <span class="post-toc-text">三、XSS分类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8F%8D%E5%B0%84%E5%9E%8B%EF%BC%9A"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">反射型：</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%80%BB%E7%BB%93"><span class="post-toc-number">5.</span> <span class="post-toc-text">总结</span></a></li></ol> 
+          
         </div>
-    </section>
-    <section class='menu'>
-        <div>Willianir&#39;s home</div>
-        
-        <ul>
-          
-            <a href="/" class="Btn">
-              <li>Home</li>
-            </a>  
-          
-            <a href="/archives/" class="Btn">
-              <li>Archive</li>
-            </a>  
-          
-        </ul>
-    </section>
-    <section class="media">
-        
-    </section>
-</aside>
-
-    <div class="container">
-        <div data-pager-shell>
-            <div>
-  <article class='ContentView'>
-    <header class='PageTitle'>
-        <h1>XSS初探</h1>
+      </div>
+      <div id="main-right"><div id="post">
+    
+    <header class="article-header">
+        <h1>
+            XSS初探
+        </h1>
     </header>
-
-    <section>
-      <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>跨站脚本（cross site script）为了避免与样式css混淆，所以简称为XSS。</p>
+    
+    <div class="post-meta">
+        <time class="post-data" datetime="2021-06-05T07:48:43.932Z" itemprop="datePublished">
+            2021-06-05
+        </time>
+        
+        
+    </div>
+    
+    <div class="post-entry">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>跨站脚本（cross site script）为了避免与样式css混淆，所以简称为XSS。</p>
 <p>XSS是一种经常出现在web应用中的计算机安全漏洞，也是web中最主流的攻击方式。那么什么是XSS呢？</p>
 <p>XSS是指恶意攻击者利用网站没有对用户提交数据进行转义处理或者过滤不足的缺点，进而添加一些代码，嵌入到web页面中去。使别的用户访问都会执行相应的嵌入代码。</p>
 <p>从而盗取用户资料、利用用户身份进行某种动作或者对访问者进行病毒侵害的一种攻击方式。</p>
@@ -83,49 +93,24 @@
 <p>对了，学习XSS同样需要掌握它的语言可以去看看<a target="_blank" rel="noopener" href="https://owasp.org/www-community/xss-filter-evasion-cheatsheet">这里</a>，同样<strong>JAVAScript、HTML、PHP</strong>也需要不断学习。</p>
 <p>今天这篇文章写的很糙，这也说明我了解的太少，随着学习的深入希望也能总结的更加清晰吧。</p>
 
-
-      
-
-    </section>
-    
-      <section class='ArticleMeta'>
-          <div>
-            发布于&nbsp;
-            <time datetime="2021-06-05T07:48:43.932Z" itemprop="datePublished">
-              2021-06-05
-            </time>
-          </div>
-          
-      </section>
-    
-    
-</article>
-
+    </div>
+    <!--畅言PC和WAP自适应版-->
   
-</div>
-
-            <footer>
-    <div>© 2021 - Willianhuanbian </div>
-    <div>
-        <span>
-            Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
-        </span>
-        ,
-        <span>
-            Theme - <a target="_blank" rel="noopener" href="https://github.com/nameoverflow/hexo-theme-icalm">Icalm</a>
-        </span>
+</div></div>
     </div>
-</footer>
-
-        </div>
-    </div>
-</div>
-
-<script src="/js/pager/dist/singlepager.js"></script>
-
-<script>
-var sp = new Pager('data-pager-shell')
-
-</script>
-</body>
+    <div id="footer">骑士恨煎蛋，骑士恨孜然</div>
+    <img id="top" src="/images/up-circle.svg" alt="top" />
+    
+  </body>
 </html>
+<!-- 加载主题脚本文件 -->
+
+<script src="/scripts/utone.js"></script>
+
+
+<script type="text/javascript">
+  window.onload = function() {
+    scroll.init()
+    siteSearch.init()
+  }
+</script>

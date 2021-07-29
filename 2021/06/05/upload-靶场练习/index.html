@@ -1,59 +1,69 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>upload-靶场练习 | Willianir&#39;s home</title>
-  
-  
-  
-  <!--link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css"-->
-  
-<link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css">
-
-  
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="baidu-site-verification" content="vvVgSQUzPU" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="keywords" content="虎虎|博客|个人|utone|Utone|">
+    <meta name="description" content="骑士恨煎蛋，骑士恨孜然">
+    
+    <title>
+       upload-靶场练习 -  Willianir&#39;s home
+    </title>
+    
 <link rel="stylesheet" href="/css/style.css">
-
-<meta name="generator" content="Hexo 5.3.0"></head>
-
-<body>
-<div class="Shell">
-    <aside class='SideBar'>
-    <section class='avatar' style="background-image: url()">
-        <div class='av-pic' style="background-image: url()">
+ 
+    
+      <link rel="icon" href="/images/favicon.ico" />
+    
+  <meta name="generator" content="Hexo 5.3.0"></head>
+  <body>
+    <div id="container">
+      <div id="main-left">
+        <div id="introduce">
+          <div class="logo-worp">
+            <a href="/"><img class="logo" src="/images/logo.png" alt=""/></a>
+          </div>
+          <ul>
+            
+              <li><a href="/"> Home </a></li>
+            
+              <li><a href="/archives"> Archive </a></li>
+            
+              <li><a href="/about"> About </a></li>
+            
+              <li><a href="/atom.xml"> RSS </a></li>
+            
+            <li>
+              <img id="search-img" src="/images/search.svg" alt="search" />
+            </li>
+          </ul>
+           
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MIME%E7%B1%BB%E5%9E%8B%E9%AA%8C%E8%AF%81%E7%BB%95%E8%BF%87%E4%B8%8A%E4%BC%A0-%E7%AC%AC%E4%BA%8C%E5%85%B3"><span class="post-toc-number">1.</span> <span class="post-toc-text">MIME类型验证绕过上传-第二关</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">基于这种类型的文件上传我们只需要将验证了Content-Type 改成图片的MIME类型即可</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E9%BB%91%E5%90%8D%E5%8D%95%E5%90%8E%E7%BC%80%E5%90%8D-php3%E3%80%81phtml-%E7%BB%95%E8%BF%87%E4%B8%8A%E4%BC%A0-%E7%AC%AC%E4%B8%89%E5%85%B3"><span class="post-toc-number">2.</span> <span class="post-toc-text">黑名单后缀名(php3、phtml)绕过上传-第三关</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#htaccess%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%BB%95%E8%BF%87%E4%B8%8A%E4%BC%A0-%E7%AC%AC%E5%9B%9B%E4%B8%AA"><span class="post-toc-number">3.</span> <span class="post-toc-text">.htaccess配置文件绕过上传-第四个</span></a></li></ol> 
+          
         </div>
-    </section>
-    <section class='menu'>
-        <div>Willianir&#39;s home</div>
-        
-        <ul>
-          
-            <a href="/" class="Btn">
-              <li>Home</li>
-            </a>  
-          
-            <a href="/archives/" class="Btn">
-              <li>Archive</li>
-            </a>  
-          
-        </ul>
-    </section>
-    <section class="media">
-        
-    </section>
-</aside>
-
-    <div class="container">
-        <div data-pager-shell>
-            <div>
-  <article class='ContentView'>
-    <header class='PageTitle'>
-        <h1>upload-靶场练习</h1>
+      </div>
+      <div id="main-right"><div id="post">
+    
+    <header class="article-header">
+        <h1>
+            upload-靶场练习
+        </h1>
     </header>
-
-    <section>
-      <h1 id="MIME类型验证绕过上传-第二关"><a href="#MIME类型验证绕过上传-第二关" class="headerlink" title="MIME类型验证绕过上传-第二关"></a>MIME类型验证绕过上传-第二关</h1><h3>基于这种类型的文件上传我们只需要将验证了Content-Type 改成图片的MIME类型即可</h3>
+    
+    <div class="post-meta">
+        <time class="post-data" datetime="2021-06-05T07:48:43.947Z" itemprop="datePublished">
+            2021-06-05
+        </time>
+        
+        
+    </div>
+    
+    <div class="post-entry">
+        <h1 id="MIME类型验证绕过上传-第二关"><a href="#MIME类型验证绕过上传-第二关" class="headerlink" title="MIME类型验证绕过上传-第二关"></a>MIME类型验证绕过上传-第二关</h1><h3>基于这种类型的文件上传我们只需要将验证了Content-Type 改成图片的MIME类型即可</h3>
 
 <p><img  src="https://img-blog.csdnimg.cn/2021041115592293.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>抓包</strong><br><img  src="https://img-blog.csdnimg.cn/20210411160046929.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
 <p><strong>修改Content-Type</strong></p>
@@ -65,49 +75,24 @@
 <p>我们可以通过上传这个配置文件达到以php解析的目的</p>
 <p>与前几关方法相同：<br><img  src="https://img-blog.csdnimg.cn/20210412204613529.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>进行后缀修改<br><img  src="https://img-blog.csdnimg.cn/20210412204711902.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>修改后发送成功成功上传，返回页面进行查看<br><img  src="https://img-blog.csdnimg.cn/2021041220484757.png"  ><span class="image-caption">在这里插入图片描述</span></p>
 
-
-      
-
-    </section>
-    
-      <section class='ArticleMeta'>
-          <div>
-            发布于&nbsp;
-            <time datetime="2021-06-05T07:48:43.947Z" itemprop="datePublished">
-              2021-06-05
-            </time>
-          </div>
-          
-      </section>
-    
-    
-</article>
-
+    </div>
+    <!--畅言PC和WAP自适应版-->
   
-</div>
-
-            <footer>
-    <div>© 2021 - Willianhuanbian </div>
-    <div>
-        <span>
-            Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
-        </span>
-        ,
-        <span>
-            Theme - <a target="_blank" rel="noopener" href="https://github.com/nameoverflow/hexo-theme-icalm">Icalm</a>
-        </span>
+</div></div>
     </div>
-</footer>
-
-        </div>
-    </div>
-</div>
-
-<script src="/js/pager/dist/singlepager.js"></script>
-
-<script>
-var sp = new Pager('data-pager-shell')
-
-</script>
-</body>
+    <div id="footer">骑士恨煎蛋，骑士恨孜然</div>
+    <img id="top" src="/images/up-circle.svg" alt="top" />
+    
+  </body>
 </html>
+<!-- 加载主题脚本文件 -->
+
+<script src="/scripts/utone.js"></script>
+
+
+<script type="text/javascript">
+  window.onload = function() {
+    scroll.init()
+    siteSearch.init()
+  }
+</script>

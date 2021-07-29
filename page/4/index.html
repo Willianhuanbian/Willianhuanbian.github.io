@@ -1,190 +1,95 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Willianir&#39;s home</title>
-  
-  
-  
-  <!--link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css"-->
-  
-<link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css">
-
-  
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="baidu-site-verification" content="vvVgSQUzPU" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="keywords" content="虎虎|博客|个人|utone|Utone|">
+    <meta name="description" content="骑士恨煎蛋，骑士恨孜然">
+    
+    <title>
+       Willianir&#39;s home
+    </title>
+    
 <link rel="stylesheet" href="/css/style.css">
-
-<meta name="generator" content="Hexo 5.3.0"></head>
-
-<body>
-<div class="Shell">
-    <aside class='SideBar'>
-    <section class='avatar' style="background-image: url()">
-        <div class='av-pic' style="background-image: url()">
+ 
+    
+      <link rel="icon" href="/images/favicon.ico" />
+    
+  <meta name="generator" content="Hexo 5.3.0"></head>
+  <body>
+    <div id="container">
+      <div id="main-left">
+        <div id="introduce">
+          <div class="logo-worp">
+            <a href="/"><img class="logo" src="/images/logo.png" alt=""/></a>
+          </div>
+          <ul>
+            
+              <li><a href="/"> Home </a></li>
+            
+              <li><a href="/archives"> Archive </a></li>
+            
+              <li><a href="/about"> About </a></li>
+            
+              <li><a href="/atom.xml"> RSS </a></li>
+            
+            <li>
+              <img id="search-img" src="/images/search.svg" alt="search" />
+            </li>
+          </ul>
+          
         </div>
-    </section>
-    <section class='menu'>
-        <div>Willianir&#39;s home</div>
-        
-        <ul>
-          
-            <a href="/" class="Btn">
-              <li>Home</li>
-            </a>  
-          
-            <a href="/archives/" class="Btn">
-              <li>Archive</li>
-            </a>  
-          
-        </ul>
-    </section>
-    <section class="media">
-        
-    </section>
-</aside>
+      </div>
+      <div id="main-right">
 
-    <div class="container">
-        <div data-pager-shell>
-            <ul class="Index">
-  
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/2021/01/30/Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B/">Hexo+github搭建个人博客</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2021-01-29T16:44:57.661Z" itemprop="datePublished">
-    2021-01-30
-  </time>
-  
-  
-</div>
-
-    </header>
-    <div>
-      
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天的文章主要记录了如何利用Hexo+Github搭建一个自己的博客，作为一个小白不得不说这个过程真的是欲哭无泪。</p>
-<h1 id="一、前期准备工作"><a href="#一、前期准备工作" class="headerlink" title="一、前期准备工作"></a>一、前期准备工作</h1><p>nodejs: 包含俩个命令 node npm</p>
-<p>hexo: 快速、简洁且高效的博客框架,支持markdown 插件和扩展性很好</p>
-<p>git：需要安装git 通过git 命令来操作github</p>
-<p>github账号：申请注册一个github账号，github提供了一个github pages功能可以支持站点</p>
-<h1 id="二、博客的搭建以及部署"><a href="#二、博客的搭建以及部署" class="headerlink" title="二、博客的搭建以及部署"></a>二、博客的搭建以及部署</h1><h2 id="1-nodejs-以及Git的安装"><a href="#1-nodejs-以及Git的安装" class="headerlink" title="1.nodejs 以及Git的安装"></a>1.nodejs 以及Git的安装</h2><p>需要使用Git安装，进入官方网址下载：<a target="_blank" rel="noopener" href="https://git-scm.com/download/win">这里是Windows用户地址</a><br>下载完成之后点击安装，然后通过打开Git Bash 这个软件来执行的命令，由于为了之后加快安装hexo速度，更换为国内的npm源：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c">npm config <span class="hljs-built_in">set</span> registry https:<span class="hljs-comment">//registry.npm.taobao.org</span><br>npm config get registry<br>看看终端显示信息，如果看到这行信息，说明配置成功: https:<span class="hljs-comment">//registry.npm.taobao.org/</span><br></code></pre></td></tr></table></figure>
-<p>下载安装 然后通过命令检测下安装版本<br>下载地址： <a target="_blank" rel="noopener" href="https://npm.taobao.org/mirrors/node/v12.20.0/">https://npm.taobao.org/mirrors/node/v12.20.0/</a></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c">$ node -v<br>(base)<br>$ npm -v<br></code></pre></td></tr></table></figure>
-<p>临时更换npm 源 (为了后面快速下载安装hexo，更换为国内的源)</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c">$ npm config <span class="hljs-built_in">set</span> registry https:<span class="hljs-comment">//registry.npm.taobao.org</span><br>$ npm config get registry<br>https:<span class="hljs-comment">//registry.npm.taobao.org/</span><br></code></pre></td></tr></table></figure>
-<h2 id="2-github注册"><a href="#2-github注册" class="headerlink" title="2.github注册"></a>2.github注册</h2><p><a target="_blank" rel="noopener" href="https://github.com/join?ref_cta=Sign%20up&ref_loc=header%20logged%20out&ref_page=/&source=header-home">这里是github 注册地址</a><br><img  src="https://img-blog.csdnimg.cn/20210129231024102.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>新建一个仓库<br><img  src="https://img-blog.csdnimg.cn/20210129231246925.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210129231345582.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>然后打开仓库创建一个 index.html 文件，并添加内容。<br><img  src="https://img-blog.csdnimg.cn/20210129231615114.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/2021012923170181.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>创建站点后，index html的效果只是暂时的。后期需要hexo部署到你的Github上就可以生成自己的博客。</p>
-<h2 id="3-GithubSHH配置"><a href="#3-GithubSHH配置" class="headerlink" title="3.GithubSHH配置"></a>3.GithubSHH配置</h2><p>首先打开Git-Bash工具 ，执行命令</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">git config --global user.name <span class="hljs-string">&quot;用户名&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;邮箱地址&quot;</span><br></code></pre></td></tr></table></figure>
-<p>（注意这里填写注册github时所使用的用户名和邮箱地址）<br>生成一对密钥 SSH key</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">ssh-keygen -t rsa -C <span class="hljs-string">&quot;你的邮箱地址&quot;</span><br></code></pre></td></tr></table></figure>
-<p>执行后一直敲回车键就可以了<br><img  src="https://img-blog.csdnimg.cn/20210129232724928.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>首次使用需要检测是否成功：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">ssh -T git@github.com<br></code></pre></td></tr></table></figure>
-<p>由于我这里安装过了，出现下面的情况。<br><img  src="https://img-blog.csdnimg.cn/20210129232912527.png"  ><span class="image-caption">在这里插入图片描述</span><br>在C盘中的用户中找到.shh的文件<br><img  src="https://img-blog.csdnimg.cn/20210129233107317.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>记事本打开复制里面的密匙内容<br>然后登录github 在github 上添加刚刚生成的ssh key 把公钥复制粘贴上去。<br><img  src="https://img-blog.csdnimg.cn/2021012923331275.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210129233435659.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p>点击后标题随意，将密匙内容复制到文本框中。</p>
-<h2 id="4-Hexo安装"><a href="#4-Hexo安装" class="headerlink" title="4.Hexo安装"></a>4.Hexo安装</h2><p>首先创建一个你熟知路径的文件，文件名这里以blog来举例。<br>安装并初始化，blog目录就是博客目录<br>打开命令控制中心进入blog执行命令：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c">npm install hexo-cli -g <br>hexo init 这里是你的github的用户名            <br>cd 以用户名创建的新的文件<br>npm install       <br>hexo server <br></code></pre></td></tr></table></figure>
-<p>出现：<code>INFO  Validating config INFO  Start processing INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</code><br>那么本地访问<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 就可以看到博客网站了，但效果是有限的并且别人无法访问。</p>
-<p>接下来部署到Github Page </p>
-<h2 id="5-Sublime安装"><a href="#5-Sublime安装" class="headerlink" title="5.Sublime安装"></a>5.Sublime安装</h2><p>为了部署Github page我们需要安装sublime进行文本编译<br>官方网站：<a target="_blank" rel="noopener" href="http://www.sublimetext.cn/">http://www.sublimetext.cn/</a><br>但是由于下载的困难，建议翻墙下载，或者在其他网址下载可以使用的安装包。<br><img  src="https://img-blog.csdnimg.cn/20210129234635122.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h2 id="6-hexo发布到github"><a href="#6-hexo发布到github" class="headerlink" title="6.hexo发布到github"></a>6.hexo发布到github</h2><p>首先：用sublime打开blog下创建的用户名文件进行部署（将文件直接拖进去就可以了）打开仓库_config.yml 配置文件，拉到文件末尾，填上如下配置：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c"># Deployment<br>## Docs: https:<span class="hljs-comment">//hexo.io/docs/one-command-deployment</span><br>deploy:<br>  type: git<br>  repo: https:<span class="hljs-comment">//github.com/budongshu/budongshu.github.io.git #仓库名字改成自己的</span><br>  branch: main<br></code></pre></td></tr></table></figure>
-<p>使用时：Ctrl+s用于保存<br>(注意由于语法问题 ：后加一个空格）</p>
-<p>第二: 要安装一个部署插件 hexo-deployer-git<br>首先进入blog的根目录执行</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure>
-<p>第三: 最后执行以下命令就可以部署上传啦</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">hexo g -d<br></code></pre></td></tr></table></figure>
-<p>接下来，在浏览器访问网址： https://你的用户名.github.io 就会看到你的博客。</p>
-<h2 id="7-hexo主题的更换"><a href="#7-hexo主题的更换" class="headerlink" title="7.hexo主题的更换"></a>7.hexo主题的更换</h2><p>可以去官方挑选自己喜欢的主题：<a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a><br><img  src="https://img-blog.csdnimg.cn/20210130000003101.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>点击这里，学习如何更换<br><img  src="https://img-blog.csdnimg.cn/20210130000110753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>首先在博客的项目文件夹下打开git bash执行命令：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">git clone -b master https:<span class="hljs-comment">//github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></code></pre></td></tr></table></figure>
-<p>成功后出现themes的文件夹<br><img  src="https://img-blog.csdnimg.cn/20210130000337784.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>然后修改_config.yml文件（_config.yml文件在博客的项目文件夹下）<br><img  src="https://img-blog.csdnimg.cn/20210130000503295.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>theme需要修改为：<code>theme: 主题的名字</code> 之后保存</p>
-<p>然后安装pug 以及stylus 的渲染器：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">npm install hexo-renderer-pug hexo-renderer-stylus --save<br><br></code></pre></td></tr></table></figure>
-<p>执行hexo s部署到本地运行</p>
-<p>然后搭建到Github上：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c">hexo clean<br>hexo g<br>hexo d<br></code></pre></td></tr></table></figure>
-<p>执行后稍等一会访问：<br><img  src="https://img-blog.csdnimg.cn/20210130001224724.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>成功了！</p>
-<h2 id="8-hexo命令"><a href="#8-hexo命令" class="headerlink" title="8.hexo命令"></a>8.hexo命令</h2><p><img  src="https://img-blog.csdnimg.cn/20210130002025339.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>作为一位小白来讲，搭建的过程的确很艰辛，但是学习的过程也是获益匪浅。希望我的记录不仅能保存下来我的搭建过程也能对你产生帮助。</p>
-
-      
+<article class="list">
+    <div class="list-time">
+        <a href="/2021/01/30/Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B/">
+            2021-01-30
+        </a>
+    </div>
+    <div class="list-title">
+        <a href="/2021/01/30/Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B/">
+            Hexo+github搭建个人博客
+        </a>
     </div>
 </article>
 
-    </li>
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/2021/01/29/hello-world/">Hello World</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2021-01-29T05:01:33.518Z" itemprop="datePublished">
-    2021-01-29
-  </time>
-  
-  
-</div>
-
-    </header>
-    <div>
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
+<article class="list">
+    <div class="list-time">
+        <a href="/2021/01/29/hello-world/">
+            2021-01-29
+        </a>
+    </div>
+    <div class="list-title">
+        <a href="/2021/01/29/hello-world/">
+            Hello World
+        </a>
     </div>
 </article>
 
-    </li>
-  
-</ul>
-
-  <section id="nav-wrapper">
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">« prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
-  </section>
-
-
-            <footer>
-    <div>© 2021 - Willianhuanbian </div>
-    <div>
-        <span>
-            Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
-        </span>
-        ,
-        <span>
-            Theme - <a target="_blank" rel="noopener" href="https://github.com/nameoverflow/hexo-theme-icalm">Icalm</a>
-        </span>
-    </div>
-</footer>
-
-        </div>
-    </div>
+<div class="list-paginator">
+    <a class="extend prev" rel="prev" href="/page/3/">PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
 </div>
-
-<script src="/js/pager/dist/singlepager.js"></script>
-
-<script>
-var sp = new Pager('data-pager-shell')
-
-</script>
-</body>
+</div>
+    </div>
+    <div id="footer">骑士恨煎蛋，骑士恨孜然</div>
+    <img id="top" src="/images/up-circle.svg" alt="top" />
+    
+  </body>
 </html>
+<!-- 加载主题脚本文件 -->
+
+<script src="/scripts/utone.js"></script>
+
+
+<script type="text/javascript">
+  window.onload = function() {
+    scroll.init()
+    siteSearch.init()
+  }
+</script>
