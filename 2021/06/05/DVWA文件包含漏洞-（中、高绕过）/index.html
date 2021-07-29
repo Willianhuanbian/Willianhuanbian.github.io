@@ -205,18 +205,18 @@
 
 
 
-<h1 id="一、DVWA-SecurityMedium級別"><a href="#一、DVWA-SecurityMedium級別" class="headerlink" title="一、DVWA SecurityMedium級別"></a>一、DVWA SecurityMedium級別</h1><p>设置好难度后，查看源码：<img   class="lazyload" data-original="https://img-blog.csdnimg.cn/2021052315344968.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  alt="在这里插入图片描述"><br>通过对代码分析可以发现这里过滤了一些东西，即是<code>array</code>里面的因此我们需要进行绕过</p>
+<h1 id="一、DVWA-SecurityMedium級別"><a href="#一、DVWA-SecurityMedium級別" class="headerlink" title="一、DVWA SecurityMedium級別"></a>一、DVWA SecurityMedium級別</h1><p>设置好难度后，查看源码：<img    class="lazyload" data-original="https://img-blog.csdnimg.cn/2021052315344968.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">在这里插入图片描述</span><br>通过对代码分析可以发现这里过滤了一些东西，即是<code>array</code>里面的因此我们需要进行绕过</p>
 <p><strong>绕过方法</strong></p>
 <ol>
 <li><p>使用绝对路径或相对路径进行绕过，在这里与低级别中路径一致</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php">http:<span class="hljs-comment">//localhost/DVWA-master/vulnerabilities/fi/?page=/etc/passwd</span><br></code></pre></td></tr></table></figure>
-<p><img   class="lazyload" data-original="https://img-blog.csdnimg.cn/20210523161323887.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  alt="在这里插入图片描述"></p>
+<p><img    class="lazyload" data-original="https://img-blog.csdnimg.cn/20210523161323887.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">在这里插入图片描述</span></p>
 </li>
 <li><p>使用的是 <code>str_replace() 函数</code>，可以使用重写的方式绕过或者是掺入大小写进行绕过</p>
 </li>
 </ol>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php"><br><span class="hljs-number">1.</span> htthttp:<span class="hljs-comment">//p://</span><br><span class="hljs-number">2.</span> http:<span class="hljs-comment">//..././</span><br><span class="hljs-number">3.</span> ../<br></code></pre></td></tr></table></figure>
-<h1 id="二、High-Security-Level"><a href="#二、High-Security-Level" class="headerlink" title="二、High Security Level"></a>二、High Security Level</h1><p>查看源码：<br><img   class="lazyload" data-original="https://img-blog.csdnimg.cn/20210523154828740.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  alt="在这里插入图片描述"><br>可以看出，报错的条件：</p>
+<h1 id="二、High-Security-Level"><a href="#二、High-Security-Level" class="headerlink" title="二、High Security Level"></a>二、High Security Level</h1><p>查看源码：<br><img    class="lazyload" data-original="https://img-blog.csdnimg.cn/20210523154828740.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">在这里插入图片描述</span><br>可以看出，报错的条件：</p>
 <ol>
 <li>传出的<code>page</code>中没有<code>file*</code></li>
 <li>$file不等于<code>Include.php</code></li>
@@ -226,7 +226,7 @@
 <li>可以使用伪协议进行绕过:<code>file://</code></li>
 </ol>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php">http:<span class="hljs-comment">//localhost/DVWA-master/vulnerabilities/fi/?page=file:///etc/passwd</span><br></code></pre></td></tr></table></figure>
-<p><img   class="lazyload" data-original="https://img-blog.csdnimg.cn/20210523160332867.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  alt="在这里插入图片描述"></p>
+<p><img    class="lazyload" data-original="https://img-blog.csdnimg.cn/20210523160332867.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">在这里插入图片描述</span></p>
 
       </section>
       <section class="extra">
