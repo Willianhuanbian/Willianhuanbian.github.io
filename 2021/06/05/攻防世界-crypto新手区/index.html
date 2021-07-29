@@ -1,100 +1,154 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="baidu-site-verification" content="vvVgSQUzPU" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
-    <meta name="keywords" content="虎虎|博客|个人|utone|Utone|">
-    <meta name="description" content="骑士恨煎蛋，骑士恨孜然">
-    
-    <title>
-       攻防世界-crypto新手区 -  Willianir&#39;s home
-    </title>
-    
-<link rel="stylesheet" href="/css/style.css">
- 
-    
-      <link rel="icon" href="/images/favicon.ico" />
-    
-  <meta name="generator" content="Hexo 5.3.0"></head>
-  <body>
-    <div id="container">
-      <div id="main-left">
-        <div id="introduce">
-          <div class="logo-worp">
-            <a href="/"><img class="logo" src="/images/logo.png" alt=""/></a>
-          </div>
-          <ul>
-            
-              <li><a href="/"> Home </a></li>
-            
-              <li><a href="/archives"> Archive </a></li>
-            
-              <li><a href="/about"> About </a></li>
-            
-              <li><a href="/atom.xml"> RSS </a></li>
-            
-            <li>
-              <img id="search-img" src="/images/search.svg" alt="search" />
-            </li>
-          </ul>
-           
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#base64"><span class="post-toc-number">1.</span> <span class="post-toc-text">base64</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Caesar"><span class="post-toc-number">2.</span> <span class="post-toc-text">Caesar</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Morse"><span class="post-toc-number">3.</span> <span class="post-toc-text">Morse</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Railfence"><span class="post-toc-number">4.</span> <span class="post-toc-text">Railfence</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%B8%8D%E4%BB%85%E4%BB%85%E6%98%AFMorse"><span class="post-toc-number">5.</span> <span class="post-toc-text">不仅仅是Morse</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%B7%B7%E5%90%88%E7%BC%96%E7%A0%81"><span class="post-toc-number">6.</span> <span class="post-toc-text">混合编码</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#easy-RSA"><span class="post-toc-number">7.</span> <span class="post-toc-text">easy_RSA</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#easy-ECC"><span class="post-toc-number">8.</span> <span class="post-toc-text">easy_ECC</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%BD%AC%E8%BD%AE%E6%9C%BA%E5%8A%A0%E5%AF%86"><span class="post-toc-number">9.</span> <span class="post-toc-text">转轮机加密</span></a></li></ol> 
-          
-        </div>
-      </div>
-      <div id="main-right"><div id="post">
-    
-    <header class="article-header">
-        <h1>
-            攻防世界-crypto新手区
-        </h1>
-    </header>
-    
-    <div class="post-meta">
-        <time class="post-data" datetime="2021-06-05T07:48:43.937Z" itemprop="datePublished">
-            2021-06-05
-        </time>
-        
-        
-    </div>
-    
-    <div class="post-entry">
-        <h1 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h1><p><img  src="https://img-blog.csdnimg.cn/20210328154941751.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>直接用base64解密<br><img  src="https://img-blog.csdnimg.cn/20210328155422786.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p><img  src="https://img-blog.csdnimg.cn/20210328155015953.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="Caesar"><a href="#Caesar" class="headerlink" title="Caesar"></a>Caesar</h1><p><img  src="https://img-blog.csdnimg.cn/20210328155039119.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>本题需要用到凯撒解密，key=12.这个我没考虑那么多，一个一个试的。。。<br><img  src="https://img-blog.csdnimg.cn/20210328155444173.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210328155356232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="Morse"><a href="#Morse" class="headerlink" title="Morse"></a>Morse</h1><p><img  src="https://img-blog.csdnimg.cn/20210328155635455.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>可见该题需要使用摩斯密码<br><img  src="https://img-blog.csdnimg.cn/20210328155706570.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>可将<strong>1更换为-**，</strong>0- .**<br><img  src="https://img-blog.csdnimg.cn/20210328160505952.png"  ><span class="image-caption">在这里插入图片描述</span><br>进行解密，得到flag<img  src="https://img-blog.csdnimg.cn/20210328160530141.png"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="Railfence"><a href="#Railfence" class="headerlink" title="Railfence"></a>Railfence</h1><p><img  src="https://img-blog.csdnimg.cn/20210328160601990.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>根据提示，可知本题需要使用栅栏解密，key=5<br><img  src="https://img-blog.csdnimg.cn/20210328160706280.png"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210328160833127.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>得到flag<br><img  src="https://img-blog.csdnimg.cn/20210328160857334.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<h1 id="不仅仅是Morse"><a href="#不仅仅是Morse" class="headerlink" title="不仅仅是Morse"></a>不仅仅是Morse</h1><p><img  src="https://img-blog.csdnimg.cn/20210328160935190.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>根据题目描述本题需要使用，<strong>摩斯密码</strong>再看我们想到<strong>培根密码</strong><br><img  src="https://img-blog.csdnimg.cn/20210328161325362.png"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210328161411553.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>将/替换为空格进行摩斯解密<img  src="https://img-blog.csdnimg.cn/20210328161442911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>再进行培根解密<img  src="https://img-blog.csdnimg.cn/20210328161545446.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>得到flag{attackanddefenceworldisinteresting}</p>
-<h1 id="混合编码"><a href="#混合编码" class="headerlink" title="混合编码"></a>混合编码</h1><p><img  src="https://img-blog.csdnimg.cn/20210328161637319.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210328161703706.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>根据字符特点以及=，可以确定使用base64进行解密<img  src="https://img-blog.csdnimg.cn/20210328161823523.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210328161840123.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>我们来观察得到的字符串判断接下来需要进行<strong>Unicode编码转换为ASCLL</strong><br><a target="_blank" rel="noopener" href="http://tool.chinaz.com/tools/unicode.aspx">这里是地址</a><br><img  src="https://img-blog.csdnimg.cn/20210328162151491.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>根据所得到的字符串，需要在进行一次base64转换<img  src="https://img-blog.csdnimg.cn/20210328162251143.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210328162329854.png"  ><span class="image-caption">在这里插入图片描述</span><br>根据ASCLL码表进行得到flag{welcometoattackanddefenceworld}</p>
-<h1 id="easy-RSA"><a href="#easy-RSA" class="headerlink" title="easy_RSA"></a>easy_RSA</h1><p><img  src="https://img-blog.csdnimg.cn/20210328162536155.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210328162551409.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>这里使用RSA工具进行解题<br><img  src="https://img-blog.csdnimg.cn/20210328162703858.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210328162739507.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>点击后得到d，即所求flag{125631357777427553}</p>
-<h1 id="easy-ECC"><a href="#easy-ECC" class="headerlink" title="easy_ECC"></a>easy_ECC</h1><p><img  src="https://img-blog.csdnimg.cn/20210328162852335.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>本题我们使用的是ECCTOOL工具进行解密<img  src="https://img-blog.csdnimg.cn/20210328163121889.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210328163636195.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/20210328163651309.png"  ><span class="image-caption">在这里插入图片描述</span><br>得到x,y<img  src="https://img-blog.csdnimg.cn/20210328163709715.png"  ><span class="image-caption">在这里插入图片描述</span><br>计算X+Y的值即可以得到结果：cyberpeace{19477226185390}</p>
-<h1 id="转轮机加密"><a href="#转轮机加密" class="headerlink" title="转轮机加密"></a>转轮机加密</h1><p><img  src="https://img-blog.csdnimg.cn/20210328164042845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>由题意可知本题需要掌握转轮机密码原理<img  src="https://img-blog.csdnimg.cn/20210328164136879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>其实原理我也是不太懂明白先往下看看，根据密匙序号先后排列字符串，如下：</p>
-<p><img  src="https://img-blog.csdnimg.cn/20210328164418491.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>也就是将该行的密文那个字母（包括这个字符）之后的字符串都提到前面</p>
-<p><img  src="https://img-blog.csdnimg.cn/20210328164855573.png"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p>看结果：<img  src="https://img-blog.csdnimg.cn/20210328165129164.png"  ><span class="image-caption">在这里插入图片描述</span><br>就这样依次每行都要转换<img  src="https://img-blog.csdnimg.cn/2021032816550993.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>仔细观察一列一列对应发现倒数第九列为所得flag<img  src="https://img-blog.csdnimg.cn/20210328170358675.png"  ><span class="image-caption">在这里插入图片描述</span><br>转化为小写：flag{fireinthehole}</p>
-
-    </div>
-    <!--畅言PC和WAP自适应版-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  <meta name="referrer" content="unsafe-url">
   
-</div></div>
+  <title>攻防世界-crypto新手区</title>
+  <meta name="author" content="Willianhuanbian">
+  <meta name="description" content="base64直接用base64解密
+
+Caesar本题需要用到凯撒解密，key=12.这个我没考虑那么多，一个一个试的。。。
+Morse可见该题需要使用摩斯密码可将1更换为-**，0- .**进行解密，得到flag
+Railfence根据提示，可知本题需要使用栅栏解密，key=5得到flag
+不仅仅">
+  
+  
+  <meta property="og:title" content="攻防世界-crypto新手区"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Willianir&#39;s home"/>
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="Willianir&#39;s home" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <a id="top"></a>
+  <div id="main">
+    <div class="main-ctnr">
+      <div class="behind">
+  <a href="/" class="back black-color">
+    <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+        <path d="M2 30 L30 2 M30 30 L2 2"></path>
+    </svg>
+  </a>
+  
+</div>
+
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        攻防世界-crypto新手区
+    </h1>
+  
+
+
     </div>
-    <div id="footer">骑士恨煎蛋，骑士恨孜然</div>
-    <img id="top" src="/images/up-circle.svg" alt="top" />
+    <div class="meta center">
+      <time datetime="2021-06-05T07:48:43.937Z" itemprop="datePublished">
+  <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2021-06-05
+</time>
+
+
+
+
+
+
+    </div>
+    <hr>
     
-  </body>
-</html>
-<!-- 加载主题脚本文件 -->
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#base64"><span class="toc-text">base64</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Caesar"><span class="toc-text">Caesar</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Morse"><span class="toc-text">Morse</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Railfence"><span class="toc-text">Railfence</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8D%E4%BB%85%E4%BB%85%E6%98%AFMorse"><span class="toc-text">不仅仅是Morse</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%B7%E5%90%88%E7%BC%96%E7%A0%81"><span class="toc-text">混合编码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#easy-RSA"><span class="toc-text">easy_RSA</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#easy-ECC"><span class="toc-text">easy_ECC</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AC%E8%BD%AE%E6%9C%BA%E5%8A%A0%E5%AF%86"><span class="toc-text">转轮机加密</span></a></li></ol>
+    
+    <div class="picture-container">
+      
+    </div>
+    <h1 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h1><p><img src="https://img-blog.csdnimg.cn/20210328154941751.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>直接用base64解密<br><img src="https://img-blog.csdnimg.cn/20210328155422786.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20210328155015953.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="Caesar"><a href="#Caesar" class="headerlink" title="Caesar"></a>Caesar</h1><p><img src="https://img-blog.csdnimg.cn/20210328155039119.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>本题需要用到凯撒解密，key=12.这个我没考虑那么多，一个一个试的。。。<br><img src="https://img-blog.csdnimg.cn/20210328155444173.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210328155356232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="Morse"><a href="#Morse" class="headerlink" title="Morse"></a>Morse</h1><p><img src="https://img-blog.csdnimg.cn/20210328155635455.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可见该题需要使用摩斯密码<br><img src="https://img-blog.csdnimg.cn/20210328155706570.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可将<strong>1更换为-**，</strong>0- .**<br><img src="https://img-blog.csdnimg.cn/20210328160505952.png" alt="在这里插入图片描述"><br>进行解密，得到flag<img src="https://img-blog.csdnimg.cn/20210328160530141.png" alt="在这里插入图片描述"></p>
+<h1 id="Railfence"><a href="#Railfence" class="headerlink" title="Railfence"></a>Railfence</h1><p><img src="https://img-blog.csdnimg.cn/20210328160601990.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>根据提示，可知本题需要使用栅栏解密，key=5<br><img src="https://img-blog.csdnimg.cn/20210328160706280.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210328160833127.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>得到flag<br><img src="https://img-blog.csdnimg.cn/20210328160857334.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="不仅仅是Morse"><a href="#不仅仅是Morse" class="headerlink" title="不仅仅是Morse"></a>不仅仅是Morse</h1><p><img src="https://img-blog.csdnimg.cn/20210328160935190.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>根据题目描述本题需要使用，<strong>摩斯密码</strong>再看我们想到<strong>培根密码</strong><br><img src="https://img-blog.csdnimg.cn/20210328161325362.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210328161411553.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>将/替换为空格进行摩斯解密<img src="https://img-blog.csdnimg.cn/20210328161442911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>再进行培根解密<img src="https://img-blog.csdnimg.cn/20210328161545446.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>得到flag{attackanddefenceworldisinteresting}</p>
+<h1 id="混合编码"><a href="#混合编码" class="headerlink" title="混合编码"></a>混合编码</h1><p><img src="https://img-blog.csdnimg.cn/20210328161637319.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210328161703706.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>根据字符特点以及=，可以确定使用base64进行解密<img src="https://img-blog.csdnimg.cn/20210328161823523.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210328161840123.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>我们来观察得到的字符串判断接下来需要进行<strong>Unicode编码转换为ASCLL</strong><br><a target="_blank" rel="noopener" href="http://tool.chinaz.com/tools/unicode.aspx">这里是地址</a><br><img src="https://img-blog.csdnimg.cn/20210328162151491.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>根据所得到的字符串，需要在进行一次base64转换<img src="https://img-blog.csdnimg.cn/20210328162251143.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210328162329854.png" alt="在这里插入图片描述"><br>根据ASCLL码表进行得到flag{welcometoattackanddefenceworld}</p>
+<h1 id="easy-RSA"><a href="#easy-RSA" class="headerlink" title="easy_RSA"></a>easy_RSA</h1><p><img src="https://img-blog.csdnimg.cn/20210328162536155.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210328162551409.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这里使用RSA工具进行解题<br><img src="https://img-blog.csdnimg.cn/20210328162703858.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210328162739507.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>点击后得到d，即所求flag{125631357777427553}</p>
+<h1 id="easy-ECC"><a href="#easy-ECC" class="headerlink" title="easy_ECC"></a>easy_ECC</h1><p><img src="https://img-blog.csdnimg.cn/20210328162852335.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>本题我们使用的是ECCTOOL工具进行解密<img src="https://img-blog.csdnimg.cn/20210328163121889.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210328163636195.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210328163651309.png" alt="在这里插入图片描述"><br>得到x,y<img src="https://img-blog.csdnimg.cn/20210328163709715.png" alt="在这里插入图片描述"><br>计算X+Y的值即可以得到结果：cyberpeace{19477226185390}</p>
+<h1 id="转轮机加密"><a href="#转轮机加密" class="headerlink" title="转轮机加密"></a>转轮机加密</h1><p><img src="https://img-blog.csdnimg.cn/20210328164042845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>由题意可知本题需要掌握转轮机密码原理<img src="https://img-blog.csdnimg.cn/20210328164136879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>其实原理我也是不太懂明白先往下看看，根据密匙序号先后排列字符串，如下：</p>
+<p><img src="https://img-blog.csdnimg.cn/20210328164418491.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>也就是将该行的密文那个字母（包括这个字符）之后的字符串都提到前面</p>
+<p><img src="https://img-blog.csdnimg.cn/20210328164855573.png" alt="在这里插入图片描述"></p>
+<p>看结果：<img src="https://img-blog.csdnimg.cn/20210328165129164.png" alt="在这里插入图片描述"><br>就这样依次每行都要转换<img src="https://img-blog.csdnimg.cn/2021032816550993.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>仔细观察一列一列对应发现倒数第九列为所得flag<img src="https://img-blog.csdnimg.cn/20210328170358675.png" alt="在这里插入图片描述"><br>转化为小写：flag{fireinthehole}</p>
 
-<script src="/scripts/utone.js"></script>
+
+  </article>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <div class="busuanzi center">
+    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
 
 
+    
+
+
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        © XXX 2016-2021
+    </div>
+    <div class="secondrow">
+        <a target="_blank" rel="noopener" href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.min.js"></script>
 <script type="text/javascript">
-  window.onload = function() {
-    scroll.init()
-    siteSearch.init()
-  }
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
 </script>
+
+</body>
+</html>

@@ -1,69 +1,85 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="baidu-site-verification" content="vvVgSQUzPU" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
-    <meta name="keywords" content="虎虎|博客|个人|utone|Utone|">
-    <meta name="description" content="骑士恨煎蛋，骑士恨孜然">
-    
-    <title>
-       PHP入门学习阶段（二） -  Willianir&#39;s home
-    </title>
-    
-<link rel="stylesheet" href="/css/style.css">
- 
-    
-      <link rel="icon" href="/images/favicon.ico" />
-    
-  <meta name="generator" content="Hexo 5.3.0"></head>
-  <body>
-    <div id="container">
-      <div id="main-left">
-        <div id="introduce">
-          <div class="logo-worp">
-            <a href="/"><img class="logo" src="/images/logo.png" alt=""/></a>
-          </div>
-          <ul>
-            
-              <li><a href="/"> Home </a></li>
-            
-              <li><a href="/archives"> Archive </a></li>
-            
-              <li><a href="/about"> About </a></li>
-            
-              <li><a href="/atom.xml"> RSS </a></li>
-            
-            <li>
-              <img id="search-img" src="/images/search.svg" alt="search" />
-            </li>
-          </ul>
-           
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E6%95%B0%E7%BB%84"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、数组</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、数组排序</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%B8%89-While-%E5%BE%AA%E7%8E%AF"><span class="post-toc-number">3.</span> <span class="post-toc-text">三. While 循环</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%9B%9B-For-%E5%BE%AA%E7%8E%AF"><span class="post-toc-number">4.</span> <span class="post-toc-text">四.For 循环</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%BA%94-%E5%87%BD%E6%95%B0"><span class="post-toc-number">5.</span> <span class="post-toc-text">五.函数</span></a></li></ol> 
-          
-        </div>
-      </div>
-      <div id="main-right"><div id="post">
-    
-    <header class="article-header">
-        <h1>
-            PHP入门学习阶段（二）
-        </h1>
-    </header>
-    
-    <div class="post-meta">
-        <time class="post-data" datetime="2021-06-05T07:48:15.136Z" itemprop="datePublished">
-            2021-06-05
-        </time>
-        
-        
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  <meta name="referrer" content="unsafe-url">
+  
+  <title>PHP入门学习阶段（二）</title>
+  <meta name="author" content="Willianhuanbian">
+  <meta name="description" content="一、数组数组能够在单个变量中存储多个值。
+数组是什么：
+数组是一个能在单个变量中存储多个值的特殊变量。
+如果您有一个项目清单（例如：车名字的清单），将其存储到单个变量中
+创建数组在 PHP 中，array() 函数用于创建数组：
+1array();
+在 PHP 中，有三种类型的数组：
+
+数值数组 -">
+  
+  
+  <meta property="og:title" content="PHP入门学习阶段（二）"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Willianir&#39;s home"/>
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="Willianir&#39;s home" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <a id="top"></a>
+  <div id="main">
+    <div class="main-ctnr">
+      <div class="behind">
+  <a href="/" class="back black-color">
+    <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+        <path d="M2 30 L30 2 M30 30 L2 2"></path>
+    </svg>
+  </a>
+  
+</div>
+
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        PHP入门学习阶段（二）
+    </h1>
+  
+
+
     </div>
+    <div class="meta center">
+      <time datetime="2021-06-05T07:48:15.136Z" itemprop="datePublished">
+  <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2021-06-05
+</time>
+
+
+
+
+
+
+    </div>
+    <hr>
     
-    <div class="post-entry">
-        <h1 id="一、数组"><a href="#一、数组" class="headerlink" title="一、数组"></a>一、数组</h1><p>数组能够在单个变量中存储多个值。</p>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%95%B0%E7%BB%84"><span class="toc-text">一、数组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F"><span class="toc-text">二、数组排序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-While-%E5%BE%AA%E7%8E%AF"><span class="toc-text">三. While 循环</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B-For-%E5%BE%AA%E7%8E%AF"><span class="toc-text">四.For 循环</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94-%E5%87%BD%E6%95%B0"><span class="toc-text">五.函数</span></a></li></ol>
+    
+    <div class="picture-container">
+      
+    </div>
+    <h1 id="一、数组"><a href="#一、数组" class="headerlink" title="一、数组"></a>一、数组</h1><p>数组能够在单个变量中存储多个值。</p>
 <p>数组是什么：</p>
 <p>数组是一个能在单个变量中存储多个值的特殊变量。</p>
 <p>如果您有一个项目清单（例如：车名字的清单），将其存储到单个变量中</p>
@@ -105,9 +121,9 @@
  <use xlink:href="#E1-MJMAIN-2E" x="4832" y="0"></use>
 </g>
 </svg>cars[1] . &quot;,&quot; . $cars[2] . &quot;.&quot;;<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210307191305394.png"  ><span class="image-caption">在这里插入图片描述</span><br><strong>获取数组的长度 - count() 函数</strong><br>count() 函数用于返回数组的长度（元素的数量）：</p>
+<p><img src="https://img-blog.csdnimg.cn/20210307191305394.png" alt="在这里插入图片描述"><br><strong>获取数组的长度 - count() 函数</strong><br>count() 函数用于返回数组的长度（元素的数量）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">echo count($cars);<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210307191510646.png"  ><span class="image-caption">在这里插入图片描述</span><br>长度为3</p>
+<p><img src="https://img-blog.csdnimg.cn/20210307191510646.png" alt="在这里插入图片描述"><br>长度为3</p>
 <p><strong>遍历数值数组</strong><br>遍历并打印数值数组中的所有值，您可以使用 for 循环，如下所示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plain"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="19.495ex" height="2.843ex" style="vertical-align: -0.838ex;" viewBox="0 -863.1 8393.6 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
 <title id="MathJax-SVG-1-Title">arrlength=count(</title>
@@ -200,11 +216,11 @@
  <use xlink:href="#E1-MJMAIN-5B" x="1884" y="0"></use>
 </g>
 </svg>x];<br>	echo &quot;&lt;br&gt;&quot;;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210307192004713.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>复现了哦！</p>
+<p><img src="https://img-blog.csdnimg.cn/20210307192004713.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>复现了哦！</p>
 <p><strong>关联数组</strong><br>关联数组是使用您分配给数组的指定的键的数组。<br>这里有两种创建的方法：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">$age&#x3D;array(&quot;Peter&quot;&#x3D;&gt;&quot;35&quot;,&quot;Ben&quot;&#x3D;&gt;&quot;37&quot;,&quot;Joe&quot;&#x3D;&gt;&quot;43&quot;);<br></code></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">$age[&#39;Peter&#39;]&#x3D;&quot;35&quot;;<br>$age[&#39;Ben&#39;]&#x3D;&quot;37&quot;;<br>$age[&#39;Joe&#39;]&#x3D;&quot;43&quot;;<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210307194109119.png"  ><span class="image-caption">在这里插入图片描述</span><br><strong>遍历关联数组</strong><br>遍历并打印关联数组中的所有值，您可以使用 foreach 循环，如下所示：</p>
+<p><img src="https://img-blog.csdnimg.cn/20210307194109119.png" alt="在这里插入图片描述"><br><strong>遍历关联数组</strong><br>遍历并打印关联数组中的所有值，您可以使用 foreach 循环，如下所示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plain">foreach (<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="5.75ex" height="2.009ex" style="vertical-align: -0.671ex;" viewBox="0 -576.1 2475.5 865.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
 <title id="MathJax-SVG-1-Title">age as </title>
 <defs aria-hidden="true">
@@ -247,7 +263,7 @@
  <use xlink:href="#E1-MJMAIN-2E" x="5094" y="0"></use>
 </g>
 </svg>x_value;<br>	echo &quot;&lt;br&gt;&quot;;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210307194444482.png"  ><span class="image-caption">在这里插入图片描述</span></p>
+<p><img src="https://img-blog.csdnimg.cn/20210307194444482.png" alt="在这里插入图片描述"></p>
 <h1 id="二、数组排序"><a href="#二、数组排序" class="headerlink" title="二、数组排序"></a>二、数组排序</h1><p>数组中的元素可以按字母或数字顺序进行降序或升序排列。</p>
 <p><strong>数组排序函数</strong></p>
 <ul>
@@ -259,10 +275,10 @@
 <li>krsort() - 根据关联数组的键，对数组进行降序排列</li>
 </ul>
 <p><strong>sort() - 对数组进行升序排列</strong></p>
-<p>将数组中的元素按照字母升序排列<br><img  src="https://img-blog.csdnimg.cn/20210307201128722.png"  ><span class="image-caption">在这里插入图片描述</span></p>
+<p>将数组中的元素按照字母升序排列<br><img src="https://img-blog.csdnimg.cn/20210307201128722.png" alt="在这里插入图片描述"></p>
 <p><strong>rsort() - 对数组进行降序排列</strong></p>
-<p>将数组中的元素按照字母降序排列<br><img  src="https://img-blog.csdnimg.cn/20210307201144126.png"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p><strong>asort() - 根据数组的值，对数组进行升序排列</strong><br><img  src="https://img-blog.csdnimg.cn/2021030720222566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>ksort() - 根据数组的键，对数组进行升序排列</strong><br><img  src="https://img-blog.csdnimg.cn/20210307202349993.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>根据以上：<br><strong>arsort() - 根据数组的值，对数组进行降序排列</strong></p>
+<p>将数组中的元素按照字母降序排列<br><img src="https://img-blog.csdnimg.cn/20210307201144126.png" alt="在这里插入图片描述"></p>
+<p><strong>asort() - 根据数组的值，对数组进行升序排列</strong><br><img src="https://img-blog.csdnimg.cn/2021030720222566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>ksort() - 根据数组的键，对数组进行升序排列</strong><br><img src="https://img-blog.csdnimg.cn/20210307202349993.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>根据以上：<br><strong>arsort() - 根据数组的值，对数组进行降序排列</strong></p>
 <p><strong>krsort() - 根据数组的键，对数组进行降序排列</strong></p>
 <h1 id="三-While-循环"><a href="#三-While-循环" class="headerlink" title="三. While 循环"></a>三. While 循环</h1><p>循环执行代码块指定的次数，或者当指定的条件为真时循环执行代码块。<br>在您编写代码时，您经常需要让相同的代码块一次又一次地重复运行。我们可以在代码中使用循环语句来完成这个任务。</p>
 <p>在 PHP 中，提供了下列循环语句：</p>
@@ -274,13 +290,13 @@
 </ul>
 <p><strong>while 循环</strong><br>while 循环将重复执行代码块，直到指定的条件不成立</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plain">while (条件)<br>&#123;<br>    要执行的代码;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210307202753922.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>do…while 语句</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20210307202753922.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>do…while 语句</strong></p>
 <p>do…while 语句会至少执行一次代码，然后检查条件，只要条件成立，就会重复进行循环。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plain">do<br>&#123;<br>    要执行的代码;<br>&#125;<br>while (条件);<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210307203113503.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
+<p><img src="https://img-blog.csdnimg.cn/20210307203113503.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h1 id="四-For-循环"><a href="#四-For-循环" class="headerlink" title="四.For 循环"></a>四.For 循环</h1><p>for 循环用于您预先知道脚本需要运行的次数的情况。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plain">for (初始值; 条件; 增量)<br>&#123;<br>    要执行的代码;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210307203446967.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><strong>foreach 循环</strong><br>foreach 循环用于遍历数组。</p>
+<p><img src="https://img-blog.csdnimg.cn/20210307203446967.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>foreach 循环</strong><br>foreach 循环用于遍历数组。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plain">foreach (<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="8.033ex" height="2.009ex" style="vertical-align: -0.671ex;" viewBox="0 -576.1 3458.5 865.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
 <title id="MathJax-SVG-1-Title">array as </title>
 <defs aria-hidden="true">
@@ -300,7 +316,7 @@
 </g>
 </svg>value)<br>&#123;<br>    要执行代码;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>每进行一次循环，当前数组元素的值就会被赋值给 $value 变量（数组指针会逐一地移动），在进行下一次循环时，您将看到数组中的下一个值。</p>
-<p><img  src="https://img-blog.csdnimg.cn/20210307203956898.png"  ><span class="image-caption">在这里插入图片描述</span></p>
+<p><img src="https://img-blog.csdnimg.cn/20210307203956898.png" alt="在这里插入图片描述"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plain">foreach (<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="8.033ex" height="2.009ex" style="vertical-align: -0.671ex;" viewBox="0 -576.1 3458.5 865.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
 <title id="MathJax-SVG-1-Title">array as </title>
 <defs aria-hidden="true">
@@ -334,7 +350,7 @@
 <text font-family="monospace" stroke="none" transform="scale(71.759) matrix(1 0 0 -1 0 0)">和</text>
 </g>
 </g>
-</svg>value 变量（数字指针会逐一地移动），在进行下一次循环时，你将看到数组中的下一个键与值。<br>也就是下一次循环数组中的键与值都将会移向下一个<br><img  src="https://img-blog.csdnimg.cn/20210307204255163.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
+</svg>value 变量（数字指针会逐一地移动），在进行下一次循环时，你将看到数组中的下一个键与值。<br>也就是下一次循环数组中的键与值都将会移向下一个<br><img src="https://img-blog.csdnimg.cn/20210307204255163.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h1 id="五-函数"><a href="#五-函数" class="headerlink" title="五.函数"></a>五.函数</h1><p>函数是通过调用函数来执行的。</p>
 <p>你可以在页面的任何位置调用函数。</p>
 <p><strong>创建 PHP 函数</strong></p>
@@ -342,11 +358,11 @@
 <p>PHP 函数准则：</p>
 <ul>
 <li>函数的名称应该提示出它的功能</li>
-<li>函数名称以字母或下划线开头（不能以数字开头）<br><img  src="https://img-blog.csdnimg.cn/2021030720463891.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></li>
+<li>函数名称以字母或下划线开头（不能以数字开头）<br><img src="https://img-blog.csdnimg.cn/2021030720463891.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
 </ul>
 <p><strong>函数 - 添加参数</strong><br>为了给函数添加更多的功能，我们可以添加参数，参数类似变量。</p>
-<p>参数就在函数名称后面的一个括号内指定。<br>实例将输出不同的名字，但姓是相同的：<br><img  src="https://img-blog.csdnimg.cn/20210307205234407.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/202103072057235.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
-<p><strong>函数 - 返回值</strong><br>如需让函数返回一个值，请使用 return 语句。<br><img  src="https://img-blog.csdnimg.cn/20210307210015604.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>可以看到再次调用add函数当<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="6.237ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 2685.6 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<p>参数就在函数名称后面的一个括号内指定。<br>实例将输出不同的名字，但姓是相同的：<br><img src="https://img-blog.csdnimg.cn/20210307205234407.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/202103072057235.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>函数 - 返回值</strong><br>如需让函数返回一个值，请使用 return 语句。<br><img src="https://img-blog.csdnimg.cn/20210307210015604.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可以看到再次调用add函数当<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="6.237ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 2685.6 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
 <title id="MathJax-SVG-1-Title">x=1,</title>
 <defs aria-hidden="true">
 <path stroke-width="1" id="E1-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path>
@@ -412,26 +428,67 @@
  <use xlink:href="#E1-MJMAIN-28" x="4831" y="0"></use>
 </g>
 </svg>m, $y);<br>	echo &quot;小明的总成绩是&quot; . $sum;<br>&#125;<br>count_score();<br></code></pre></td></tr></table></figure>
-<p><img  src="https://img-blog.csdnimg.cn/20210307210752947.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span></p>
+<p><img src="https://img-blog.csdnimg.cn/20210307210752947.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
-    </div>
-    <!--畅言PC和WAP自适应版-->
-  
-</div></div>
-    </div>
-    <div id="footer">骑士恨煎蛋，骑士恨孜然</div>
-    <img id="top" src="/images/up-circle.svg" alt="top" />
+
+  </article>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <div class="busuanzi center">
+    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
+
+
     
-  </body>
-</html>
-<!-- 加载主题脚本文件 -->
-
-<script src="/scripts/utone.js"></script>
 
 
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        © XXX 2016-2021
+    </div>
+    <div class="secondrow">
+        <a target="_blank" rel="noopener" href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.min.js"></script>
 <script type="text/javascript">
-  window.onload = function() {
-    scroll.init()
-    siteSearch.init()
-  }
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
 </script>
+
+</body>
+</html>
