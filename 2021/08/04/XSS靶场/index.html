@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  <meta name="referrer" content="unsafe-url">
+  
+  <title>Willianir&#39;s home</title>
+  <meta name="author" content="Willianhuanbian">
+  <meta name="description" content="第一关利用语句进行弹窗测试就可以&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;
+第二关
+可以发现本题依然是根据GET传参数，查看源代码这是一个value进行输入，使用js恶意代码拼接
+构造payload：&amp;quot;/&amp;gt;&amp;lt;script&amp;gt;alert(2)&amp;">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Willianir&#39;s home"/>
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="Willianir&#39;s home" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <a id="top"></a>
+  <div id="main">
+    <div class="main-ctnr">
+      <div class="behind">
+  <a href="/" class="back black-color">
+    <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+        <path d="M2 30 L30 2 M30 30 L2 2"></path>
+    </svg>
+  </a>
+  
+</div>
+
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      <time datetime="2021-08-04T03:03:26.735Z" itemprop="datePublished">
+  <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2021-08-04
+</time>
+
+
+
+
+
+
+    </div>
+    <hr>
+    
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E5%85%B3"><span class="toc-text">第一关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E5%85%B3"><span class="toc-text">第二关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#xss%E7%A7%98%E7%B1%8D%E7%AC%AC%E4%B8%89%E5%BC%8F%EF%BC%88%E7%BB%95%E5%87%BD%E5%BC%B9%EF%BC%89"><span class="toc-text">xss秘籍第三式（绕函弹）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#xss%E7%A7%98%E7%B1%8D%E7%AC%AC%E5%9B%9B%E5%BC%8F%EF%BC%88%E6%9E%84%E7%BB%95%E5%87%BD%E5%BC%B9%EF%BC%89"><span class="toc-text">xss秘籍第四式（构绕函弹）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#xss%E7%A7%98%E7%B1%8D%E7%AC%AC%E4%BA%94%E5%85%B3-%EF%BC%88%E9%97%AD%E6%96%B0java%E5%BC%B9%EF%BC%89"><span class="toc-text">xss秘籍第五关 （闭新java弹）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#xss%E7%A7%98%E7%B1%8D%E7%AC%AC%E5%85%AD%E5%85%B3%EF%BC%88%E5%A4%A7%E5%B0%8F%E5%86%99%EF%BC%89"><span class="toc-text">xss秘籍第六关（大小写）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#xss%E7%A7%98%E7%B1%8D%E7%AC%AC%E4%B8%83%E5%85%B3%EF%BC%88%E9%87%8D%E5%A4%8D%E5%86%99%EF%BC%89"><span class="toc-text">xss秘籍第七关（重复写）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#xss%E7%A7%98%E7%B1%8D%E7%AC%AC%E5%85%AB%E5%85%B3%EF%BC%88DOM%EF%BC%89"><span class="toc-text">xss秘籍第八关（DOM）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#xss%E7%A7%98%E7%B1%8D%E7%AC%AC%E4%B9%9D%E5%85%B3%EF%BC%88%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%EF%BC%89"><span class="toc-text">xss秘籍第九关（代码审计）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#xss%E7%A7%98%E7%B1%8D%E7%AC%AC%E5%8D%81%E5%85%B3%EF%BC%88%E6%94%B9%E7%B1%BB%E5%9E%8B%EF%BC%89"><span class="toc-text">xss秘籍第十关（改类型）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+    
+    <div class="picture-container">
+      
+    </div>
+    <h1 id="第一关"><a href="#第一关" class="headerlink" title="第一关"></a>第一关</h1><p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627706143824-ebcd923f-cadb-4309-9fd0-049b1e60e035.png#align=left&display=inline&height=406&margin=%5Bobject%20Object%5D&name=image.png&originHeight=812&originWidth=1068&size=147387&status=done&style=none&width=534" alt="image.png"><br>利用语句进行弹窗测试就可以<br><code>&lt;script&gt;alert(1)&lt;/script&gt;</code><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627706206918-a879298f-69e8-4871-b6da-6b059b6a3e31.png#align=left&display=inline&height=338&margin=%5Bobject%20Object%5D&name=image.png&originHeight=675&originWidth=1428&size=65116&status=done&style=none&width=714" alt="image.png"></p>
+<h1 id="第二关"><a href="#第二关" class="headerlink" title="第二关"></a>第二关</h1><p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627706252323-14e61740-a651-4e14-80c2-3a24e4bdb2ce.png#align=left&display=inline&height=282&margin=%5Bobject%20Object%5D&name=image.png&originHeight=564&originWidth=830&size=74146&status=done&style=none&width=415" alt="image.png"></p>
+<p>可以发现本题依然是根据GET传参数，查看源代码<img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627706317906-c4d39740-e32c-49a5-b2a5-ab35e128ed46.png#align=left&display=inline&height=142&margin=%5Bobject%20Object%5D&name=image.png&originHeight=284&originWidth=578&size=19798&status=done&style=none&width=289" alt="image.png"><br>这是一个value进行输入，使用js恶意代码拼接</p>
+<p>构造payload：<code>&quot;/&gt;&lt;script&gt;alert(2)&lt;/script&gt;//</code><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627706490971-9191b4c6-54e6-4fde-87fe-b50e289eb797.png#align=left&display=inline&height=339&margin=%5Bobject%20Object%5D&name=image.png&originHeight=677&originWidth=1613&size=81924&status=done&style=none&width=806.5" alt="image.png"></p>
+<h1 id="xss秘籍第三式（绕函弹）"><a href="#xss秘籍第三式（绕函弹）" class="headerlink" title="xss秘籍第三式（绕函弹）"></a>xss秘籍第三式（绕函弹）</h1><p>根据流程来：<br>一、查看页面，任然是GET型，都是GET型哪有什么区别呢，查看源代码查看<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627706761663-a3c78775-c7dd-4e33-96e2-3d4ca315f07f.png#align=left&display=inline&height=47&margin=%5Bobject%20Object%5D&name=image.png&originHeight=93&originWidth=883&size=7185&status=done&style=none&width=441.5" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627706842090-054f4ff4-b592-4c3b-a634-bd09e7cd751e.png#align=left&display=inline&height=146&margin=%5Bobject%20Object%5D&name=image.png&originHeight=291&originWidth=998&size=21855&status=done&style=none&width=499" alt="image.png"><br>仍然是value输入，但是这次是空的值，仍然进行js恶意代码输入</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627707001301-7411faaf-7b0b-47f8-b61e-50af3437784d.png#align=left&display=inline&height=348&margin=%5Bobject%20Object%5D&name=image.png&originHeight=695&originWidth=1172&size=93971&status=done&style=none&width=586" alt="image.png"></p>
+<p>没有弹窗，构造payload,还是没有反应<br><code>&quot;/&gt;&lt;img src=# onerror=alert(1)/&gt;//</code></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627707106934-d7b50abb-5281-426c-b6fe-2286d916e687.png#align=left&display=inline&height=302&margin=%5Bobject%20Object%5D&name=image.png&originHeight=603&originWidth=1255&size=83291&status=done&style=none&width=627.5" alt="image.png"></p>
+<p>为什么都用不了！！！<br>大概是后端使用了<code>**htmlspecialchars**</code>函数进行过滤，因此我们可以使用不带有尖括号的特殊字符进行尝试：<br><code>&#39; onmouseover=&#39;javascript:alert(1)</code></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627707548465-40136334-82be-44c7-9897-70be1e4ebaa8.png#align=left&display=inline&height=312&margin=%5Bobject%20Object%5D&name=image.png&originHeight=623&originWidth=1324&size=84336&status=done&style=none&width=662" alt="image.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627707663005-b592ba70-cb10-46e2-9bf3-37a7a1334535.png#align=left&display=inline&height=321&margin=%5Bobject%20Object%5D&originHeight=321&originWidth=448&size=0&status=done&style=none&width=448"></p>
+<p>至于为什么要使用<code>&#39;</code>这是因为<br><code>&lt;input type=&#39;text&#39; value=&#39; &amp;#039 onmouseover=&amp;#039 javascript:alert(1)&#39;&gt;</code><br>只有使用单引号，转换出来的<code>&amp;#039</code>才有意义</p>
+<h1 id="xss秘籍第四式（构绕函弹）"><a href="#xss秘籍第四式（构绕函弹）" class="headerlink" title="xss秘籍第四式（构绕函弹）"></a>xss秘籍第四式（构绕函弹）</h1><p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627707936384-787ad814-6eb7-43dd-9c21-1130e5573858.png#align=left&display=inline&height=282&margin=%5Bobject%20Object%5D&name=image.png&originHeight=564&originWidth=1125&size=92573&status=done&style=none&width=562.5" alt="image.png"></p>
+<p>这是我们再拿第三关的payload进行尝试我们发现已经没有任何作用<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627707990966-3227d284-8268-4501-bfa1-ed6d41c33082.png#align=left&display=inline&height=356&margin=%5Bobject%20Object%5D&name=image.png&originHeight=712&originWidth=1535&size=127876&status=done&style=none&width=767.5" alt="image.png"></p>
+<p>老样子查看一下源代码，我也没有发现什么。。。。看一下大佬们的解释<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627708247630-3bdc814d-5b73-4b5d-863d-121f5ffcba4f.png#align=left&display=inline&height=89&margin=%5Bobject%20Object%5D&name=image.png&originHeight=178&originWidth=1039&size=165973&status=done&style=none&width=519.5" alt="image.png"></p>
+<p>让我们跟着思路走下去<br>构造payload:<code>1、</code><br><code> </code><br><code>         2、 &quot;onmouseover=&#39;alert(1)&#39; </code></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627708551823-b4e7a9dd-e310-4ce1-8336-b8ada47400e2.png#align=left&display=inline&height=451&margin=%5Bobject%20Object%5D&name=image.png&originHeight=903&originWidth=1487&size=145089&status=done&style=none&width=743.5" alt="image.png"></p>
+<p>这不就可以了嘛</p>
+<h1 id="xss秘籍第五关-（闭新java弹）"><a href="#xss秘籍第五关-（闭新java弹）" class="headerlink" title="xss秘籍第五关 （闭新java弹）"></a>xss秘籍第五关 （闭新java弹）</h1><p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627708650624-5d2e1ac2-e60d-4c9d-8146-14b3aab3a49e.png#align=left&display=inline&height=281&margin=%5Bobject%20Object%5D&name=image.png&originHeight=562&originWidth=793&size=58621&status=done&style=none&width=396.5" alt="image.png"></p>
+<p>是不是跟第四关差不多嘞，但是这可是第五关呐！！！啊这，肯定比第四关更难吧<br>问题不大，让我们先用第四关的方法进行尝试<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627708758941-0e69a7e9-374e-41a4-a6f3-5227ab356033.png#align=left&display=inline&height=404&margin=%5Bobject%20Object%5D&name=image.png&originHeight=808&originWidth=1357&size=103051&status=done&style=none&width=678.5" alt="image.png"></p>
+<p>可以发现，这里闭合了on,尝试大小写绕过<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627708823792-f10acfc6-a769-46f9-8393-cf6e7916cfd8.png#align=left&display=inline&height=355&margin=%5Bobject%20Object%5D&name=image.png&originHeight=710&originWidth=1432&size=94804&status=done&style=none&width=716" alt="image.png"><br>还是仍然对on产生了绕过，尝试编码<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627709048199-88ea66f6-2d3f-4821-9d9f-8350adcabdaf.png#align=left&display=inline&height=367&margin=%5Bobject%20Object%5D&name=image.png&originHeight=733&originWidth=1351&size=93595&status=done&style=none&width=675.5" alt="image.png"><br>发现编码也不行……….</p>
+<p>既然都不行，就回到最处思考使用&lt;&gt;操作<br>构造payload:<code>&quot;/&gt;&lt;a href=&quot;javascript:alert(1)&quot;/&gt;</code></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627709212844-6826273f-223c-4f83-9d62-e476314353fb.png#align=left&display=inline&height=408&margin=%5Bobject%20Object%5D&name=image.png&originHeight=816&originWidth=1492&size=112763&status=done&style=none&width=746" alt="image.png"></p>
+<p>似乎什么也没有，又似乎发现了什么！！<br>似乎发现了被单独弥留下来的一个超链接版的xss代码，我们点击进行尝试，很不错，这个链接尽然弹出了xss代码</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627709310268-4886b33a-6846-410c-a904-314412788aeb.png#align=left&display=inline&height=81&margin=%5Bobject%20Object%5D&name=image.png&originHeight=161&originWidth=930&size=18341&status=done&style=none&width=465" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627709294047-bf9b6b1f-3fcf-4841-9634-ac0d58a50192.png#align=left&display=inline&height=165&margin=%5Bobject%20Object%5D&name=image.png&originHeight=329&originWidth=1062&size=38457&status=done&style=none&width=531" alt="image.png"></p>
+<h1 id="xss秘籍第六关（大小写）"><a href="#xss秘籍第六关（大小写）" class="headerlink" title="xss秘籍第六关（大小写）"></a>xss秘籍第六关（大小写）</h1><p>还是先使用上一关的payload<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627800669185-f80bed73-d9c7-42ed-8c4e-7861e0627ef7.png#align=left&display=inline&height=237&margin=%5Bobject%20Object%5D&name=image.png&originHeight=474&originWidth=1243&size=102015&status=done&style=none&width=621.5" alt="image.png"></p>
+<p>查看一下源代码<img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627800696465-5b35c42c-2883-42a4-a850-00d245c7ed13.png#align=left&display=inline&height=76&margin=%5Bobject%20Object%5D&name=image.png&originHeight=151&originWidth=817&size=14241&status=done&style=none&width=408.5" alt="image.png"></p>
+<p>可见是过滤了href，在这里使用的是大小写进行过滤：<br><code>&quot; /&gt; &lt;a Href=&quot;javascript:alert(1)&quot;/&gt;</code><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627801004209-cb96219c-3e7c-415f-9c21-a8afab1c12e9.png#align=left&display=inline&height=371&margin=%5Bobject%20Object%5D&name=image.png&originHeight=742&originWidth=1258&size=127478&status=done&style=none&width=629" alt="image.png"></p>
+<p>完成了<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627801024904-f6fbf88f-e8f8-4bf8-b946-efffa7fe6884.png#align=left&display=inline&height=379&margin=%5Bobject%20Object%5D&name=image.png&originHeight=758&originWidth=1346&size=109544&status=done&style=none&width=673" alt="image.png"></p>
+<h1 id="xss秘籍第七关（重复写）"><a href="#xss秘籍第七关（重复写）" class="headerlink" title="xss秘籍第七关（重复写）"></a>xss秘籍第七关（重复写）</h1><p>老方法，上一关payload进行尝试<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627801162187-2e7c466d-5adb-41e1-9ae4-958735a582f0.png#align=left&display=inline&height=416&margin=%5Bobject%20Object%5D&name=image.png&originHeight=831&originWidth=1434&size=103075&status=done&style=none&width=717" alt="image.png"></p>
+<p>value什么也没有输出，可见是被过滤了，我们换个关键词试试<br><code>&quot;/&gt;&lt;img src=&#39;javascript:alert(1)&#39;&gt;//</code></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627801405391-20a23be4-f88c-401c-88cf-091d56c0e578.png#align=left&display=inline&height=361&margin=%5Bobject%20Object%5D&name=image.png&originHeight=721&originWidth=1675&size=108313&status=done&style=none&width=837.5" alt="image.png"></p>
+<p>这应该是对关键词进行了过滤操作，也就不能使用SRC、herf等一些关键词出发xss的恶意js，是否可以使用不用到这些都标签构造payload。。<br>But….连script标签也被过滤的，这就让人很头大！！</p>
+<p>那么现在需要考虑如何进行<code>script</code>绕过，就是我们需要解决的事情了，先尝试大小写<br><code>&quot;/&gt;&lt;Script&gt;alert(xss)&lt;/Script&gt;//&lt;</code><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627801858161-e2b9c9a4-4085-45bb-bfb0-8bba204d75da.png#align=left&display=inline&height=378&margin=%5Bobject%20Object%5D&name=image.png&originHeight=757&originWidth=1507&size=106081&status=done&style=none&width=753.5" alt="image.png"></p>
+<p>可见还是被过滤了<br>没关系，绕过的方式很多，再尝试重复进行尝试<br><code>&quot;/&gt;&lt;ScrscriptipT&gt;alert(&quot;xss&quot;)&lt;/ScriscriptPT&gt;//&lt;</code><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627802251651-7e1942ba-dc0f-4769-b084-f73a0adffcff.png#align=left&display=inline&height=265&margin=%5Bobject%20Object%5D&name=image.png&originHeight=529&originWidth=1719&size=63298&status=done&style=none&width=859.5" alt="image.png"></p>
+<p>哦豁，小心机</p>
+<h1 id="xss秘籍第八关（DOM）"><a href="#xss秘籍第八关（DOM）" class="headerlink" title="xss秘籍第八关（DOM）"></a>xss秘籍第八关（DOM）</h1><p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627802815082-62dcbe17-c7d1-4341-ab8e-26d0efb98f3f.png#align=left&display=inline&height=281&margin=%5Bobject%20Object%5D&name=image.png&originHeight=562&originWidth=1888&size=151846&status=done&style=none&width=944" alt="image.png"></p>
+<p>要添加友情链接，这一关很可能属于DOM型xss，因此需要根据友情链接进行恶意js构造<br>这样我们又回到了第五关了：<code>javascript:alert(1)</code><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627803515009-e6b78d52-d46c-4638-be6d-b02ae5beb718.png#align=left&display=inline&height=106&margin=%5Bobject%20Object%5D&name=image.png&originHeight=212&originWidth=414&size=11474&status=done&style=none&width=207" alt="image.png">一个小知识点<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627803124604-26ace6fd-921a-4182-85b5-2d43d27cc7aa.png#align=left&display=inline&height=421&margin=%5Bobject%20Object%5D&name=image.png&originHeight=841&originWidth=1364&size=166737&status=done&style=none&width=682" alt="image.png"></p>
+<p>javascript被过滤了，尝试绕过老样子：大小写、重复<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627803697915-cbbec139-16d9-4509-9e75-6df68841660e.png#align=left&display=inline&height=379&margin=%5Bobject%20Object%5D&name=image.png&originHeight=758&originWidth=1373&size=162429&status=done&style=none&width=686.5" alt="image.png"></p>
+<p>都不行，怎么呢，也不能替换，小问题<img src="https://cdn.nlark.com/yuque/0/2021/gif/12570963/1627803761630-cc80f855-efae-41f5-90b6-8f53063436c5.gif#align=left&display=inline&height=113&margin=%5Bobject%20Object%5D&originHeight=315&originWidth=315&size=0&status=done&style=none&width=113"><br>还可以对关键词进行编码，在这里我们使用16进制进行编码，至于其他编码方式也是可以的<br><code>javascrip&amp;#x74:alert(1)</code><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627804083230-3d6b93f2-f5ee-47ad-a7c9-c8671e663732.png#align=left&display=inline&height=214&margin=%5Bobject%20Object%5D&name=image.png&originHeight=428&originWidth=723&size=50446&status=done&style=none&width=361.5" alt="image.png"></p>
+<p>这不就好了</p>
+<h1 id="xss秘籍第九关（代码审计）"><a href="#xss秘籍第九关（代码审计）" class="headerlink" title="xss秘籍第九关（代码审计）"></a>xss秘籍第九关（代码审计）</h1><p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627804267764-cf6f34a0-0c43-4bad-9505-b9c0a09b739b.png#align=left&display=inline&height=435&margin=%5Bobject%20Object%5D&name=image.png&originHeight=869&originWidth=1831&size=205641&status=done&style=none&width=915.5" alt="image.png"></p>
+<p>到了这一关就不仅仅是对源代码进行分析了，找到文件的php代码进行审计<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627804339096-5e13d4cf-c078-479b-bf75-cf153d43b5b3.png#align=left&display=inline&height=218&margin=%5Bobject%20Object%5D&name=image.png&originHeight=436&originWidth=970&size=36331&status=done&style=none&width=485" alt="image.png"></p>
+<p>尝试进行弹窗<code>&quot;/&gt;&lt;a href=&#39;javascript:alert(1)&#39;/&gt;</code></p>
+<p>查看源文件并没有发现什么，这一关不知道为什么好卡！！应该是出了什么问题，去看一下大佬们的笔记<br>发现这是一个对<code>https://</code>字符的操作，不能出现https字样，只能是**http:// ** 这几个字符，不然就会返回链接不合法</p>
+<p>因此构造payload时只需要出现http:// 的字样，并且在尝试过程中，对script进行了过滤，所以我么根据上一关的经验去构造<br><code>javascrip&amp;#x74:alert(1)//http://www.san.com</code></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627806408261-8fb7de8d-c38b-4ec4-b0cb-6e9085d4f580.png#align=left&display=inline&height=381&margin=%5Bobject%20Object%5D&name=image.png&originHeight=762&originWidth=1743&size=145354&status=done&style=none&width=871.5" alt="image.png"></p>
+<p>这样就成功了，至于后面的链接，随意根据格式写就可以</p>
+<h1 id="xss秘籍第十关（改类型）"><a href="#xss秘籍第十关（改类型）" class="headerlink" title="xss秘籍第十关（改类型）"></a>xss秘籍第十关（改类型）</h1><p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627806813331-465e7b4f-0994-4d2a-82d5-45c23dfb845e.png#align=left&display=inline&height=438&margin=%5Bobject%20Object%5D&name=image.png&originHeight=875&originWidth=1149&size=288614&status=done&style=none&width=574.5" alt="image.png"></p>
+<p>可能有隐藏的表单，尝试提交t_link、t_history、t_sort变量，t_sort变量返回在了html的value中，但是过滤了尖括号<br>也就是存在get参数又隐藏框，经尝试t_sort存在<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627807315698-ea45c299-a17d-430a-b1d3-7952c5366150.png#align=left&display=inline&height=465&margin=%5Bobject%20Object%5D&name=image.png&originHeight=929&originWidth=893&size=277279&status=done&style=none&width=446.5" alt="image.png"><br>而剩下的两个参数则不存在<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627807359101-b27b739e-f556-458e-a643-ebbc84c8cc0e.png#align=left&display=inline&height=465&margin=%5Bobject%20Object%5D&name=image.png&originHeight=930&originWidth=851&size=276466&status=done&style=none&width=425.5" alt="image.png"><br>type是为了让页面展现出一个输入框，一点击就会弹出alert<br>构造payload:<code>123&amp;t_sort=&quot;type=&quot;text&quot; onclick=&quot;alert(1)</code>(输入的文本都无法显示，这里只能改变一下keyword的类型，type=text)<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627807583196-4b7c0366-0aaa-467e-81aa-3ff5665f770a.png#align=left&display=inline&height=324&margin=%5Bobject%20Object%5D&name=image.png&originHeight=647&originWidth=1611&size=178045&status=done&style=none&width=805.5" alt="image.png"></p>
+<p>今天就到这里了</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>下面两个链接是发现的一些绕过姿势<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/H4ck3R-XiX/p/12732356.html">绕过总结</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29277155/article/details/51320064">绕过总结</a></p>
+
+
+  </article>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <div class="busuanzi center">
+    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
+
+
+    
+
+
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        © XXX 2016-2020
+    </div>
+    <div class="secondrow">
+        <a href="">
+        Willianir
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.min.js"></script>
+<script type="text/javascript">
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
+</html>

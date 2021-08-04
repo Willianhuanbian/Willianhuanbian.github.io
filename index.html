@@ -88,8 +88,8 @@
   
   
     <h1 class="index-title">
-        <a href="/2021/06/05/CTFhub-RCE/">
-            CTFhub-RCE
+        <a href="/2021/08/04/XSS靶场/">
+            
         </a>
     </h1>
   
@@ -97,19 +97,22 @@
 
   <div class="excerpt">
   
-    @TOC
+    第一关利用语句进行弹窗测试就可以&lt;script&gt;alert(1)&lt;/script&gt;
+第二关
+可以发现本题依然是根据GET传参数，查看源代码这是一个value进行输入，使用js恶意代码拼接
+构造payload：&quo
   
-  <a href="/2021/06/05/CTFhub-RCE/">
+  <a href="/2021/08/04/XSS靶场/">
     more
   </a>
   </div>
   <div class="index-meta">
-    <time datetime="2021-06-05T07:48:43.968Z" itemprop="datePublished">
+    <time datetime="2021-08-04T03:03:26.735Z" itemprop="datePublished">
   <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
   &nbsp;
-  2021-06-05
+  2021-08-04
 </time>
 
 
@@ -131,8 +134,8 @@
   
   
     <h1 class="index-title">
-        <a href="/2021/06/05/CTFshow-web(5-6)/">
-            CTFshow-web(5-6)
+        <a href="/2021/08/04/CTFHUB-xss(反射型)/">
+            
         </a>
     </h1>
   
@@ -140,19 +143,23 @@
 
   <div class="excerpt">
   
-    @TOC
+    经过测试，第一个文本框是用于测试使用
+第二个文本框应该是将信息发送至后台，进行处理，
+因此我们只能是在XSS测试平台上进行获取注册成功后顺便创建一个项目，选择默认配置成功后会给一个地址
+直接插入构造的url中即可这时会接受到一个信息
+即可获
   
-  <a href="/2021/06/05/CTFshow-web(5-6)/">
+  <a href="/2021/08/04/CTFHUB-xss(反射型)/">
     more
   </a>
   </div>
   <div class="index-meta">
-    <time datetime="2021-06-05T07:48:43.965Z" itemprop="datePublished">
+    <time datetime="2021-08-04T03:03:08.187Z" itemprop="datePublished">
   <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
   &nbsp;
-  2021-06-05
+  2021-08-04
 </time>
 
 
@@ -174,8 +181,8 @@
   
   
     <h1 class="index-title">
-        <a href="/2021/06/05/CTFshow(web2-4）/">
-            CTFshow(web2-4）
+        <a href="/2021/08/04/XSS/">
+            
         </a>
     </h1>
   
@@ -183,19 +190,21 @@
 
   <div class="excerpt">
   
-    @TOC
+    通过网页上传我们写的HTML、css代码在代码中嵌入木马等
+将script代码注入到网页内，然后别人打开后，别人的浏览器就会执行恶意代码
+查看cookie如果对方的网站存在XSS漏洞，我们可以通过js,html等嵌入一个我们构造的网站框架，
   
-  <a href="/2021/06/05/CTFshow(web2-4）/">
+  <a href="/2021/08/04/XSS/">
     more
   </a>
   </div>
   <div class="index-meta">
-    <time datetime="2021-06-05T07:48:43.964Z" itemprop="datePublished">
+    <time datetime="2021-08-04T03:02:53.439Z" itemprop="datePublished">
   <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
   &nbsp;
-  2021-06-05
+  2021-08-04
 </time>
 
 
@@ -217,8 +226,8 @@
   
   
     <h1 class="index-title">
-        <a href="/2021/06/05/ISCC2021-部分题目再现/">
-            ISCC2021-部分题目再现
+        <a href="/2021/08/04/CVE-2018-8174 漏洞复现/">
+            
         </a>
     </h1>
   
@@ -226,20 +235,19 @@
 
   <div class="excerpt">
   
-    @TOC
-练武easyweb很明显，本题需要进行sql注入但是并不知道注入点经过测试，判断注入点为：’ 闭合符号用%23代替在后面测试发现空格被过滤了，我们可以使用%0d进行绕过尝试使用联合查询发现union,select,尝试使用双写进行
+    漏洞描述：CVE-2018-8174 是 Windows VBScript Engine 代码执行漏洞。微软在4月20日早上确认此漏洞，并于5月8号发布了官方安全补丁，对该 0day 漏洞进行了修复，将其命名为 CVE-2018-8174由
   
-  <a href="/2021/06/05/ISCC2021-部分题目再现/">
+  <a href="/2021/08/04/CVE-2018-8174 漏洞复现/">
     more
   </a>
   </div>
   <div class="index-meta">
-    <time datetime="2021-06-05T07:48:43.962Z" itemprop="datePublished">
+    <time datetime="2021-08-04T03:02:39.002Z" itemprop="datePublished">
   <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
   &nbsp;
-  2021-06-05
+  2021-08-04
 </time>
 
 
@@ -261,8 +269,8 @@
   
   
     <h1 class="index-title">
-        <a href="/2021/06/05/DVWA文件包含漏洞-（中、高绕过）/">
-            DVWA文件包含漏洞-（中、高绕过）
+        <a href="/2021/08/04/Buuctf刷题记录/">
+            
         </a>
     </h1>
   
@@ -270,19 +278,20 @@
 
   <div class="excerpt">
   
-    @TOC
+    [HCTF 2018]WarmUp这是一道关于代码审计的题通过查看源代码发现了source.php的源文件进入查看
+`&lt;?php    highlight_file(__FILE__);    class emmm    {     
   
-  <a href="/2021/06/05/DVWA文件包含漏洞-（中、高绕过）/">
+  <a href="/2021/08/04/Buuctf刷题记录/">
     more
   </a>
   </div>
   <div class="index-meta">
-    <time datetime="2021-06-05T07:48:43.960Z" itemprop="datePublished">
+    <time datetime="2021-08-04T03:02:22.104Z" itemprop="datePublished">
   <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
   &nbsp;
-  2021-06-05
+  2021-08-04
 </time>
 
 
@@ -304,8 +313,8 @@
   
   
     <h1 class="index-title">
-        <a href="/2021/06/05/mysql-IN和LIKE的使用/">
-            mysql-IN和LIKE的使用
+        <a href="/2021/08/04/内网渗透技巧（入门）/">
+            
         </a>
     </h1>
   
@@ -313,23 +322,21 @@
 
   <div class="excerpt">
   
-    前言
-掌握运算符in的使用
-掌握运算符like的使用
-
-一、运算符in的使用运算符 IN 允许我们在 WHERE 子句中过滤某个字段的多个值。==where子句使用in语法==SELECT column_name FROM table_na
+    内网转发拿到webshell进行端口转发，达到代理的目的监听状态连接之后可以进行操作，比如查看ip获取用户名什么的
+功能比较强大
+信息收集进入服务器后进行信息收集msf读取本机密码以上演示是针对永恒之蓝漏洞-win7x64版本的，由于机主是
   
-  <a href="/2021/06/05/mysql-IN和LIKE的使用/">
+  <a href="/2021/08/04/内网渗透技巧（入门）/">
     more
   </a>
   </div>
   <div class="index-meta">
-    <time datetime="2021-06-05T07:48:43.959Z" itemprop="datePublished">
+    <time datetime="2021-08-04T03:02:04.774Z" itemprop="datePublished">
   <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
   &nbsp;
-  2021-06-05
+  2021-08-04
 </time>
 
 
@@ -351,8 +358,8 @@
   
   
     <h1 class="index-title">
-        <a href="/2021/06/05/POST注入-SQL-labs(11关)/">
-            POST注入-SQL-labs(11关)
+        <a href="/2021/08/04/渗透扫描工具/">
+            
         </a>
     </h1>
   
@@ -360,22 +367,21 @@
 
   <div class="excerpt">
   
-    一、万能密码对于万能密码的类型是根据SQL注入的情况而判断的，这里举例几个SQL注入中常见的几个类型：
-
-xxx’ or 1 = 1#(最后的#可以换成– (记住如果是– 的最后有个空格)) 【这种是比较通用的】
-xxx’ or ‘1’ =
+    Nessus安装成功之后，倘若关机后服务就会关闭，再次开启网站也就进不去了，这时候需要
+在/obt/nessus的目录下，再次开启服务net start &quot;Tenable Nessus&quot;
+实例扫描漏洞点击“New Sca
   
-  <a href="/2021/06/05/POST注入-SQL-labs(11关)/">
+  <a href="/2021/08/04/渗透扫描工具/">
     more
   </a>
   </div>
   <div class="index-meta">
-    <time datetime="2021-06-05T07:48:43.957Z" itemprop="datePublished">
+    <time datetime="2021-08-04T03:01:47.133Z" itemprop="datePublished">
   <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
   &nbsp;
-  2021-06-05
+  2021-08-04
 </time>
 
 
@@ -397,8 +403,8 @@ xxx’ or ‘1’ =
   
   
     <h1 class="index-title">
-        <a href="/2021/06/05/数据库查询语句（二）-条件查询/">
-            数据库查询语句（二）-条件查询
+        <a href="/2021/08/04/CNVD-2021-14536 锐捷 RG-UAC 统一上网行为管理审计系统信息泄露漏洞/">
+            
         </a>
     </h1>
   
@@ -406,23 +412,20 @@ xxx’ or ‘1’ =
 
   <div class="excerpt">
   
-    前言1. 熟练掌握where子句各类运算符的使用
-2. 熟练掌握多条件查询and、or的使用
-
-
-一、单条件查询在SQL中，insert、update、delete和select后面都能带where子句，用于插入、修改、删除或查询指定条件的
+    就很离谱，再看信息泄露的东西的时候，看到一篇漏洞复现的文章。。。。管理员密码就在源代码里面，让我们来看看
+复现环境fofa搜索 title=&quot;RG-UAC登录页面&quot; &amp;&amp; body=&quot;admin
   
-  <a href="/2021/06/05/数据库查询语句（二）-条件查询/">
+  <a href="/2021/08/04/CNVD-2021-14536 锐捷 RG-UAC 统一上网行为管理审计系统信息泄露漏洞/">
     more
   </a>
   </div>
   <div class="index-meta">
-    <time datetime="2021-06-05T07:48:43.955Z" itemprop="datePublished">
+    <time datetime="2021-08-04T03:01:30.561Z" itemprop="datePublished">
   <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
   &nbsp;
-  2021-06-05
+  2021-08-04
 </time>
 
 
@@ -444,8 +447,8 @@ xxx’ or ‘1’ =
   
   
     <h1 class="index-title">
-        <a href="/2021/06/05/数据库再次学习-简单查询/">
-            延时注入-sql注入第九关
+        <a href="/2021/08/04/信息收集/">
+            
         </a>
     </h1>
   
@@ -453,23 +456,23 @@ xxx’ or ‘1’ =
 
   <div class="excerpt">
   
-    目标1. 了解select的完整语法
-
-==2. 掌握使用select进行简单查询==
-一、基础语法掌握在之前的文章有过对数据库的简单介绍了，今天我们对select语句进行一下细致的学习🕵️‍♂️
-1234567SELECT column
+    软件版本号，信心显示、作者等，通过版本号等信息，进行攻击造成服务损坏主域名安防高，通过子域名发掘漏洞更加容易，从而进行渗透
+nmap工具更加强大
+whois
+nslookup 查询DNS服务器地址
+C段tranceroute-反查域名wha
   
-  <a href="/2021/06/05/数据库再次学习-简单查询/">
+  <a href="/2021/08/04/信息收集/">
     more
   </a>
   </div>
   <div class="index-meta">
-    <time datetime="2021-06-05T07:48:43.953Z" itemprop="datePublished">
+    <time datetime="2021-08-04T03:01:11.701Z" itemprop="datePublished">
   <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
   &nbsp;
-  2021-06-05
+  2021-08-04
 </time>
 
 
@@ -488,7 +491,7 @@ xxx’ or ‘1’ =
   
 </ul>
 <ul class="pager">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next</a>
 </ul>
 
 

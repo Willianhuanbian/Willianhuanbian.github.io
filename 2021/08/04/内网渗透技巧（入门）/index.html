@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  <meta name="referrer" content="unsafe-url">
+  
+  <title>Willianir&#39;s home</title>
+  <meta name="author" content="Willianhuanbian">
+  <meta name="description" content="内网转发拿到webshell进行端口转发，达到代理的目的监听状态连接之后可以进行操作，比如查看ip获取用户名什么的
+功能比较强大
+信息收集进入服务器后进行信息收集msf读取本机密码以上演示是针对永恒之蓝漏洞-win7x64版本的，由于机主是win10之后的暂不演示，命令如下返回后load mimik">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Willianir&#39;s home"/>
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="Willianir&#39;s home" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <a id="top"></a>
+  <div id="main">
+    <div class="main-ctnr">
+      <div class="behind">
+  <a href="/" class="back black-color">
+    <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+        <path d="M2 30 L30 2 M30 30 L2 2"></path>
+    </svg>
+  </a>
+  
+</div>
+
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      <time datetime="2021-08-04T03:02:04.774Z" itemprop="datePublished">
+  <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2021-08-04
+</time>
+
+
+
+
+
+
+    </div>
+    <hr>
+    
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E8%BD%AC%E5%8F%91"><span class="toc-text">内网转发</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-text">信息收集</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%AA%E5%90%91%E7%A7%BB%E5%8A%A8"><span class="toc-text">横向移动</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%94%B6%E5%B0%BE%E5%B7%A5%E7%A8%8B"><span class="toc-text">收尾工程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+    
+    <div class="picture-container">
+      
+    </div>
+    <h1 id="内网转发"><a href="#内网转发" class="headerlink" title="内网转发"></a>内网转发</h1><p>拿到webshell进行端口转发，达到代理的目的<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627178596045-5a65a39b-2bef-4a87-86f5-77fb5d44c214.png#align=left&display=inline&height=237&margin=%5Bobject%20Object%5D&name=image.png&originHeight=473&originWidth=419&size=38996&status=done&style=none&width=209.5" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627178715676-885b11ba-8255-4ccf-ab13-bf95936f7b51.png#align=left&display=inline&height=158&margin=%5Bobject%20Object%5D&name=image.png&originHeight=316&originWidth=1033&size=69927&status=done&style=none&width=516.5" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627178749452-2705f915-499d-4ad1-8c38-415510c2d2d5.png#align=left&display=inline&height=199&margin=%5Bobject%20Object%5D&name=image.png&originHeight=397&originWidth=812&size=55912&status=done&style=none&width=406" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627182983513-c8c954d8-c0a4-4214-b057-a0899ee82827.png#align=left&display=inline&height=45&margin=%5Bobject%20Object%5D&name=image.png&originHeight=90&originWidth=275&size=8743&status=done&style=none&width=137.5" alt="image.png">监听状态<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627183278940-4a863690-52c2-4845-ac7c-5a38c76f4372.png#align=left&display=inline&height=105&margin=%5Bobject%20Object%5D&name=image.png&originHeight=209&originWidth=1179&size=61364&status=done&style=none&width=589.5" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627183346971-efea506c-4250-49b9-be5b-ec92f7656abe.png#align=left&display=inline&height=207&margin=%5Bobject%20Object%5D&name=image.png&originHeight=413&originWidth=605&size=89952&status=done&style=none&width=302.5" alt="image.png"><br>连接之后可以进行操作，比如查看ip<br>获取用户名什么的<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627183448137-ddddee9f-54c2-48c8-907e-6022baa87a53.png#align=left&display=inline&height=27&margin=%5Bobject%20Object%5D&name=image.png&originHeight=54&originWidth=624&size=15370&status=done&style=none&width=312" alt="image.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627179167722-9b26d7a6-4878-4aad-899a-6210ace32723.png#align=left&display=inline&height=99&margin=%5Bobject%20Object%5D&name=image.png&originHeight=198&originWidth=868&size=44343&status=done&style=none&width=434" alt="image.png"><br>功能比较强大</p>
+<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><p>进入服务器后进行信息收集<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627179369235-3ab61663-55c1-46bc-ba2f-9d3df92aa225.png#align=left&display=inline&height=216&margin=%5Bobject%20Object%5D&name=image.png&originHeight=432&originWidth=1077&size=146624&status=done&style=none&width=538.5" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627179486512-abd11286-0328-49d8-bdce-cd75100b6104.png#align=left&display=inline&height=181&margin=%5Bobject%20Object%5D&name=image.png&originHeight=362&originWidth=410&size=47416&status=done&style=none&width=205" alt="image.png"><br>msf读取本机密码<img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627181491212-71476d0b-8a69-4e5c-883a-896b49217e1a.png#align=left&display=inline&height=217&margin=%5Bobject%20Object%5D&name=image.png&originHeight=433&originWidth=652&size=75629&status=done&style=none&width=326" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627181514150-e928c619-b6a3-4d3d-80b1-e58c34660b80.png#align=left&display=inline&height=227&margin=%5Bobject%20Object%5D&name=image.png&originHeight=453&originWidth=645&size=131377&status=done&style=none&width=322.5" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627181609307-99d4cfeb-b8da-4a27-ba3b-e64c6e8d6911.png#align=left&display=inline&height=209&margin=%5Bobject%20Object%5D&name=image.png&originHeight=417&originWidth=676&size=169273&status=done&style=none&width=338" alt="image.png"><br>以上演示是针对永恒之蓝漏洞-win7x64版本的，由于机主是win10之后的暂不演示，命令如下<br>返回后<br>load mimikatz<br>msv<br>kerberos<br>ps进入<br>migrate ####<br>migrate ####<br>keyscan start<br>keyscan dump<img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627182190030-19515ebd-2ce5-4f7b-997e-ea668bd9d519.png#align=left&display=inline&height=272&margin=%5Bobject%20Object%5D&name=image.png&originHeight=543&originWidth=988&size=633862&status=done&style=none&width=494" alt="image.png"><br>keyscan dump</p>
+<h1 id="横向移动"><a href="#横向移动" class="headerlink" title="横向移动"></a>横向移动</h1><p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627182805191-645831a9-16de-4053-9a8c-746b498be7aa.png#align=left&display=inline&height=225&margin=%5Bobject%20Object%5D&name=image.png&originHeight=450&originWidth=735&size=45292&status=done&style=none&width=367.5" alt="image.png"><br>端口扫描：8080,3389-远程登录,701,445,1433-msfsql<br>御剑其实更快扫描端口<br>命令执行：java反序列化漏洞<br>mysql-权限<br>文件上传-进行绕过</p>
+<h1 id="收尾工程"><a href="#收尾工程" class="headerlink" title="收尾工程"></a>收尾工程</h1><p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627183739435-c56eb16a-914a-43dd-ac21-535ba0a7a2b3.png#align=left&display=inline&height=191&margin=%5Bobject%20Object%5D&name=image.png&originHeight=382&originWidth=831&size=72264&status=done&style=none&width=415.5" alt="image.png"><br>还有一些工具可以用于清理</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>拿到权限绕过防火墙-进行端口转发或者进行代理-socks多层代理-信息收集-拿到各种密码-进行端口扫描要针对型扫描，针对某个端口（因为扫描的时候会造成很大的动静）-得到漏洞</p>
+
+
+  </article>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <div class="busuanzi center">
+    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
+
+
+    
+
+
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        © XXX 2016-2020
+    </div>
+    <div class="secondrow">
+        <a href="">
+        Willianir
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.min.js"></script>
+<script type="text/javascript">
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
+</html>

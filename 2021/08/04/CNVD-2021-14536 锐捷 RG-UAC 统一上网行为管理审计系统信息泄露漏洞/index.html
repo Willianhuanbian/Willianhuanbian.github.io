@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  <meta name="referrer" content="unsafe-url">
+  
+  <title>Willianir&#39;s home</title>
+  <meta name="author" content="Willianhuanbian">
+  <meta name="description" content="就很离谱，再看信息泄露的东西的时候，看到一篇漏洞复现的文章。。。。管理员密码就在源代码里面，让我们来看看
+复现环境fofa搜索 title=&amp;quot;RG-UAC登录页面&amp;quot; &amp;amp;&amp;amp; body=&amp;quot;admin&amp;quot;选择一个进入环境
+直接进入后台查看源代码😘
+
+">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Willianir&#39;s home"/>
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="Willianir&#39;s home" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <a id="top"></a>
+  <div id="main">
+    <div class="main-ctnr">
+      <div class="behind">
+  <a href="/" class="back black-color">
+    <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+        <path d="M2 30 L30 2 M30 30 L2 2"></path>
+    </svg>
+  </a>
+  
+</div>
+
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      <time datetime="2021-08-04T03:01:30.561Z" itemprop="datePublished">
+  <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2021-08-04
+</time>
+
+
+
+
+
+
+    </div>
+    <hr>
+    
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E7%8E%B0%E7%8E%AF%E5%A2%83"><span class="toc-text">复现环境</span></a></li></ol>
+    
+    <div class="picture-container">
+      
+    </div>
+    <p>就很离谱，再看信息泄露的东西的时候，看到一篇漏洞复现的文章。。。。<br>管理员密码就在源代码里面，让我们来看看</p>
+<h2 id="复现环境"><a href="#复现环境" class="headerlink" title="复现环境"></a>复现环境</h2><p>fofa搜索 <code>title=&quot;RG-UAC登录页面&quot; &amp;&amp; body=&quot;admin&quot;</code><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1625990348383-293e920b-2932-4af3-a1b5-b01fa6abe69b.png#align=left&display=inline&height=117&margin=%5Bobject%20Object%5D&name=image.png&originHeight=234&originWidth=1247&size=30174&status=done&style=none&width=623.5" alt="image.png"><br>选择一个进入环境<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1625990385404-2b8c71d1-1991-4c5a-9ed3-b861bb66c0ed.png#align=left&display=inline&height=474&margin=%5Bobject%20Object%5D&name=image.png&originHeight=947&originWidth=1920&size=314141&status=done&style=none&width=960" alt="image.png"></p>
+<p>直接进入后台查看源代码😘<img src="https://cdn.nlark.com/yuque/0/2021/gif/12570963/1625990427247-cbaad5ab-55fc-45d1-a7e3-cdedfd5a604f.gif#align=left&display=inline&height=146&margin=%5Bobject%20Object%5D&originHeight=302&originWidth=302&size=0&status=done&style=none&width=146"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1625990514301-503f5101-3b54-4924-b7de-4596da1186d9.png#align=left&display=inline&height=76&margin=%5Bobject%20Object%5D&name=image.png&originHeight=151&originWidth=1858&size=18116&status=done&style=none&width=929" alt="image.png"></p>
+<p>可以看到，管理员的账号密码都有，不过密码进行了md5加密，接出来不就好了吗<a target="_blank" rel="noopener" href="https://www.somd5.com/">这里</a><br>进行登录。。就这样进来了</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1625990834827-148e4303-d215-4a91-818e-400997de9b5f.png#align=left&display=inline&height=462&margin=%5Bobject%20Object%5D&name=image.png&originHeight=924&originWidth=1905&size=365565&status=done&style=none&width=952.5" alt="image.png"></p>
+<p>参考链接：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/lcxblogs/p/14502101.html">大大佬的博客</a></p>
+
+
+  </article>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <div class="busuanzi center">
+    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
+
+
+    
+
+
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        © XXX 2016-2020
+    </div>
+    <div class="secondrow">
+        <a href="">
+        Willianir
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.min.js"></script>
+<script type="text/javascript">
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
+</html>

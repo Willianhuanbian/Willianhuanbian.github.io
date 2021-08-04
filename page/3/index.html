@@ -88,8 +88,8 @@
   
   
     <h1 class="index-title">
-        <a href="/2021/06/05/图片隐写（二）/">
-            图片隐写（二）
+        <a href="/2021/06/05/数据库再次学习-简单查询/">
+            延时注入-sql注入第九关
         </a>
     </h1>
   
@@ -97,14 +97,18 @@
 
   <div class="excerpt">
   
-    一.jpg一切隐藏的事物无外乎依附于一个载体，从而达到加密的效果。因此当我们分析时需要充分了解载体，了解载体本身哪里可以隐藏。也就是说当面对图片隐写时，我们需要充分了解图片格式，比如在图片中的exif信息里面包含很多东西同时也可以进行修改，
+    目标1. 了解select的完整语法
+
+==2. 掌握使用select进行简单查询==
+一、基础语法掌握在之前的文章有过对数据库的简单介绍了，今天我们对select语句进行一下细致的学习🕵️‍♂️
+1234567SELECT column
   
-  <a href="/2021/06/05/图片隐写（二）/">
+  <a href="/2021/06/05/数据库再次学习-简单查询/">
     more
   </a>
   </div>
   <div class="index-meta">
-    <time datetime="2021-06-05T07:48:43.934Z" itemprop="datePublished">
+    <time datetime="2021-06-05T07:48:43.953Z" itemprop="datePublished">
   <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
@@ -131,8 +135,8 @@
   
   
     <h1 class="index-title">
-        <a href="/2021/06/05/XSS-初探/">
-            XSS初探
+        <a href="/2021/06/05/upload练习（二）/">
+            upload练习（二）
         </a>
     </h1>
   
@@ -140,16 +144,14 @@
 
   <div class="excerpt">
   
-    前言跨站脚本（cross site script）为了避免与样式css混淆，所以简称为XSS。
-XSS是一种经常出现在web应用中的计算机安全漏洞，也是web中最主流的攻击方式。那么什么是XSS呢？
-XSS是指恶意攻击者利用网站没有对用户提
+    @TOC
   
-  <a href="/2021/06/05/XSS-初探/">
+  <a href="/2021/06/05/upload练习（二）/">
     more
   </a>
   </div>
   <div class="index-meta">
-    <time datetime="2021-06-05T07:48:43.932Z" itemprop="datePublished">
+    <time datetime="2021-06-05T07:48:43.951Z" itemprop="datePublished">
   <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
@@ -176,8 +178,8 @@ XSS是指恶意攻击者利用网站没有对用户提
   
   
     <h1 class="index-title">
-        <a href="/2021/06/05/sqli-labs-报错注入-updatexml报错/">
-            sqli-labs-报错注入-updatexml报错
+        <a href="/2021/06/05/延时注入-sql注入第九关/">
+            延时注入-sql注入第九关
         </a>
     </h1>
   
@@ -185,16 +187,16 @@ XSS是指恶意攻击者利用网站没有对用户提
 
   <div class="excerpt">
   
-    前言union注入是最简单方便的,但是要求页面必须有显示位,没有就没法利用.
-所以当页面没有显示位时,我们需要用其他方法来获取数据.因此我们可以使用报错注入: 有些网站在开发调试阶段开启了报错提示信息,如果没有关闭,就有可能存在报错注入.
+    前言什么是延时注入？
 
+12341.IF(Condition,A,B)函数2.当Condition为TRUE时，返回A；当Condition为FALSE时，返回B。3.sleep()函数			网页延迟n秒后，输出结果4.left（）函数  
   
-  <a href="/2021/06/05/sqli-labs-报错注入-updatexml报错/">
+  <a href="/2021/06/05/延时注入-sql注入第九关/">
     more
   </a>
   </div>
   <div class="index-meta">
-    <time datetime="2021-06-05T07:48:43.930Z" itemprop="datePublished">
+    <time datetime="2021-06-05T07:48:43.948Z" itemprop="datePublished">
   <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
@@ -221,8 +223,8 @@ XSS是指恶意攻击者利用网站没有对用户提
   
   
     <h1 class="index-title">
-        <a href="/2021/06/05/攻防世界web新手区(webshell与weak_auth)/">
-            攻防世界web新手区(webshell与weak_auth)
+        <a href="/2021/06/05/upload-靶场练习/">
+            upload-靶场练习
         </a>
     </h1>
   
@@ -230,16 +232,20 @@ XSS是指恶意攻击者利用网站没有对用户提
 
   <div class="excerpt">
   
-    一.webshell打开之后可以看到：
-本题考察的是一句话木马以及工具的使用这里我们可以使用蚁剑操作添加后点击地址可以看到flag就在这里面
-二、weak_auth根据题目提示本题考查的弱密码可以看到登录名：admin,如果熟知弱密码的话可
+    MIME类型验证绕过上传-第二关基于这种类型的文件上传我们只需要将验证了Content-Type 改成图片的MIME类型即可
+
+抓包
+修改Content-Type
+
+上传成功
+黑名单后缀名(php3、phtml)绕过上传-第三关这关检测了文
   
-  <a href="/2021/06/05/攻防世界web新手区(webshell与weak_auth)/">
+  <a href="/2021/06/05/upload-靶场练习/">
     more
   </a>
   </div>
   <div class="index-meta">
-    <time datetime="2021-06-05T07:48:28.282Z" itemprop="datePublished">
+    <time datetime="2021-06-05T07:48:43.947Z" itemprop="datePublished">
   <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
@@ -266,8 +272,8 @@ XSS是指恶意攻击者利用网站没有对用户提
   
   
     <h1 class="index-title">
-        <a href="/2021/06/05/sqli-labs闯关1-4总结/">
-            sqli-labs闯关1-4
+        <a href="/2021/06/05/upload-labs-第一关/">
+            upload-labs-第一关
         </a>
     </h1>
   
@@ -275,14 +281,14 @@ XSS是指恶意攻击者利用网站没有对用户提
 
   <div class="excerpt">
   
-    一、第1-2关：基于错误的字符串/数字型注入1234561.?id=1 order by 4 --+2.?id=-1 union select 1,2,3 --+3.?id=-1 union select 1,database(),3 --
+    前言客户端js验证绕过上传-（1）`让我们看看第一关说了什么基于“JS本地验证”绕过其实也就是：客户端js检查类型的上传漏洞是Web系统的上传功能在前端页面使用javascript脚本对要上传的文件进行检查，在服务器端没有进行检查，而造成的
   
-  <a href="/2021/06/05/sqli-labs闯关1-4总结/">
+  <a href="/2021/06/05/upload-labs-第一关/">
     more
   </a>
   </div>
   <div class="index-meta">
-    <time datetime="2021-06-05T07:48:17.550Z" itemprop="datePublished">
+    <time datetime="2021-06-05T07:48:43.944Z" itemprop="datePublished">
   <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
@@ -309,8 +315,8 @@ XSS是指恶意攻击者利用网站没有对用户提
   
   
     <h1 class="index-title">
-        <a href="/2021/06/05/PHP入门阶段学习（二）/">
-            PHP入门学习阶段（二）
+        <a href="/2021/06/05/CTFshow-萌新/">
+            CTFshow-萌新
         </a>
     </h1>
   
@@ -318,19 +324,20 @@ XSS是指恶意攻击者利用网站没有对用户提
 
   <div class="excerpt">
   
-    一、数组数组能够在单个变量中存储多个值。
-数组是什么：
-数组是一个能在单个变量中存储多个值的特殊变量。
-如果您有一个项目清单（例如：车名字的清单），将其存储到单个变量中
-创建数组在 PHP 中，array() 函数用于创建数组：
-1arra
+    萌新_密码2那就敲一下键盘试一下，每六个字符一组，你会发现六个字符中间正好包围起来一个字符即所找的flag答案依次拼接：FWY
+1因此KEY&#123;fwy&#125;
+
+萌新 密码3解题思路：
+
+一串摩斯电码
+看到培根，可以想到培根密码
   
-  <a href="/2021/06/05/PHP入门阶段学习（二）/">
+  <a href="/2021/06/05/CTFshow-萌新/">
     more
   </a>
   </div>
   <div class="index-meta">
-    <time datetime="2021-06-05T07:48:15.136Z" itemprop="datePublished">
+    <time datetime="2021-06-05T07:48:43.943Z" itemprop="datePublished">
   <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
@@ -357,8 +364,8 @@ XSS是指恶意攻击者利用网站没有对用户提
   
   
     <h1 class="index-title">
-        <a href="/2021/06/05/PHP入门阶段学习(一)/">
-            PHP入门学习阶段（一）
+        <a href="/2021/06/05/SQL-labs-Burp(第八关)/">
+            SQL-labs-Burp(第八关)
         </a>
     </h1>
   
@@ -366,27 +373,14 @@ XSS是指恶意攻击者利用网站没有对用户提
 
   <div class="excerpt">
   
-    一、常量PHP 变量规则：
-
-变量以 $ 符号开始，后面跟着变量的名称
-变量名必须以字母或者下划线字符开始
-变量名只能包含字母数字字符以及下划线（A-z、0-9 和 _ ）
-变量名不能包含空格
-变量名是区分大小写的（
-y 和 
-
-
-
-
- 
-
+    @TOC
   
-  <a href="/2021/06/05/PHP入门阶段学习(一)/">
+  <a href="/2021/06/05/SQL-labs-Burp(第八关)/">
     more
   </a>
   </div>
   <div class="index-meta">
-    <time datetime="2021-06-05T07:48:01.924Z" itemprop="datePublished">
+    <time datetime="2021-06-05T07:48:43.941Z" itemprop="datePublished">
   <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
@@ -413,8 +407,8 @@ y 和
   
   
     <h1 class="index-title">
-        <a href="/2021/06/05/攻防世界-Web(新手区)练习题/">
-            攻防世界-新手区Wbe题
+        <a href="/2021/06/05/sqli-labs第八关-布尔注入 (1)/">
+            sqli-labs第八关-布尔注入 (1)
         </a>
     </h1>
   
@@ -422,16 +416,14 @@ y 和
 
   <div class="excerpt">
   
-    前言在这里记录了我对于学习攻防世界-新手区Wbe题的总结。
-一、view_source该题通过提示可以看出需要查看网页源代码，但是采用右键的方式无法使用因此可以使用F12进行查看。
-二、robots该题的关键是robots,通过查阅发现：r
+    @TOC
   
-  <a href="/2021/06/05/攻防世界-Web(新手区)练习题/">
+  <a href="/2021/06/05/sqli-labs第八关-布尔注入 (1)/">
     more
   </a>
   </div>
   <div class="index-meta">
-    <time datetime="2021-06-05T07:47:55.188Z" itemprop="datePublished">
+    <time datetime="2021-06-05T07:48:43.939Z" itemprop="datePublished">
   <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
@@ -458,8 +450,8 @@ y 和
   
   
     <h1 class="index-title">
-        <a href="/2021/02/05/SQL注入-联合查询/">
-            SQL注入-联合查询入门
+        <a href="/2021/06/05/攻防世界-crypto新手区/">
+            攻防世界-crypto新手区
         </a>
     </h1>
   
@@ -467,21 +459,23 @@ y 和
 
   <div class="excerpt">
   
-    前言联合查询：一：按照注入语法分为:联合查询注入Union/报错查询注入error/布尔型注入Boolean/延时注入Time/堆叠查询注入
-二：联合查询注入是最简单的一种注入方式,但是要求页面必须有显示位.否则无法注入.
-显示位:可以理解
+    base64直接用base64解密
+
+Caesar本题需要用到凯撒解密，key=12.这个我没考虑那么多，一个一个试的。。。
+Morse可见该题需要使用摩斯密码可将1更换为-**，0- .**进行解密，得到flag
+Railfence根据提
   
-  <a href="/2021/02/05/SQL注入-联合查询/">
+  <a href="/2021/06/05/攻防世界-crypto新手区/">
     more
   </a>
   </div>
   <div class="index-meta">
-    <time datetime="2021-02-05T09:18:57.446Z" itemprop="datePublished">
+    <time datetime="2021-06-05T07:48:43.937Z" itemprop="datePublished">
   <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
   &nbsp;
-  2021-02-05
+  2021-06-05
 </time>
 
 
@@ -500,7 +494,7 @@ y 和
   
 </ul>
 <ul class="pager">
-    <a class="extend prev" rel="prev" href="/page/2/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/2/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next</a>
 </ul>
 
 
