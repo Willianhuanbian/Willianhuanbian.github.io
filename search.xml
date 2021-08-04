@@ -1455,7 +1455,7 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
+    <title>BUUCTF刷题</title>
     <url>/2021/08/04/Buuctf%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<h2 id="HCTF-2018-WarmUp"><a href="#HCTF-2018-WarmUp" class="headerlink" title="[HCTF 2018]WarmUp"></a>[HCTF 2018]WarmUp</h2><p>这是一道关于代码审计的题<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627198003837-a7ebfeb9-f44e-4ccc-b1ca-96ce5f953a99.png#align=left&display=inline&height=189&margin=%5Bobject%20Object%5D&name=image.png&originHeight=377&originWidth=1265&size=52770&status=done&style=none&width=632.5" alt="image.png"><br>通过查看源代码发现了source.php的源文件<br>进入查看</p>
 <p>`&lt;?php<br>    highlight_file(__FILE__);<br>    class emmm<br>    {<br>        public static function checkFile(&amp;$page)<br>        {<br>            $whitelist = [“source”=&gt;”source.php”,”hint”=&gt;”hint.php”];<br>            if (! isset(<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="16.536ex" height="2.843ex" style="vertical-align: -0.838ex; margin-left: -0.089ex;" viewBox="-38.5 -863.1 7119.5 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
@@ -2089,7 +2089,7 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
+    <title>CNVD-2021-14536 锐捷 RG-UAC 统一上网行为管理审计系统信息泄露漏洞</title>
     <url>/2021/08/04/CNVD-2021-14536%20%E9%94%90%E6%8D%B7%20RG-UAC%20%E7%BB%9F%E4%B8%80%E4%B8%8A%E7%BD%91%E8%A1%8C%E4%B8%BA%E7%AE%A1%E7%90%86%E5%AE%A1%E8%AE%A1%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E/</url>
     <content><![CDATA[<p>就很离谱，再看信息泄露的东西的时候，看到一篇漏洞复现的文章。。。。<br>管理员密码就在源代码里面，让我们来看看</p>
 <h2 id="复现环境"><a href="#复现环境" class="headerlink" title="复现环境"></a>复现环境</h2><p>fofa搜索 <code>title=&quot;RG-UAC登录页面&quot; &amp;&amp; body=&quot;admin&quot;</code><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1625990348383-293e920b-2932-4af3-a1b5-b01fa6abe69b.png#align=left&display=inline&height=117&margin=%5Bobject%20Object%5D&name=image.png&originHeight=234&originWidth=1247&size=30174&status=done&style=none&width=623.5" alt="image.png"><br>选择一个进入环境<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1625990385404-2b8c71d1-1991-4c5a-9ed3-b861bb66c0ed.png#align=left&display=inline&height=474&margin=%5Bobject%20Object%5D&name=image.png&originHeight=947&originWidth=1920&size=314141&status=done&style=none&width=960" alt="image.png"></p>
@@ -2101,7 +2101,7 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
+    <title>CTFHUB-XSS</title>
     <url>/2021/08/04/CTFHUB-xss(%E5%8F%8D%E5%B0%84%E5%9E%8B)/</url>
     <content><![CDATA[<p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627540838269-f6255878-39b2-4b7e-a9fe-70db62d59227.png#align=left&display=inline&height=269&margin=%5Bobject%20Object%5D&name=image.png&originHeight=537&originWidth=1574&size=41871&status=done&style=none&width=787" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627540846706-32ad2456-ee5c-4ab0-9dcb-8aae2535a335.png#align=left&display=inline&height=73&margin=%5Bobject%20Object%5D&name=image.png&originHeight=145&originWidth=548&size=7236&status=done&style=none&width=274" alt="image.png"><br>经过测试，第一个文本框是用于测试使用</p>
 <p>第二个文本框应该是将信息发送至后台，进行处理，</p>
@@ -2111,7 +2111,7 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
+    <title>CVE-2018-8174</title>
     <url>/2021/08/04/CVE-2018-8174%20%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</url>
     <content><![CDATA[<h1 id="漏洞描述："><a href="#漏洞描述：" class="headerlink" title="漏洞描述："></a>漏洞描述：</h1><p>CVE-2018-8174 是 Windows VBScript Engine 代码执行漏洞。<br>微软在4月20日早上确认此漏洞，并于5月8号发布了官方安全补丁，对该 0day 漏洞进行了修复，将其命名为 CVE-2018-8174<br>由于 VBScript 脚本执行引擎(vbscript.dll)存在代码执行漏洞，攻击者可以将恶意的VBScript嵌入到Office文件或者网站中，一旦用户不小心点击，远程攻击者可以获取当前用户权限执行脚本中的恶意代码</p>
 <h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627282558665-f69a8561-6723-4a68-8da8-009e1e9d953b.png#align=left&display=inline&height=247&margin=%5Bobject%20Object%5D&name=image.png&originHeight=493&originWidth=784&size=127118&status=done&style=none&width=392" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627283240183-5620164b-2d5b-4f8d-8b2e-61478b605957.png#align=left&display=inline&height=220&margin=%5Bobject%20Object%5D&name=image.png&originHeight=440&originWidth=649&size=134009&status=done&style=none&width=324.5" alt="image.png"></p>
@@ -2120,7 +2120,7 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
+    <title>JS学习阶段（1）</title>
     <url>/2021/08/04/JavaScript/</url>
     <content><![CDATA[<p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627356600808-0dc60608-222b-4ca2-96b4-2d1cc89b9a1e.png#align=left&display=inline&height=106&margin=%5Bobject%20Object%5D&name=image.png&originHeight=212&originWidth=1328&size=108411&status=done&style=none&width=664" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627356673958-4480c73d-61d9-43fc-b20e-35edf258c16f.png#align=left&display=inline&height=55&margin=%5Bobject%20Object%5D&name=image.png&originHeight=109&originWidth=289&size=12730&status=done&style=none&width=144.5" alt="image.png"></p>
 <p>作用：<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627357045409-1247e4ae-54f4-4cb7-a407-40d95a683e31.png#align=left&display=inline&height=152&margin=%5Bobject%20Object%5D&name=image.png&originHeight=304&originWidth=392&size=37315&status=done&style=none&width=196" alt="image.png"><br>其实也就是JAVAscript漏洞<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627357072875-58658477-df08-4cc5-8f9a-b44908778275.png#align=left&display=inline&height=65&margin=%5Bobject%20Object%5D&name=image.png&originHeight=129&originWidth=398&size=17473&status=done&style=none&width=199" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627357187993-8fa4b1ab-1814-496c-953c-d5df8abe6550.png#align=left&display=inline&height=20&margin=%5Bobject%20Object%5D&name=image.png&originHeight=39&originWidth=468&size=20737&status=done&style=none&width=234" alt="image.png"><br>BEEF中hook.js是一个钩子-木马</p>
@@ -2161,7 +2161,7 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
+    <title>XSS原理</title>
     <url>/2021/08/04/XSS/</url>
     <content><![CDATA[<p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627353750244-eb30b7e8-2e0f-4920-81d5-42563fa0deb4.png#align=left&display=inline&height=53&margin=%5Bobject%20Object%5D&name=image.png&originHeight=106&originWidth=339&size=10445&status=done&style=none&width=169.5" alt="image.png"><br>通过网页上传我们写的HTML、css代码在代码中嵌入木马等</p>
 <p>将script代码注入到网页内，然后别人打开后，别人的浏览器就会执行恶意代码</p>
@@ -2171,7 +2171,7 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
+    <title>Nessus</title>
     <url>/2021/08/04/%E6%B8%97%E9%80%8F%E6%89%AB%E6%8F%8F%E5%B7%A5%E5%85%B7/</url>
     <content><![CDATA[<h2 id="Nessus"><a href="#Nessus" class="headerlink" title="Nessus"></a>Nessus</h2><p>安装成功之后，倘若关机后服务就会关闭，再次开启网站也就进不去了，这时候需要</p>
 <p>在/obt/nessus的目录下，再次开<img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1625986924729-59eaf639-d2e8-466e-9523-56b266409d46.png#align=left&display=inline&height=181&margin=%5Bobject%20Object%5D&name=image.png&originHeight=361&originWidth=567&size=88021&status=done&style=none&width=283.5" alt="image.png">启服务<code>net start &quot;Tenable Nessus&quot;</code></p>
@@ -2180,7 +2180,7 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
+    <title>内网渗透技巧（入门）</title>
     <url>/2021/08/04/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E6%8A%80%E5%B7%A7%EF%BC%88%E5%85%A5%E9%97%A8%EF%BC%89/</url>
     <content><![CDATA[<h1 id="内网转发"><a href="#内网转发" class="headerlink" title="内网转发"></a>内网转发</h1><p>拿到webshell进行端口转发，达到代理的目的<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627178596045-5a65a39b-2bef-4a87-86f5-77fb5d44c214.png#align=left&display=inline&height=237&margin=%5Bobject%20Object%5D&name=image.png&originHeight=473&originWidth=419&size=38996&status=done&style=none&width=209.5" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627178715676-885b11ba-8255-4ccf-ab13-bf95936f7b51.png#align=left&display=inline&height=158&margin=%5Bobject%20Object%5D&name=image.png&originHeight=316&originWidth=1033&size=69927&status=done&style=none&width=516.5" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627178749452-2705f915-499d-4ad1-8c38-415510c2d2d5.png#align=left&display=inline&height=199&margin=%5Bobject%20Object%5D&name=image.png&originHeight=397&originWidth=812&size=55912&status=done&style=none&width=406" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627182983513-c8c954d8-c0a4-4214-b057-a0899ee82827.png#align=left&display=inline&height=45&margin=%5Bobject%20Object%5D&name=image.png&originHeight=90&originWidth=275&size=8743&status=done&style=none&width=137.5" alt="image.png">监听状态<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627183278940-4a863690-52c2-4845-ac7c-5a38c76f4372.png#align=left&display=inline&height=105&margin=%5Bobject%20Object%5D&name=image.png&originHeight=209&originWidth=1179&size=61364&status=done&style=none&width=589.5" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627183346971-efea506c-4250-49b9-be5b-ec92f7656abe.png#align=left&display=inline&height=207&margin=%5Bobject%20Object%5D&name=image.png&originHeight=413&originWidth=605&size=89952&status=done&style=none&width=302.5" alt="image.png"><br>连接之后可以进行操作，比如查看ip<br>获取用户名什么的<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627183448137-ddddee9f-54c2-48c8-907e-6022baa87a53.png#align=left&display=inline&height=27&margin=%5Bobject%20Object%5D&name=image.png&originHeight=54&originWidth=624&size=15370&status=done&style=none&width=312" alt="image.png"></p>
 <p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627179167722-9b26d7a6-4878-4aad-899a-6210ace32723.png#align=left&display=inline&height=99&margin=%5Bobject%20Object%5D&name=image.png&originHeight=198&originWidth=868&size=44343&status=done&style=none&width=434" alt="image.png"><br>功能比较强大</p>
@@ -2191,7 +2191,7 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
+    <title>信息收集</title>
     <url>/2021/08/04/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</url>
     <content><![CDATA[<p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1626088156178-c7769928-5f46-4b8f-94e6-63fe06883caf.png#align=left&display=inline&height=342&margin=%5Bobject%20Object%5D&name=image.png&originHeight=684&originWidth=1235&size=840387&status=done&style=none&width=617.5" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1626088171085-d730e888-6c6a-4945-a32d-24eb5dfc9ad3.png#align=left&display=inline&height=313&margin=%5Bobject%20Object%5D&name=image.png&originHeight=625&originWidth=1304&size=802686&status=done&style=none&width=652" alt="image.png"></p>
 <p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1626088272552-6d1bc8f3-dfc6-4be5-8799-ad8bd7b6753c.png#align=left&display=inline&height=278&margin=%5Bobject%20Object%5D&name=image.png&originHeight=556&originWidth=1270&size=461097&status=done&style=none&width=635" alt="image.png"><br>软件版本号，信心显示、作者等，通过版本号等信息，进行攻击造成服务损坏<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1626088454411-1abb4ab1-36fc-4506-91a0-1fbc839b922e.png#align=left&display=inline&height=283&margin=%5Bobject%20Object%5D&name=image.png&originHeight=565&originWidth=976&size=569035&status=done&style=none&width=488" alt="image.png"><br>主域名安防高，通过子域名发掘漏洞更加容易，从而进行渗透</p>
@@ -2203,7 +2203,7 @@
 <p>| <a href="http://www.pyyszx.cn/"><strong>设为首页</strong></a>  濮阳市油田艺术中学  <a href="https://bszs.conac.cn/sitename?method=show&id=0C30B9CF3D1C1E6AE053012819ACE3A5"><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1626092192747-de753e8e-a6e3-41e5-8aea-a9cc7e0946fe.png#align=left&display=inline&height=80&margin=%5Bobject%20Object%5D&originHeight=80&originWidth=80&size=0&status=done&style=none&width=80"></a> Copyright©  2010-2019  <a href="http://www.pyyszx.cn/baishuadmin/"><strong>管理登陆</strong>
 </a>地址：河南省濮阳市任丘路335号  邮编：457001  电话：0393-4821909  邮箱：<a href="mailto:pyyszx@163.com">pyyszx@163.com</a>  <a href="http://beian.miit.gov.cn/">豫ICP备17017403号</a> <a href="https://www.cnzz.com/stat/website.php?web_id=1254058491"><img src="https://cdn.nlark.com/yuque/0/2021/gif/12570963/1626092192632-cc183e60-9b26-4e16-b682-4b5210ef3490.gif#align=left&display=inline&height=12&margin=%5Bobject%20Object%5D&originHeight=12&originWidth=50&size=0&status=done&style=none&width=50"></a> |<br>| — |<br>| 您是本站的第 <img src="https://cdn.nlark.com/yuque/0/2021/gif/12570963/1626092192665-e7f83212-e976-4066-910b-b7d78243a8d0.gif#align=left&display=inline&height=20&margin=%5Bobject%20Object%5D&originHeight=20&originWidth=15&size=0&status=done&style=none&width=15"><img src="https://cdn.nlark.com/yuque/0/2021/gif/12570963/1626092192666-fd18ce67-a20f-4b59-9910-19a2780b6c7f.gif#align=left&display=inline&height=20&margin=%5Bobject%20Object%5D&originHeight=20&originWidth=15&size=0&status=done&style=none&width=15"><img src="https://cdn.nlark.com/yuque/0/2021/gif/12570963/1626092192668-ea1ee76d-6a39-4cbe-9114-b61597383068.gif#align=left&display=inline&height=20&margin=%5Bobject%20Object%5D&originHeight=20&originWidth=15&size=0&status=done&style=none&width=15"><img src="https://cdn.nlark.com/yuque/0/2021/gif/12570963/1626092192688-5f8d167b-3be9-44c5-8571-77307ab5752f.gif#align=left&display=inline&height=20&margin=%5Bobject%20Object%5D&originHeight=20&originWidth=15&size=0&status=done&style=none&width=15"><img src="https://cdn.nlark.com/yuque/0/2021/gif/12570963/1626092192698-92ae340d-e05b-4348-a269-a8d6e9f78677.gif#align=left&display=inline&height=20&margin=%5Bobject%20Object%5D&originHeight=20&originWidth=15&size=0&status=done&style=none&width=15"><img src="https://cdn.nlark.com/yuque/0/2021/gif/12570963/1626092192691-46f6a3a0-7312-4515-b63a-38cb3a568dc1.gif#align=left&display=inline&height=20&margin=%5Bobject%20Object%5D&originHeight=20&originWidth=15&size=0&status=done&style=none&width=15"><img src="https://cdn.nlark.com/yuque/0/2021/gif/12570963/1626092192918-1b6572c7-96e4-4b6e-a908-21294d1e2d62.gif#align=left&display=inline&height=20&margin=%5Bobject%20Object%5D&originHeight=20&originWidth=15&size=0&status=done&style=none&width=15"> 位访问者 |</p>
 <p><a href="http://www.pyyszx.cn/">http://www.pyyszx.cn</a> [200 OK] Apache[2.4.23], Country[CHINA][CN], HTTPServer[Windows (32 bit)][Apache/2.4.23 (Win32) OpenSSL/1.0.2j], IP[114.118.11.54], OpenSSL[1.0.2j], Script</p>
-<p>Domain Name: pyyszx.cn<br>ROID: 20150107s10001s73619105-cn<br>Domain Status: ok<br>Registrant: 濮阳市油田艺术中学       地址<br>Registrant Contact Email: <a href="mailto:&#106;&#x78;&#56;&#49;&#57;&#64;&#x31;&#50;&#54;&#x2e;&#x63;&#111;&#x6d;">&#106;&#x78;&#56;&#49;&#57;&#64;&#x31;&#50;&#54;&#x2e;&#x63;&#111;&#x6d;</a>    邮箱<br>Sponsoring Registrar: 成都世纪东方网络通信有限公司  组织<br>Name Server: ns.cdnhost.cn    服务器<br>Name Server: ns.dnsfamily.com<br>Registration Time: 2015-01-07 15:09:21<br>Expiration Time: 2022-01-07 15:09:21</p>
+<p>Domain Name: pyyszx.cn<br>ROID: 20150107s10001s73619105-cn<br>Domain Status: ok<br>Registrant: 濮阳市油田艺术中学       地址<br>Registrant Contact Email: <a href="mailto:&#x6a;&#x78;&#x38;&#49;&#x39;&#64;&#49;&#x32;&#x36;&#x2e;&#x63;&#111;&#109;">&#x6a;&#x78;&#x38;&#49;&#x39;&#64;&#49;&#x32;&#x36;&#x2e;&#x63;&#111;&#109;</a>    邮箱<br>Sponsoring Registrar: 成都世纪东方网络通信有限公司  组织<br>Name Server: ns.cdnhost.cn    服务器<br>Name Server: ns.dnsfamily.com<br>Registration Time: 2015-01-07 15:09:21<br>Expiration Time: 2022-01-07 15:09:21</p>
 <p>inurl:<em>.pyyszx.cn<br>site:</em>.pyyszx.cn</p>
 <p><a href="http://www.pyyszx.cn/baishuadmin/">http://www.pyyszx.cn/baishuadmin/</a>后台管理<br><a href="http://www.pyyszx.cn/reg.php">http://www.pyyszx.cn/reg.php</a>注册</p>
 <p>Server:         192.168.3.1<br>Address:        192.168.3.1#53<br>Non-authoritative answer:<br>Name:   <a href="http://www.pyyszx.cn/">www.pyyszx.cn</a><br>Address: 114.118.11.54
@@ -2212,7 +2212,7 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
+    <title>XSS靶场（1-10）</title>
     <url>/2021/08/04/XSS%E9%9D%B6%E5%9C%BA/</url>
     <content><![CDATA[<h1 id="第一关"><a href="#第一关" class="headerlink" title="第一关"></a>第一关</h1><p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627706143824-ebcd923f-cadb-4309-9fd0-049b1e60e035.png#align=left&display=inline&height=406&margin=%5Bobject%20Object%5D&name=image.png&originHeight=812&originWidth=1068&size=147387&status=done&style=none&width=534" alt="image.png"><br>利用语句进行弹窗测试就可以<br><code>&lt;script&gt;alert(1)&lt;/script&gt;</code><br><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627706206918-a879298f-69e8-4871-b6da-6b059b6a3e31.png#align=left&display=inline&height=338&margin=%5Bobject%20Object%5D&name=image.png&originHeight=675&originWidth=1428&size=65116&status=done&style=none&width=714" alt="image.png"></p>
 <h1 id="第二关"><a href="#第二关" class="headerlink" title="第二关"></a>第二关</h1><p><img src="https://cdn.nlark.com/yuque/0/2021/png/12570963/1627706252323-14e61740-a651-4e14-80c2-3a24e4bdb2ce.png#align=left&display=inline&height=282&margin=%5Bobject%20Object%5D&name=image.png&originHeight=564&originWidth=830&size=74146&status=done&style=none&width=415" alt="image.png"></p>
