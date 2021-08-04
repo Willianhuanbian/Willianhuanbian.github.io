@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  <meta name="referrer" content="unsafe-url">
+  
+  <title>数据库查询语句（二）-条件查询</title>
+  <meta name="author" content="Willianhuanbian">
+  <meta name="description" content="前言1. 熟练掌握where子句各类运算符的使用
+2. 熟练掌握多条件查询and、or的使用
+
+
+一、单条件查询在SQL中，insert、update、delete和select后面都能带where子句，用于插入、修改、删除或查询指定条件的记录
+1SELECT column_name FROM ta">
+  
+  
+  <meta property="og:title" content="数据库查询语句（二）-条件查询"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Willianir&#39;s home"/>
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="Willianir&#39;s home" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <a id="top"></a>
+  <div id="main">
+    <div class="main-ctnr">
+      <div class="behind">
+  <a href="/" class="back black-color">
+    <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+        <path d="M2 30 L30 2 M30 30 L2 2"></path>
+    </svg>
+  </a>
+  
+</div>
+
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        数据库查询语句（二）-条件查询
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      <time datetime="2021-06-05T07:48:43.955Z" itemprop="datePublished">
+  <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2021-06-05
+</time>
+
+
+
+
+
+
+    </div>
+    <hr>
+    
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">1. 熟练掌握where子句各类运算符的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">2. 熟练掌握多条件查询and、or的使用
+
+
+一、单条件查询在SQL中，insert、update、delete和select后面都能带where子句，用于插入、修改、删除或查询指定条件的记录
+1
+SELECT column_name FROM table_name WHERE column_name 运算符 value
+
+
+语句:select * from table_name where column_name 运算符 value;
+
+下面是查询不等于Dumb的名单
+
+大于等于
+
+Between语句
+
+二、多条件查询在where子句中，使用and、or可以把两个或多个过滤条件结合起来。
+1
+SELECT column_name FROM table_name WHERE condition1 AND condition2 OR condition3
+
+
+AND语句：进行查询id&gt;&#x3D;3 并且Password &#x3D;‘admin’的数据
+
+or语句：id&gt;&#x3D;3或者password&#x3D;’Dumb’的数据都可以显示出来
+
+多个条件时
+
+可以看到这里明明是筛选ID&gt;&#x3D;6的为什么还会出现ID&#x3D;2-5的呢这是因为
+AND语句连接的是前面条件，OR语句条件作业在第三个条件因此也就同时输出了第三个条件的内容，如果想要输出符合条件的数据只需要在条件范围内用（）包括就可以了
+</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%8D%95%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="toc-text">一、单条件查询</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%A4%9A%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="toc-text">二、多条件查询</span></a></li></ol>
+    
+    <div class="picture-container">
+      
+    </div>
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h3>1. 熟练掌握where子句各类运算符的使用</h3>
+<h3>2. 熟练掌握多条件查询and、or的使用
+
+
+<h1 id="一、单条件查询"><a href="#一、单条件查询" class="headerlink" title="一、单条件查询"></a>一、单条件查询</h1><p>在SQL中，insert、update、delete和select后面都能带where子句，用于插入、修改、删除或查询指定条件的记录</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> column_name <span class="hljs-keyword">FROM</span> table_name <span class="hljs-keyword">WHERE</span> column_name 运算符 <span class="hljs-keyword">value</span><br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210508093514522.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>语句:<code>select * from table_name where column_name 运算符 value;</code><br><img src="https://img-blog.csdnimg.cn/20210508103718355.png" alt="在这里插入图片描述"><br><strong>下面是查询不等于Dumb的名单</strong><br><img src="https://img-blog.csdnimg.cn/20210508103859433.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>大于等于</strong><br><img src="https://img-blog.csdnimg.cn/20210508104038347.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>Between语句</strong><br><img src="https://img-blog.csdnimg.cn/20210508104232768.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="二、多条件查询"><a href="#二、多条件查询" class="headerlink" title="二、多条件查询"></a>二、多条件查询</h1><p>在where子句中，使用and、or可以把两个或多个过滤条件结合起来。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> column_name <span class="hljs-keyword">FROM</span> table_name <span class="hljs-keyword">WHERE</span> condition1 <span class="hljs-keyword">AND</span> condition2 <span class="hljs-keyword">OR</span> condition3<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210508093617634.png" alt="在这里插入图片描述"></p>
+<p><strong>AND语句：进行查询id&gt;=3 并且Password =‘admin’的数据</strong><br><img src="https://img-blog.csdnimg.cn/20210508104452501.png" alt="在这里插入图片描述"><br><strong>or语句：id&gt;=3或者password=’Dumb’的数据都可以显示出来</strong><br><img src="https://img-blog.csdnimg.cn/20210508104644987.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>多个条件时</strong><br><img src="https://img-blog.csdnimg.cn/20210508105253541.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可以看到这里明明是筛选ID&gt;=6的为什么还会出现ID=2-5的呢这是因为<img src="https://img-blog.csdnimg.cn/20210508105451208.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>AND语句连接的是前面条件，OR语句条件作业在第三个条件因此也就同时输出了第三个条件的内容，如果想要输出符合条件的数据只需要在条件范围内用<code>（）</code>包括就可以了<img src="https://img-blog.csdnimg.cn/20210508105917494.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTcwNjA0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+
+  </article>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <div class="busuanzi center">
+    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
+
+
+    
+
+
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        © XXX 2016-2020
+    </div>
+    <div class="secondrow">
+        <a href="">
+        Willianir
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.min.js"></script>
+<script type="text/javascript">
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
+</html>
